@@ -1,0 +1,2006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple-Kitchen</title>
+    <link rel="stylesheet" href="assets/css/datepicker.min.css">
+    <link href="assets/css/slick.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/datepicker.min.js"></script>
+    <script src="assets/js/slick.min.js"></script>
+    <script src="assets/js/TweenMax.min.js"></script>
+    <script src="assets/js/ScrollMagic.min.js"></script>
+    <script src="assets/js/animation.gsap.min.js"></script>
+    <script src="assets/js/debug.addIndicators.min.js"></script>
+    <script src="assets/js/turn.js"></script>
+    <script src="assets/js/main.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <div class="content">
+        <header class="header">
+            <a href="#" class="header__logo">
+                <div class="logo__wrapper">
+                    <div class="logo logo_size_m logo_color_head">
+                        <svg width="163" height="49" viewBox="0 0 163 49" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M87.928 8.664C87.928 9.208 88.168 9.64 88.648 9.96C89.128 10.28 89.712 10.528 90.4 10.704C91.088 10.88 91.776 11.08 92.464 11.304C93.152 11.512 93.736 11.872 94.216 12.384C94.696 12.88 94.936 13.536 94.936 14.352C94.936 15.376 94.528 16.208 93.712 16.848C92.912 17.488 91.872 17.808 90.592 17.808C89.44 17.808 88.456 17.552 87.64 17.04C86.84 16.528 86.28 15.864 85.96 15.048L87.304 14.256C87.528 14.88 87.928 15.376 88.504 15.744C89.096 16.096 89.792 16.272 90.592 16.272C91.376 16.272 92.032 16.12 92.56 15.816C93.088 15.496 93.352 15.008 93.352 14.352C93.352 13.808 93.112 13.376 92.632 13.056C92.152 12.736 91.568 12.488 90.88 12.312C90.192 12.136 89.504 11.944 88.816 11.736C88.128 11.512 87.544 11.152 87.064 10.656C86.584 10.144 86.344 9.48 86.344 8.664C86.344 7.688 86.728 6.872 87.496 6.216C88.28 5.56 89.264 5.232 90.448 5.232C91.424 5.232 92.28 5.456 93.016 5.904C93.752 6.336 94.296 6.928 94.648 7.68L93.328 8.448C92.864 7.328 91.904 6.768 90.448 6.768C89.76 6.768 89.168 6.936 88.672 7.272C88.176 7.592 87.928 8.056 87.928 8.664Z"
+                                  fill="white"/>
+                            <path d="M99.0693 2.64C98.8453 2.864 98.5733 2.976 98.2533 2.976C97.9333 2.976 97.6613 2.864 97.4373 2.64C97.2133 2.416 97.1013 2.144 97.1013 1.824C97.1013 1.504 97.2133 1.232 97.4373 1.008C97.6613 0.784 97.9333 0.672 98.2533 0.672C98.5733 0.672 98.8453 0.784 99.0693 1.008C99.2933 1.232 99.4053 1.504 99.4053 1.824C99.4053 2.144 99.2933 2.416 99.0693 2.64ZM97.4613 17.52V5.52H99.0453V17.52H97.4613Z"
+                                  fill="white"/>
+                            <path d="M115.199 5.232C116.543 5.232 117.623 5.664 118.439 6.528C119.271 7.392 119.687 8.56 119.687 10.032V17.52H118.103V10.032C118.103 8.992 117.831 8.192 117.287 7.632C116.759 7.056 116.055 6.768 115.175 6.768C114.183 6.768 113.375 7.104 112.751 7.776C112.143 8.432 111.839 9.464 111.839 10.872V17.52H110.255V10.032C110.255 8.976 109.999 8.168 109.487 7.608C108.991 7.048 108.311 6.768 107.447 6.768C106.487 6.768 105.671 7.104 104.999 7.776C104.327 8.448 103.991 9.48 103.991 10.872V17.52H102.407V5.52H103.991V7.272C104.855 5.912 106.079 5.232 107.663 5.232C109.391 5.232 110.607 5.96 111.311 7.416C112.175 5.96 113.471 5.232 115.199 5.232Z"
+                                  fill="white"/>
+                            <path d="M129.182 5.232C130.894 5.232 132.35 5.84 133.55 7.056C134.766 8.272 135.374 9.76 135.374 11.52C135.374 13.28 134.766 14.768 133.55 15.984C132.35 17.2 130.894 17.808 129.182 17.808C127.054 17.808 125.438 16.928 124.334 15.168V22.32H122.75V5.52H124.334V7.872C125.438 6.112 127.054 5.232 129.182 5.232ZM125.702 14.904C126.614 15.816 127.734 16.272 129.062 16.272C130.39 16.272 131.51 15.816 132.422 14.904C133.334 13.976 133.79 12.848 133.79 11.52C133.79 10.192 133.334 9.072 132.422 8.16C131.51 7.232 130.39 6.768 129.062 6.768C127.734 6.768 126.614 7.232 125.702 8.16C124.79 9.072 124.334 10.192 124.334 11.52C124.334 12.848 124.79 13.976 125.702 14.904Z"
+                                  fill="white"/>
+                            <path d="M138.008 17.52V0H139.592V17.52H138.008Z" fill="white"/>
+                            <path d="M148.497 5.232C150.273 5.232 151.705 5.864 152.793 7.128C153.897 8.376 154.449 9.856 154.449 11.568C154.449 11.744 154.433 11.992 154.401 12.312H143.865C144.025 13.528 144.537 14.496 145.401 15.216C146.281 15.92 147.361 16.272 148.641 16.272C149.553 16.272 150.337 16.088 150.993 15.72C151.665 15.336 152.169 14.84 152.505 14.232L153.897 15.048C153.369 15.896 152.649 16.568 151.737 17.064C150.825 17.56 149.785 17.808 148.617 17.808C146.729 17.808 145.193 17.216 144.009 16.032C142.825 14.848 142.233 13.344 142.233 11.52C142.233 9.728 142.817 8.232 143.985 7.032C145.153 5.832 146.657 5.232 148.497 5.232ZM148.497 6.768C147.249 6.768 146.201 7.144 145.353 7.896C144.521 8.632 144.025 9.592 143.865 10.776H152.817C152.657 9.512 152.169 8.528 151.353 7.824C150.537 7.12 149.585 6.768 148.497 6.768Z"
+                                  fill="white"/>
+                            <path d="M96.376 45.52H94.264L88.264 39.736V45.52H86.68V28.72H88.264V38.824L93.976 33.52H96.136L89.944 39.28L96.376 45.52Z"
+                                  fill="white"/>
+                            <path d="M100.147 30.64C99.9234 30.864 99.6514 30.976 99.3314 30.976C99.0114 30.976 98.7394 30.864 98.5154 30.64C98.2914 30.416 98.1794 30.144 98.1794 29.824C98.1794 29.504 98.2914 29.232 98.5154 29.008C98.7394 28.784 99.0114 28.672 99.3314 28.672C99.6514 28.672 99.9234 28.784 100.147 29.008C100.371 29.232 100.483 29.504 100.483 29.824C100.483 30.144 100.371 30.416 100.147 30.64ZM98.5394 45.52V33.52H100.123V45.52H98.5394Z"
+                                  fill="white"/>
+                            <path d="M109.845 35.056H106.389V42.328C106.389 42.984 106.517 43.456 106.773 43.744C107.029 44.016 107.413 44.16 107.925 44.176C108.437 44.176 109.077 44.16 109.845 44.128V45.52C108.165 45.776 106.901 45.656 106.053 45.16C105.221 44.664 104.805 43.72 104.805 42.328V35.056H102.285V33.52H104.805V30.64L106.389 30.16V33.52H109.845V35.056Z"
+                                  fill="white"/>
+                            <path d="M117.35 45.808C115.542 45.808 114.038 45.208 112.838 44.008C111.638 42.792 111.038 41.296 111.038 39.52C111.038 37.744 111.638 36.256 112.838 35.056C114.038 33.84 115.542 33.232 117.35 33.232C118.534 33.232 119.598 33.52 120.542 34.096C121.486 34.656 122.174 35.416 122.606 36.376L121.31 37.12C120.99 36.4 120.47 35.832 119.75 35.416C119.046 34.984 118.246 34.768 117.35 34.768C116.022 34.768 114.902 35.232 113.99 36.16C113.078 37.072 112.622 38.192 112.622 39.52C112.622 40.848 113.078 41.976 113.99 42.904C114.902 43.816 116.022 44.272 117.35 44.272C118.246 44.272 119.046 44.064 119.75 43.648C120.454 43.216 121.006 42.64 121.406 41.92L122.726 42.688C122.23 43.648 121.502 44.408 120.542 44.968C119.582 45.528 118.518 45.808 117.35 45.808Z"
+                                  fill="white"/>
+                            <path d="M130.616 33.232C132.072 33.232 133.216 33.68 134.048 34.576C134.896 35.456 135.32 36.648 135.32 38.152V45.52H133.736V38.152C133.736 37.08 133.448 36.248 132.872 35.656C132.312 35.064 131.512 34.768 130.472 34.768C129.32 34.768 128.384 35.136 127.664 35.872C126.944 36.592 126.584 37.712 126.584 39.232V45.52H125V28.72H126.584V35.392C127.48 33.952 128.824 33.232 130.616 33.232Z"
+                                  fill="white"/>
+                            <path d="M143.927 33.232C145.703 33.232 147.135 33.864 148.223 35.128C149.327 36.376 149.879 37.856 149.879 39.568C149.879 39.744 149.863 39.992 149.831 40.312H139.295C139.455 41.528 139.967 42.496 140.831 43.216C141.711 43.92 142.791 44.272 144.071 44.272C144.983 44.272 145.767 44.088 146.423 43.72C147.095 43.336 147.599 42.84 147.935 42.232L149.327 43.048C148.799 43.896 148.079 44.568 147.167 45.064C146.255 45.56 145.215 45.808 144.047 45.808C142.159 45.808 140.623 45.216 139.439 44.032C138.255 42.848 137.663 41.344 137.663 39.52C137.663 37.728 138.247 36.232 139.415 35.032C140.583 33.832 142.087 33.232 143.927 33.232ZM143.927 34.768C142.679 34.768 141.631 35.144 140.783 35.896C139.951 36.632 139.455 37.592 139.295 38.776H148.247C148.087 37.512 147.599 36.528 146.783 35.824C145.967 35.12 145.015 34.768 143.927 34.768Z"
+                                  fill="white"/>
+                            <path d="M158.015 33.232C159.471 33.232 160.615 33.68 161.447 34.576C162.295 35.456 162.719 36.648 162.719 38.152V45.52H161.135V38.152C161.135 37.08 160.847 36.248 160.271 35.656C159.711 35.064 158.911 34.768 157.871 34.768C156.719 34.768 155.783 35.136 155.063 35.872C154.343 36.592 153.983 37.712 153.983 39.232V45.52H152.399V33.52H153.983V35.392C154.879 33.952 156.223 33.232 158.015 33.232Z"
+                                  fill="white"/>
+                            <path class="logo__icon" fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M6.31456 10.7329L6.36222 2.33289C6.01906 2.16024 5.66987 2.02918 5.32069 1.94188C4.922 2.04155 4.52331 2.19829 4.13357 2.40882L4.18081 10.7329C4.18233 11.0019 3.97883 11.2279 3.71108 11.2545C3.42462 11.283 3.16932 11.0738 3.14087 10.7874L2.44089 3.73989C1.02603 5.26225 0 7.62252 0 10.588C0 14.8649 1.91103 18.4166 4.42121 19.1111C5.71354 35.3735 19.32 48.1677 35.9148 48.1677C42.6142 48.1677 48.8266 46.0825 53.9383 42.5257C55.8979 43.2542 58.9747 44.3127 62.0144 44.5707C63.8632 44.7275 65.7889 44.5985 67.4798 43.853C69.2068 43.0915 70.6186 41.716 71.4354 39.538C72.8914 35.6551 72.0465 32.753 70.4733 30.6134C69.294 29.0095 67.6663 27.8151 66.5552 26.9999C66.3126 26.8218 66.0947 26.6619 65.9114 26.5197C66.693 24.1611 67.2042 21.6793 67.4083 19.111C69.9184 18.4164 71.8294 14.8648 71.8294 10.588C71.8294 5.81288 69.169 1.94188 66.5087 1.94188C63.8483 1.94188 61.188 5.81288 61.188 10.588C61.188 14.7492 62.997 18.2238 65.4067 19.0485C64.6883 27.7265 60.2255 35.3422 53.638 40.2759L53.5579 40.2458L53.5112 40.3703C48.5928 44.0133 42.5054 46.1677 35.9148 46.1677C20.4039 46.1677 7.68004 34.2348 6.4228 19.0484C8.83248 18.2236 10.6414 14.7491 10.6414 10.588C10.6414 7.5309 9.55097 5.11697 8.06825 3.60119L7.35449 10.7874C7.32604 11.0738 7.07074 11.283 6.78428 11.2545C6.51654 11.2279 6.31303 11.0019 6.31456 10.7329ZM62.1835 42.5778C59.9458 42.3879 57.6593 41.7152 55.8482 41.087C58.136 39.2244 60.1581 37.0478 61.8488 34.6231C62.4411 34.988 63.159 35.4478 63.8379 35.9116C64.356 36.2656 64.8453 36.6179 65.2365 36.9293C65.6446 37.2543 65.8953 37.496 65.9868 37.6311L66.8146 37.0701C66.6268 36.7929 66.2603 36.4662 65.8594 36.147C65.4416 35.8143 64.9302 35.4468 64.4021 35.086C63.7235 34.6223 63.0072 34.1629 62.4082 33.7932C63.4947 32.125 64.4279 30.3477 65.1878 28.4815C65.2963 28.5622 65.4072 28.6439 65.5199 28.7269C66.6175 29.5359 67.886 30.4708 68.862 31.7982C70.06 33.4275 70.767 35.6244 69.5627 38.8357C68.934 40.5123 67.9049 41.4798 66.6729 42.023C65.4046 42.5822 63.853 42.7195 62.1835 42.5778Z"
+                                  fill="white"/>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+            <div class="header__nav nav ">
+                <ul class="ul nav__list">
+                    <li class="nav__item nav__item_calc text_size_s text_weight_semibold">
+                        <a href="#">Калькулятор</a>
+                    </li>
+                    <li class="nav__item current text text_size_s text_weight_semibold">
+                        <a href="#">Преимущества</a>
+                    </li>
+                    <li class="nav__item text_size_s text_weight_semibold">
+                        <a href="#">Меню и тарифы</a>
+                    </li>
+                    <li class="nav__item text_size_s nav__item_faq text_weight_semibold">
+                        <a href="#">FAQ</a>
+                    </li>
+                    <li class="nav__item nav__item_questions text_size_s text_weight_semibold">
+                        <a href="#">Частые вопросы</a>
+                    </li>
+                </ul>
+                <div class="nav__contacts">
+                    <div class="nav__number-wrapper">
+                        <input type="text" class="nav__number text_size_s text_weight_ mask-tel mask-tel"
+                               placeholder="Ваш телефон">
+                    </div>
+                    <button class="button nav__button ">
+                        <span class=" nav__button-title text_size_s button__title text_color_white text_weight_semibold">
+                            Перезвоните мне
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="header__right">
+                <div class="header__info">
+                    <a href="tel: +7 (495) 649-81-68" type="text"
+                       class="header__number text_weight_medium text_size_xs text">+7 (495) 649-81-68</a>
+                    <div class="header__button button button_color_pink button_size_xxxs button_radius_cub">
+                        <span class="button__title text_size_xs text_weight_semibold text_color_white">
+                            Перезвоните мне
+                        </span>
+                    </div>
+                </div>
+                <div class="header__login login">
+                    <button class="button login__button">
+                        <span class="login__text text_size_xs text">Войти</span>
+                        <a class="login__icon-wrapper">
+                            <img class="login__icon" src="assets/icon/login.svg" alt="login-icon">
+                        </a>
+                    </button>
+                </div>
+                <a href="#" class="header__cart-button">
+                    <div class="cart-button__wrapper">
+                        <div class="cart-button__num">
+                            <span class="cart-button__text text_size_xxs text_weight_medium">14</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="header__burger burger ">
+                <span></span>
+            </div>
+        </header>
+        <div class="start-slider__container">
+            <div class="start-slider">
+                <div class="slider-for__wrapper">
+                    <div class="slider-for">
+                        <div class="slider-for__item">
+                            <div class="slider-for__card">
+                                <div class="slider-for__image-wrapper">
+                                    <img class="slider-for__image-desc" src="assets/img/banner-1.png" alt="girl-img"
+                                         class="slider-for__image">
+                                    <img class="slider-for__image-mob" src="assets/img/banner-1-mobile.png" alt="">
+                                </div>
+                                <div class="slider-for__content">
+                                    <h1 class="slider-for__text text_size_xl text_weight_bold text_color text_color_white">
+                                        Соки и смузи <span
+                                            class="slider-for__text_subtitle">в новой детокс-программе</span>
+                                    </h1>
+                                    <div class="slider__button button button_size_m button_color_smoke button_radius_circle button_shadow">
+                                        <div class="button__title text_weight_semibold text_size_s button__title_black">
+                                            Заказать детокс-набор
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-for__item">
+                            <div class="slider-for__card">
+                                <div class="slider-for__image-wrapper">
+                                    <img class="slider-for__image-desc" src="assets/img/banner-2.png" alt="girl-img"
+                                         class="slider-for__image">
+                                    <img class="slider-for__image-mob" src="assets/img/banner-2-mobile.png" alt="">
+                                </div>
+                                <div class="slider-for__content">
+                                    <h1 class="slider-for__text text_size_xl text_weight_bold text_color text_color_white">
+                                        Соки и смузи <span
+                                            class="slider-for__text_subtitle">в новой детокс-программе</span>
+                                    </h1>
+                                    <div class="slider__button button button_size_m button_color_smoke button_radius_circle button_shadow">
+                                        <div class="button__title text_weight_semibold text_size_s button__title_black">
+                                            Заказать детокс-набор
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-for__item">
+                            <div class="slider-for__card">
+                                <div class="slider-for__image-wrapper">
+                                    <img class="slider-for__image-desc" src="assets/img/banner-1.png" alt="girl-img"
+                                         class="slider-for__image">
+                                    <img class="slider-for__image-mob" src="assets/img/banner-1-mobile.png" alt="">
+                                </div>
+                                <div class="slider-for__content">
+                                    <h1 class="slider-for__text text_size_xl text_weight_bold text_color text_color_white">
+                                        Соки и смузи <span
+                                            class="slider-for__text_subtitle">в новой детокс-программе</span>
+                                    </h1>
+                                    <div class="slider__button button button_size_m button_color_smoke button_radius_circle button_shadow">
+                                        <div class="button__title text_weight_semibold text_size_s button__title_black">
+                                            Заказать детокс-набор
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-for__item">
+                            <div class="slider-for__card">
+                                <div class="slider-for__image-wrapper">
+                                    <img class="slider-for__image-desc" src="assets/img/banner-2.png" alt="girl-img"
+                                         class="slider-for__image">
+                                    <img class="slider-for__image-mob" src="assets/img/banner-2-mobile.png" alt="">
+                                </div>
+                                <div class="slider-for__content">
+                                    <h1 class="slider-for__text text_size_xl text_weight_bold text_color text_color_white">
+                                        Соки и смузи <span
+                                            class="slider-for__text_subtitle">в новой детокс-программе</span>
+                                    </h1>
+                                    <div class="slider__button button button_size_m button_color_smoke button_radius_circle button_shadow">
+                                        <div class="button__title text_weight_semibold text_size_s button__title_black">
+                                            Заказать детокс-набор
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-for__item">
+                            <div class="slider-for__card">
+                                <div class="slider-for__image-wrapper">
+                                    <img class="slider-for__image-desc" src="assets/img/banner-1.png" alt="girl-img"
+                                         class="slider-for__image">
+                                    <img class="slider-for__image-mob" src="assets/img/banner-1-mobile.png" alt="">
+                                </div>
+                                <div class="slider-for__content">
+                                    <h1 class="slider-for__text text_size_xl text_weight_bold text_color text_color_white">
+                                        Соки и смузи <span
+                                            class="slider-for__text_subtitle">в новой детокс-программе</span>
+                                    </h1>
+                                    <div class="slider__button button button_size_m button_color_smoke button_radius_circle button_shadow">
+                                        <div class="button__title text_weight_semibold text_size_s button__title_black">
+                                            Заказать детокс-набор
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-for__item">
+                            <div class="slider-for__card">
+                                <div class="slider-for__image-wrapper">
+                                    <img class="slider-for__image-desc" src="assets/img/banner-2.png" alt="girl-img"
+                                         class="slider-for__image">
+                                    <img class="slider-for__image-mob" src="assets/img/banner-2-mobile.png" alt="">
+                                </div>
+                                <div class="slider-for__content">
+                                    <h1 class="slider-for__text text_size_xl text_weight_bold text_color text_color_white">
+                                        Соки и смузи <span
+                                            class="slider-for__text_subtitle">в новой детокс-программе</span>
+                                    </h1>
+                                    <div class="slider__button button button_size_m button_color_smoke button_radius_circle button_shadow">
+                                        <div class="button__title text_weight_semibold text_size_s button__title_black">
+                                            Заказать детокс-набор
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-for__item">
+                            <div class="slider-for__card">
+                                <div class="slider-for__image-wrapper">
+                                    <img class="slider-for__image-desc" src="assets/img/banner-1.png" alt="girl-img"
+                                         class="slider-for__image">
+                                    <img class="slider-for__image-mob" src="assets/img/banner-1-mobile.png" alt="">
+                                </div>
+                                <div class="slider-for__content">
+                                    <h1 class="slider-for__text text_size_xl text_weight_bold text_color text_color_white">
+                                        Соки и смузи <span
+                                            class="slider-for__text_subtitle">в новой детокс-программе</span>
+                                    </h1>
+                                    <div class="slider__button button button_size_m button_color_smoke button_radius_circle button_shadow">
+                                        <div class="button__title text_weight_semibold text_size_s button__title_black">
+                                            Заказать детокс-набор
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-for__item">
+                            <div class="slider-for__card">
+                                <div class="slider-for__image-wrapper">
+                                    <img class="slider-for__image-desc" src="assets/img/banner-2.png" alt="girl-img"
+                                         class="slider-for__image">
+                                    <img class="slider-for__image-mob" src="assets/img/banner-2-mobile.png" alt="">
+                                </div>
+                                <div class="slider-for__content">
+                                    <h1 class="slider-for__text text_size_xl text_weight_bold text_color text_color_white">
+                                        Соки и смузи <span
+                                            class="slider-for__text_subtitle">в новой детокс-программе</span>
+                                    </h1>
+                                    <div class="slider__button button button_size_m button_color_smoke button_radius_circle button_shadow">
+                                        <div class="button__title text_weight_semibold text_size_s button__title_black">
+                                            Заказать детокс-набор
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-nav__wrapper">
+                    <div class="slider-nav">
+                        <div class="slider-nav__item">
+                            <div class="slider-nav__card">
+                                <img src="assets/img/slider-nav-banner-1.png" alt="">
+                            </div>
+                        </div>
+                        <div class="slider-nav__item">
+                            <div class="slider-nav__card">
+                                <img src="assets/img/slider-nav-banner.png" alt="">
+                            </div>
+                        </div>
+                        <div class="slider-nav__item">
+                            <div class="slider-nav__card">
+                                <img src="assets/img/slider-nav-banner-1.png" alt="">
+                            </div>
+                        </div>
+                        <div class="slider-nav__item">
+                            <div class="slider-nav__card">
+                                <img src="assets/img/slider-nav-banner.png" alt="">
+                            </div>
+                        </div>
+                        <div class="slider-nav__item">
+                            <div class="slider-nav__card">
+                                <img src="assets/img/slider-nav-banner-1.png" alt="">
+                            </div>
+                        </div>
+                        <div class="slider-nav__item">
+                            <div class="slider-nav__card">
+                                <img src="assets/img/slider-nav-banner.png" alt="">
+                            </div>
+                        </div>
+                        <div class="slider-nav__item">
+                            <div class="slider-nav__card">
+                                <img src="assets/img/slider-nav-banner-1.png" alt="">
+                            </div>
+                        </div>
+                        <div class="slider-nav__item">
+                            <div class="slider-nav__card">
+                                <img src="assets/img/slider-nav-banner.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider__nav-button-wrapper slider__nav-button-wrapper_start slider__prev start-slider__prev">
+                <div class="slider__nav-button slider__nav-button_prev">
+                </div>
+            </div>
+            <div class="slider__nav-button-wrapper slider__nav-button-wrapper_start slider__next start-slider__next">
+                <div class="slider__nav-button slider__nav-button_next">
+                </div>
+            </div>
+        </div>
+        <section class="advantages section-mb">
+            <h2 class="advantages__title text_size_l text_weight_bold h2-mb uppercase center">SIMPLE KITCHEN</h2>
+            <div class="advantages__content">
+                <div class="advantages__item">
+                    <div class="advantages__item-img">
+                        <img src="assets/icon/dishes.svg" alt="" class="advantages__item-icon">
+                    </div>
+                    <h3 class="advantages__item-title text_weight_bold text_size_m">Готовые блюда</h3>
+                    <p class="advantages__item-text text_size_xs">
+                        С нами вам не нужно готовить, а только насладиться едой! Вам остается только разогреть, а КБЖУ
+                        уже посчитано и указано в меню
+                    </p>
+                </div>
+                <div class="advantages__item">
+                    <div class="advantages__item-img">
+                        <img src="assets/icon/clock.svg" alt="" class="advantages__item-icon">
+                    </div>
+                    <h3 class="advantages__item-title text_weight_bold text_size_m">Экономия времени</h3>
+                    <p class="advantages__item-text text_size_xs">
+                        Утренняя доставка в 2х часовой интервал именно туда, куда Вам удобно!
+                    </p>
+                </div>
+                <div class="advantages__item">
+                    <div class="advantages__item-img">
+                        <img src="assets/icon/calc.svg" alt="" class="advantages__item-icon">
+                    </div>
+                    <h3 class="advantages__item-title text_weight_bold text_size_m">Экономия средств</h3>
+                    <p class="advantages__item-text text_size_xs">
+                        Наши рационы готовятся из лучших продуктов, а кбжу сбалансированно. Вам не придется тратить
+                        деньги на врачей и медикаменты!
+                    </p>
+                </div>
+                <div class="advantages__item">
+                    <div class="advantages__item-img">
+                        <img src="assets/icon/delivery.svg" alt="" class="advantages__item-icon">
+                    </div>
+                    <h3 class="advantages__item-title text_weight_bold text_size_m">Доставка</h3>
+                    <p class="advantages__item-text text_size_xs">
+                        Утренняя доставка в 2х часовой интервал именно туда, куда Вам удобно!
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="nutrition section-mb">
+            <h2 class="nutrition__title text_size_l text_weight_bold uppercase center h2-mb">Программы питания</h2>
+            <form action="#" id="diet-form">
+                <div class="nutrition__box">
+                    <div class="nutrition__tab-wrapper">
+                        <input type="radio" id="detox" name="nutrition__cases"
+                               class="nutrition__radio nutrition_detox">
+                        <input type="radio" id="weight-loss" name="nutrition__cases"
+                               class="nutrition__radio nutrition__weight-loss">
+                        <input type="radio" id="balance" name="nutrition__cases"
+                               class="nutrition__radio nutrition__balance">
+                        <input type="radio" id="weight-gainer" name="nutrition__cases"
+                               class="nutrition__radio nutrition__weight-gainer" checked>
+                        <input type="radio" id="veganism" name="nutrition__cases"
+                               class="nutrition__radio nutrition__veganism">
+                        <input type="radio" id="business-lunch" name="nutrition__cases"
+                               class="nutrition__radio nutrition__business-lunch">
+                        <div class="nutrition__label-wrapper">
+                            <label for="detox">
+                                <div class="nutrition__tab nutrition__tab_left nutrition__tab-1 nutrition__tab_size_xl nutrition__tab_weight-loss">
+                                    <h4 class="nutrition__tab-title text_weight_extrabold text_size_s">Детокс</h4>
+                                    <span class="nutrition__tab-subtitle text_size_s text_weight_extrabold">1 200 ккал</span>
+                                </div>
+                            </label>
+                            <label for="weight-loss">
+                                <div class="nutrition__tab nutrition__tab_left nutrition__tab-1 nutrition__tab_size_xl nutrition__tab_weight-loss">
+                                    <h4 class="nutrition__tab-title text_weight_extrabold text_size_s">Снижение
+                                        веса</h4>
+                                    <span class="nutrition__tab-subtitle text_size_s text_weight_extrabold">800/1 000/1 200 ккал</span>
+                                </div>
+                            </label>
+                            <label for="balance">
+                                <div class="nutrition__tab nutrition__tab_center nutrition__tab_size_xl nutrition__tab_balance">
+                                    <h4 class="nutrition__tab-title text_weight_extrabold text_size_s">Баланс</h4>
+                                    <span class="nutrition__tab-subtitle text_size_s text_weight_extrabold">1 500 ккал</span>
+                                </div>
+                            </label>
+                            <label for="weight-gainer">
+                                <div class="nutrition__tab nutrition__tab_center nutrition__tab_size_xl nutrition__tab_weight-gainer">
+                                    <h4 class="nutrition__tab-title text_weight_extrabold text_size_s">Спортивное
+                                        питание</h4>
+                                    <span class="nutrition__tab-subtitle text_size_s text_weight_extrabold">2 000/2 500 ккал</span>
+                                </div>
+                            </label>
+                            <label for="veganism">
+                                <div class="nutrition__tab nutrition__tab_center nutrition__tab_size_xl nutrition__tab_veganism">
+                                    <h4 class="nutrition__tab-title text_weight_extrabold text_size_s">Веганство</h4>
+                                    <span class="nutrition__tab-subtitle text_size_s text_weight_extrabold">1 000 ккал</span>
+                                </div>
+                            </label>
+                            <label for="business-lunch">
+                                <div class="nutrition__tab nutrition__tab_right nutrition__tab_size_xl nutrition__tab_business-lunch">
+                                    <h4 class="nutrition__tab-title text_weight_extrabold text_size_s">Бизнес ланч</h4>
+                                    <span class="nutrition__tab-subtitle text_size_s text_weight_extrabold">1 200 ккал</span>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="nutrition__menu-wrapper nutrition__wrapper-menu_detox"></div>
+                        <div class="nutrition__menu-wrapper nutrition__wrapper-menu_weight-loss"></div>
+                        <div class="nutrition__menu-wrapper nutrition__wrapper-menu_balance"></div>
+                        <div class="nutrition__menu-wrapper nutrition__wrapper-menu_sport">
+                            <div class="nutrition__menu">
+                                <div class="nutrition__menu-left nutrition__menu_column">
+                                    <div class="nutrition__menu-left-top">
+                                        <h3 class="nutrition__menu-choose-title text_weight_bold text_size_m">Выберите
+                                            рацион</h3>
+
+                                        <div class="nutrition__diet-tab-wrapper">
+                                            <label for="diet-balance">
+                                                <input type="radio" id="diet-balance" name="diet__cases"
+                                                       class="input-diet diet__balance" checked>
+                                                <div class="label-button label-button_border label-button_size_l  diet__tab diet__tab_life">
+                                                    <div class="label-button_content_center">
+                                                        <div class="label-button__icon label-button__icon_dark">
+                                                            <svg width="44" height="44" viewBox="0 0 44 44" fill="none"
+                                                                 xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M7.48178 31.5281C10.118 31.5281 12.5416 29.972 13.6599 27.6099H14.2613C14.6491 27.6099 14.9635 27.2955 14.9635 26.9078C14.9635 26.52 14.6491 26.2056 14.2613 26.2056H0.702128C0.314366 26.2056 0 26.52 0 26.9078C0 27.2955 0.314366 27.6099 0.702128 27.6099H1.30362C2.42197 29.972 4.84552 31.5281 7.48178 31.5281ZM12.0578 27.6099C11.0728 29.146 9.3442 30.1239 7.48178 30.1239C5.61936 30.1239 3.89082 29.146 2.90578 27.6099H12.0578Z"
+                                                                      fill="#101828"/>
+                                                                <path d="M43.2975 26.2056H29.7383C29.3505 26.2056 29.0361 26.52 29.0361 26.9078C29.0361 27.2955 29.3505 27.6099 29.7383 27.6099H30.3397C31.458 29.972 33.8816 31.5281 36.5178 31.5281C39.1541 31.5281 41.5776 29.972 42.696 27.6099H43.2975C43.6852 27.6099 43.9996 27.2955 43.9996 26.9078C43.9996 26.52 43.6852 26.2056 43.2975 26.2056ZM36.5178 30.1239C34.6554 30.1239 32.9269 29.146 31.9418 27.6099H41.0937C40.1088 29.146 38.3802 30.1239 36.5178 30.1239Z"
+                                                                      fill="#101828"/>
+                                                                <path d="M39.5543 42.1001H35.9616C35.6254 40.067 33.8557 38.5111 31.7288 38.5111H31.2817C30.9457 36.4776 29.1752 34.922 27.0479 34.922H22.7029V8.35719H35.5439L30.1363 24.5319C30.0134 24.8996 30.2118 25.2975 30.5796 25.4204C30.9475 25.5435 31.3452 25.3449 31.4681 24.9771L36.519 9.86948L41.57 24.9771C41.6682 25.2711 41.942 25.4568 42.2358 25.4568C42.3096 25.4568 42.3846 25.4451 42.4585 25.4204C42.8263 25.2975 43.0247 24.8996 42.9018 24.5319L37.494 8.35719H38.6447C39.0325 8.35719 39.3468 8.04283 39.3468 7.65506C39.3468 7.2673 39.0325 6.95294 38.6447 6.95294H22.7029V2.84165H26.134C27.2364 2.84165 28.1332 3.7385 28.1332 4.84084C28.1332 5.2286 28.4476 5.54297 28.8353 5.54297H30.9611C31.3489 5.54297 31.6632 5.2286 31.6632 4.84084C31.6632 4.45308 31.3489 4.13872 30.9611 4.13872H29.4647C29.1402 2.59778 27.7701 1.4374 26.134 1.4374H22.7029V0.702128C22.7029 0.314366 22.3885 0 22.0007 0C21.613 0 21.2986 0.314366 21.2986 0.702128V1.4374H17.8674C16.2314 1.4374 14.8613 2.59787 14.5367 4.13872H13.0404C12.6526 4.13872 12.3382 4.45308 12.3382 4.84084C12.3382 5.2286 12.6526 5.54297 13.0404 5.54297H15.1661C15.5539 5.54297 15.8683 5.2286 15.8683 4.84084C15.8683 3.7385 16.7651 2.84165 17.8674 2.84165H21.2986V6.95294H5.35675C4.96899 6.95294 4.65462 7.2673 4.65462 7.65506C4.65462 8.04283 4.96899 8.35719 5.35675 8.35719H6.50749L1.09989 24.5319C0.976969 24.8996 1.17534 25.2975 1.54316 25.4204C1.91099 25.5435 2.30876 25.3449 2.43168 24.9771L7.48251 9.86939L12.5334 24.977C12.6316 25.271 12.9055 25.4567 13.1992 25.4567C13.2731 25.4567 13.3481 25.445 13.4219 25.4203C13.7898 25.2974 13.9881 24.8995 13.8652 24.5318L8.45753 8.35719H21.2986V34.922H16.9536C14.8264 34.922 13.0558 36.4776 12.7197 38.5111H12.2727C10.1457 38.5111 8.37608 40.067 8.03991 42.1001H4.44716C4.0594 42.1001 3.74504 42.4145 3.74504 42.8023C3.74504 43.19 4.0594 43.5044 4.44716 43.5044H39.5544C39.9422 43.5044 40.2565 43.19 40.2565 42.8023C40.2565 42.4145 39.9421 42.1001 39.5543 42.1001ZM12.2727 39.9153H13.3645C13.7522 39.9153 14.0666 39.6009 14.0666 39.2132C14.0666 37.6213 15.3617 36.3262 16.9536 36.3262H27.0479C28.6398 36.3262 29.9349 37.6213 29.9349 39.2132C29.9349 39.6009 30.2492 39.9153 30.637 39.9153H31.7288C33.0785 39.9153 34.2145 40.8465 34.5289 42.1001H9.47253C9.78699 40.8465 10.9229 39.9153 12.2727 39.9153Z"
+                                                                      fill="#101828"/>
+                                                                <path d="M27.8274 38.5109H16.1719C15.7841 38.5109 15.4697 38.8253 15.4697 39.2131C15.4697 39.6008 15.7841 39.9152 16.1719 39.9152H27.8274C28.2151 39.9152 28.5295 39.6008 28.5295 39.2131C28.5295 38.8253 28.2151 38.5109 27.8274 38.5109Z"
+                                                                      fill="#101828"/>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="label-button__text">
+                                                            <h4 class="label-button__title text_weight_bold text_size_s">
+                                                                Balance</h4>
+                                                            <span class="label-button__cal  text_size_xs">2000 ккал</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </label>
+                                            <label for="diet-sport">
+                                                <input type="radio" id="diet-sport" name="diet__cases"
+                                                       class="input-diet diet__sport">
+                                                <div class="label-button label-button_border label-button_size_l  diet__tab diet__tab_life">
+                                                    <div class="label-button_content_center">
+                                                        <div class="label-button__icon label-button__icon_dark">
+                                                            <svg width="58" height="36" viewBox="0 0 58 36" fill="none"
+                                                                 xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M55.025 15.0837H53.5882V12.1418C53.5882 9.92004 51.9156 8.07432 49.7406 7.75029C49.2835 6.13751 47.9206 4.8917 46.2245 4.57461V4.44187C46.2245 1.99277 44.1916 0 41.6933 0C39.1944 0 37.1616 1.99277 37.1616 4.44187V12.5787L35.5517 13.3113H22.4487L20.8384 12.5787V4.44187C20.8384 1.99277 18.8056 0 16.3072 0C13.8084 0 11.7755 1.99277 11.7755 4.44187V4.57461C10.0798 4.8917 8.71646 6.13751 8.25935 7.75029C6.08444 8.07432 4.41222 9.92004 4.41222 12.1418V15.0837H2.97496C1.33459 15.0837 0 16.392 0 18C0 19.608 1.33459 20.9163 2.97496 20.9163H4.41177V23.8586C4.41177 26.08 6.08444 27.9257 8.25935 28.2497C8.71646 29.8625 10.0794 31.1083 11.7755 31.4254V31.5581C11.7755 34.0072 13.8084 36 16.3067 36C18.8056 36 20.8384 34.0072 20.8384 31.5581V23.4213L22.4483 22.6883H35.5513L37.1616 23.4213V31.5581C37.1616 34.0072 39.1944 36 41.6928 36C44.1916 36 46.2245 34.0072 46.2245 31.5581V31.425C47.9202 31.1083 49.2835 29.8625 49.7406 28.2497C51.9156 27.9257 53.5878 26.08 53.5878 23.8582V20.9163H55.0246C56.6654 20.9163 58 19.608 58 18C58 16.392 56.6654 15.0837 55.025 15.0837ZM23.1107 14.9774H34.8893V21.0226H23.1107V14.9774ZM2.97496 19.2506C2.27182 19.2506 1.69922 18.6897 1.69922 18C1.69922 17.3103 2.27182 16.7494 2.97496 16.7494H4.41177V19.2506H2.97496ZM6.11099 23.8586V12.1418C6.11099 10.9008 6.946 9.8476 8.09386 9.4932V26.5068C6.946 26.1524 6.11099 25.0992 6.11099 23.8586ZM19.1392 31.5581C19.1392 33.0889 17.8688 34.3343 16.3072 34.3343C14.7456 34.3343 13.4747 33.0889 13.4747 31.5581V15.121C13.4747 14.6612 13.0946 14.2882 12.6251 14.2882C12.1561 14.2882 11.7755 14.6612 11.7755 15.121V29.7111C10.6276 29.3567 9.79308 28.3035 9.79308 27.0625V8.93754C9.79308 7.6965 10.6281 6.64372 11.7755 6.2889V12.0859C11.7755 12.5461 12.1561 12.9187 12.6251 12.9187C13.0946 12.9187 13.4747 12.5461 13.4747 12.0859V4.44231C13.4747 2.91108 14.7456 1.6657 16.3072 1.6657C17.8688 1.6657 19.1392 2.91151 19.1392 4.44231V31.5581ZM20.8384 14.4153L21.4115 14.676V21.324L20.8384 21.5852V14.4153ZM36.5885 21.324V14.676L37.1616 14.4153V21.5847L36.5885 21.324ZM44.5253 31.5581C44.5253 33.0889 43.2549 34.3343 41.6933 34.3343C40.1317 34.3343 38.8608 33.0889 38.8608 31.5581V4.44231C38.8608 2.91108 40.1317 1.6657 41.6933 1.6657C43.2549 1.6657 44.5253 2.91151 44.5253 4.44231V31.5581ZM51.889 23.8586C51.889 25.0992 51.054 26.1524 49.9061 26.5068V23.4101C49.9061 22.9503 49.526 22.5772 49.0565 22.5772C48.5875 22.5772 48.2069 22.9503 48.2069 23.4101V27.0625C48.2069 28.3035 47.3724 29.3563 46.2245 29.7111V6.2889C47.3724 6.64329 48.2069 7.6965 48.2069 8.93754V20.3008C48.2069 20.761 48.5875 21.1336 49.0565 21.1336C49.526 21.1336 49.9061 20.761 49.9061 20.3008V9.4932C51.054 9.8476 51.889 10.9008 51.889 12.1418V23.8586ZM55.025 19.2506H53.5882V16.7494H55.025C55.7282 16.7494 56.3008 17.3103 56.3008 18C56.3008 18.6897 55.7282 19.2506 55.025 19.2506Z"
+                                                                      fill="#101828"/>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="label-button__text">
+                                                            <h4 class="label-button__title text_weight_bold text_size_s">
+                                                                Sport</h4>
+                                                            <span class="label-button__cal text_size_xs">2000 ккал</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <h3 class="nutrition__menu-about-title text_size_m">О рационе life</h3>
+                                        <p class="nutrition__menu-about-text text_size_xs">
+                                            С нами вам не нужно готовить, а только насладиться едой! Вам остается только
+                                            разогреть, а КБЖУ уже посчитано и указано в меню.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="nutrition__menu-mid">
+                                    <div class="nutrition__week-tab_wrapper">
+                                        <label>
+                                            <input type="radio" id="monday" name="diet__week" class="input-diet"
+                                                   checked>
+                                            <div class="label-button label-button_text-color_shadow week-button label-button_size_s diet__days-tab">
+                                                <div class="label-button_content_сenter">
+                                                    <div class="label-button__days">
+                                                        <h4 class="text_size_s">Пн</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <label>
+                                            <input type="radio" id="tues" name="diet__week" class="input-diet week-day">
+                                            <div class="label-button label-button_text-color_shadow week-button label-button_size_s diet__days-tab">
+                                                <div class="label-button__days">
+                                                    <h4 class="text_size_s">Вт</h4>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <label>
+                                            <input type="radio" id="wednesday" name="diet__week"
+                                                   class="input-diet week-day">
+                                            <div class="label-button label-button_text-color_shadow week-button label-button_size_s diet__days-tab">
+                                                <div class="label-button_content_сenter">
+                                                    <div class="label-button__days">
+                                                        <h4 class="text_size_s">Ср</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <label>
+                                            <input type="radio" id="thursday" name="diet__week"
+                                                   class="input-diet week-day">
+                                            <div class="label-button label-button_text-color_shadow week-button label-button_size_s diet__days-tab">
+                                                <div class="label-button_content_сenter">
+                                                    <div class="label-button__days">
+                                                        <h4 class="text_size_s">Чт</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <label>
+                                            <input type="radio" id="friday" name="diet__week"
+                                                   class="input-diet week-day">
+                                            <div class="label-button label-button_text-color_shadow week-button label-button_size_s diet__days-tab">
+                                                <div class="label-button_content_сenter">
+                                                    <div class="label-button__days">
+                                                        <h4 class="text_size_s">Пт</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <label>
+                                            <input type="radio" id="saturday" name="diet__week"
+                                                   class="input-diet week-day">
+                                            <div class="label-button label-button_text-color_shadow week-button label-button_size_s diet__days-tab">
+                                                <div class="label-button_content_сenter">
+                                                    <div class="label-button__days">
+                                                        <h4 class="text_size_s">Сб</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <label>
+                                            <input type="radio" id="sunday" name="diet__week"
+                                                   class="input-diet week-day">
+                                            <div class="label-button label-button_text-color_shadow week-button label-button_size_s diet__days-tab">
+                                                <div class="label-button_content_сenter">
+                                                    <div class="label-button__days">
+                                                        <h4 class="text_size_s">Вс</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="food-calories-wrapper">
+                                        <div class="food-calories">
+                                            <span class="food-calories__name text_size_s ">Всего:</span>
+                                            <span class="food-calories__value text_size_s text_weight_bold">878 ккал</span>
+                                        </div>
+                                        <div class="food-calories__about">
+                                            <div class="food-calories">
+                                                <span class="food-calories__name text_size_s ">Белки:</span>
+                                                <span class="food-calories__value text_size_s text_weight_bold">57 г</span>
+                                            </div>
+                                            <div class="food-calories">
+                                                <span class="food-calories__name text_size_s ">Жиры:</span>
+                                                <span class="food-calories__value text_size_s text_weight_bold">37 г</span>
+                                            </div>
+                                            <div class="food-calories">
+                                                <span class="food-calories__name text_size_s ">Углеводы:</span>
+                                                <span class="food-calories__value text_size_s text_weight_bold">75 г</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slider__nav-button-wrapper slider__nav-button-wrapper_diet slider__prev slider-diet__prev">
+                                        <div class="slider__nav-button slider__nav-button_prev">
+                                        </div>
+                                    </div>
+                                    <div class="slider__nav-button-wrapper slider__nav-button-wrapper_diet slider__next slider-diet__next">
+                                        <div class="slider__nav-button slider__nav-button_next">
+                                        </div>
+                                    </div>
+                                    <div class="slider-diet">
+                                        <div class="slider-diet__item">
+                                            <div class="slider-diet__card">
+                                                <div class="slider-diet__banner-wrapper">
+                                                    <div class="slider-diet__banner-title">
+                                                        <span class="text_size_s text_color_white">Завтрак</span>
+                                                    </div>
+                                                    <img class="slider-diet__banner" src="assets/img/food-img.png">
+                                                </div>
+                                                <h3 class="slider-diet__title text_size_m">Куриная грудка с соусом и
+                                                    овощами</h3>
+                                                <p class="slider-diet__description text_size_xs">
+                                                    Здесь описание конкретно выбранного блюда, а не всего рациона. При
+                                                    переключениии на другое блюдо меняется и название, и описание на
+                                                    выбранное блюдо.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="slider-diet__item">
+                                            <div class="slider-diet__card">
+                                                <div class="slider-diet__banner-wrapper">
+                                                    <div class="slider-diet__banner-title">
+                                                        <span class="text_size_s text_color_white">Завтрак</span>
+                                                    </div>
+                                                    <img class="slider-diet__banner" src="assets/img/food-img-2.png">
+                                                </div>
+                                                <h3 class="slider-diet__title text_size_m">Куриная грудка с соусом и
+                                                    овощами</h3>
+                                                <p class="slider-diet__description text_size_xs">
+                                                    Здесь описание конкретно выбранного блюда, а не всего рациона. При
+                                                    переключениии на другое блюдо меняется и название, и описание на
+                                                    выбранное блюдо.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="slider-diet__item">
+                                            <div class="slider-diet__card">
+                                                <div class="slider-diet__banner-wrapper">
+                                                    <div class="slider-diet__banner-title">
+                                                        <span class="text_size_s text_color_white">Завтрак</span>
+                                                    </div>
+                                                    <img class="slider-diet__banner" src="assets/img/food-img-3.png">
+                                                </div>
+                                                <h3 class="slider-diet__title text_size_m">Куриная грудка с соусом и
+                                                    овощами</h3>
+                                                <p class="slider-diet__description text_size_xs">
+                                                    Здесь описание конкретно выбранного блюда, а не всего рациона. При
+                                                    переключениии на другое блюдо меняется и название, и описание на
+                                                    выбранное блюдо.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="slider-diet__item">
+                                            <div class="slider-diet__card">
+                                                <div class="slider-diet__banner-title">
+                                                    <span class="text_size_s text_color_white">Обед</span>
+                                                </div>
+                                                <div class="slider-diet__banner-wrapper">
+                                                    <img class="slider-diet__banner" src="assets/img/food-img-4.png">
+                                                </div>
+                                                <h3 class="slider-diet__title text_size_m">Куриная грудка с соусом и
+                                                    овощами</h3>
+                                                <p class="slider-diet__description text_size_xs">
+                                                    Здесь описание конкретно выбранного блюда, а не всего рациона. При
+                                                    переключениии на другое блюдо меняется и название, и описание на
+                                                    выбранное блюдо.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="slider-diet__item">
+                                            <div class="slider-diet__card">
+                                                <div class="slider-diet__banner-wrapper">
+                                                    <div class="slider-diet__banner-title">
+                                                        <span class="text_size_s text_color_white">Обед</span>
+                                                    </div>
+                                                    <img class="slider-diet__banner" src="assets/img/food-img-5.png">
+                                                </div>
+                                                <h3 class="slider-diet__title text_size_m">Куриная грудка с соусом и
+                                                    овощами</h3>
+                                                <p class="slider-diet__description text_size_xs">
+                                                    Здесь описание конкретно выбранного блюда, а не всего рациона. При
+                                                    переключениии на другое блюдо меняется и название, и описание на
+                                                    выбранное блюдо.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="slider-diet__item">
+                                            <div class="slider-diet__card">
+                                                <div class="slider-diet__banner-wrapper">
+                                                    <div class="slider-diet__banner-title">
+                                                        <span class="text_size_s text_color_white">Полдник</span>
+                                                    </div>
+                                                    <img class="slider-diet__banner" src="assets/img/food-img-6.png">
+                                                </div>
+                                                <h3 class="slider-diet__title text_size_m">Куриная грудка с соусом и
+                                                    овощами</h3>
+                                                <p class="slider-diet__description text_size_xs">
+                                                    Здесь описание конкретно выбранного блюда, а не всего рациона. При
+                                                    переключениии на другое блюдо меняется и название, и описание на
+                                                    выбранное блюдо.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="slider-diet__item">
+                                            <div class="slider-diet__card">
+                                                <div class="slider-diet__banner-wrapper">
+                                                    <div class="slider-diet__banner-title">
+                                                        <span class="text_size_s text_color_white">Ужин</span>
+                                                    </div>
+                                                    <img class="slider-diet__banner" src="assets/img/food-img-7.png">
+                                                </div>
+                                                <h3 class="slider-diet__title text_size_m">Куриная грудка с соусом и
+                                                    овощами</h3>
+                                                <p class="slider-diet__description text_size_xs">
+                                                    Здесь описание конкретно выбранного блюда, а не всего рациона. При
+                                                    переключениии на другое блюдо меняется и название, и описание на
+                                                    выбранное блюдо.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slider-diet__meals-wrapper">
+                                        <div class="slider-diet__meal-wrapper">
+                                            <div class="slider-diet__meal active">
+                                                <img src="assets/img/food-img.png" alt="">
+                                                <div class="slider-diet__meal-title">
+                                                    <span class="text_size_xxs text_color_white">Завтрак</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="slider-diet__meal-wrapper">
+                                            <div class="slider-diet__meal">
+                                                <img src="assets/img/food-img-2.png" alt="">
+                                                <div class="slider-diet__meal-title">
+                                                    <span class="text_size_xxs text_color_white">Завтрак</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="slider-diet__meal-wrapper">
+                                            <div class="slider-diet__meal">
+                                                <img src="assets/img/food-img-3.png" alt="">
+                                                <div class="slider-diet__meal-title">
+                                                    <span class="text_size_xxs text_color_white">Завтрак</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="slider-diet__meal-wrapper">
+                                            <div class="slider-diet__meal">
+                                                <img src="assets/img/food-img-4.png" alt="">
+                                                <div class="slider-diet__meal-title">
+                                                    <span class="text_size_xxs text_color_white">Обед</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="slider-diet__meal-wrapper">
+                                            <div class="slider-diet__meal">
+                                                <img src="assets/img/food-img-5.png" alt="">
+                                                <div class="slider-diet__meal-title">
+                                                    <span class="text_size_xxs text_color_white">Обед</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="slider-diet__meal-wrapper">
+                                            <div class="slider-diet__meal">
+                                                <img src="assets/img/food-img-6.png" alt="">
+                                                <div class="slider-diet__meal-title">
+                                                    <span class="text_size_xxs text_color_white">Полдник</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="slider-diet__meal-wrapper">
+                                            <div class="slider-diet__meal">
+                                                <img src="assets/img/food-img-7.png" alt="">
+                                                <div class="slider-diet__meal-title">
+                                                    <span class="text_size_xxs text_color_white">Ужин</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="nutrition__menu-right nutrition__menu_unspace">
+                                    <div class="nutrition__menu-right-top">
+                                        <h3 class="nutrition__menu-choose-title text_size_m">Выберите количество
+                                            дней</h3>
+                                        <div class="day-number__wrapper">
+                                            <div class="day-number drop-box">
+                                                <div class="day-number__header drop-header">
+                                                    <span class="day-number__value text_size_s text_weight_bold">2 дня </span>
+                                                    <span class="day-number__price-day text_size_xs text_color_shadow">в день 1050 ₽</span>
+                                                    <span class="day-number__price text_weight_bold text_size_s">4 200 ₽</span>
+                                                </div>
+                                                <div class="day-number__cont drop-container">
+                                                    <div class="day-number__list-wrapper drop-wrapper">
+                                                        <ul class="day-number__list">
+                                                            <li class="day-number__item">
+                                                                <label>
+                                                                    <input type="radio" name="phone-days" checked
+                                                                           class="hidden">
+                                                                    <div class="day-number__item-wrap">
+                                                                        <span class="day-number__value text_size_s text_weight_bold">2 дня </span>
+                                                                        <span class="day-number__price-day text_size_xs text_color_shadow">в день 1050 ₽</span>
+                                                                        <span class="day-number__price text_weight_bold text_size_s">4 200 ₽</span>
+                                                                    </div>
+                                                                </label>
+                                                            </li>
+                                                            <li class="day-number__item">
+                                                                <label>
+                                                                    <input type="radio" name="phone-days"
+                                                                           class="hidden">
+                                                                    <div class="day-number__item-wrap">
+                                                                        <span class="day-number__value text_size_s text_weight_bold">3 дня </span>
+                                                                        <span class="day-number__price-day text_size_xs text_color_shadow">в день 1050 ₽</span>
+                                                                        <span class="day-number__price text_weight_bold text_size_s">4 200 ₽</span>
+                                                                    </div>
+                                                                </label>
+                                                            </li>
+                                                            <li class="day-number__item">
+                                                                <label>
+                                                                    <input type="radio" name="phone-days"
+                                                                           class="hidden">
+                                                                    <div class="day-number__item-wrap">
+                                                                        <span class="day-number__value text_size_s text_weight_bold">4 дня </span>
+                                                                        <span class="day-number__price-day text_size_xs text_color_shadow">в день 1050 ₽</span>
+                                                                        <span class="day-number__price text_weight_bold text_size_s">4 200 ₽</span>
+                                                                    </div>
+                                                                </label>
+                                                            </li>
+                                                            <li class="day-number__item">
+                                                                <label>
+                                                                    <input type="radio" name="phone-days"
+                                                                           class="hidden">
+                                                                    <div class="day-number__item-wrap">
+                                                                        <span class="day-number__value text_size_s text_weight_bold">5 дня </span>
+                                                                        <span class="day-number__price-day text_size_xs text_color_shadow">в день 1050 ₽</span>
+                                                                        <span class="day-number__price text_weight_bold text_size_s">4 200 ₽</span>
+                                                                    </div>
+                                                                </label>
+                                                            </li>
+                                                            <li class="day-number__item">
+                                                                <label>
+                                                                    <input type="radio" name="phone-days"
+                                                                           class="hidden">
+                                                                    <div class="day-number__item-wrap">
+                                                                        <span class="day-number__value text_size_s text_weight_bold">6 дня </span>
+                                                                        <span class="day-number__price-day text_size_xs text_color_shadow">в день 1050 ₽</span>
+                                                                        <span class="day-number__price text_weight_bold text_size_s">4 200 ₽</span>
+                                                                    </div>
+                                                                </label>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="nutrition__diet-day-wrapper">
+                                            <label>
+                                                <input type="radio" id="two-days" name="diet__days"
+                                                       class="input-diet diet-days__radio diet__days" checked>
+                                                <div class="label-button label-button_border label-button_size_l diet__days-tab">
+                                                    <div class="label-button_content_between">
+                                                        <div class="label-button__days">
+                                                            <h4 class="label-button__title text_weight_bold text_size_s">
+                                                                2 дня</h4>
+                                                        </div>
+                                                        <div class="label-button__text label-button__text_right">
+                                                            <h4 class="label-button__price text_weight_bold text_size_s">
+                                                                2 200 ₽</h4>
+                                                            <span class="diet__price-one-day text_color_shadow text_size_xs">В день 1 100 ₽</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </label>
+                                            <label>
+                                                <input type="radio" id="four-days" name="diet__days"
+                                                       class="input-diet diet-days__radio diet__days">
+                                                <div class="label-button label-button_border label-button_size_l diet__days-tab">
+                                                    <div class="label-button_content_between">
+                                                        <div class="label-button__days">
+                                                            <h4 class="label-button__title text_weight_bold text_size_s">
+                                                                4 дня</h4>
+                                                        </div>
+                                                        <div class="label-button__text label-button__text_right">
+                                                            <h4 class="label-button__price text_weight_bold text_size_s">
+                                                                4 200 ₽</h4>
+                                                            <span class="diet__price-one-day text_color_shadow text_size_xs">В день 1050 ₽</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </label>
+                                            <label>
+                                                <input type="radio" id="six-days" name="diet__days"
+                                                       class="input-diet diet-days__radio diet__days">
+                                                <div class="label-button label-button_border label-button_size_l diet__days-tab">
+                                                    <div class="label-button_content_between">
+                                                        <div class="label-button__days">
+                                                            <h4 class="label-button__title text_weight_bold text_size_s">
+                                                                6 дней</h4>
+                                                        </div>
+                                                        <div class="label-button__text label-button__text_right">
+                                                            <h4 class="label-button__price text_weight_bold text_size_s">
+                                                                5 940 ₽</h4>
+                                                            <span class="diet__price-one-day text_color_shadow text_size_xs">В день 990 ₽</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </label>
+                                            <label>
+                                                <input type="radio" id="twelve-days" name="diet__days"
+                                                       class="input-diet diet-days__radio diet__days">
+                                                <div class="label-button label-button_border label-button_size_l diet__days-tab">
+                                                    <div class="label-button_content_between">
+                                                        <div class="label-button__days">
+                                                            <h4 class="label-button__title text_weight_bold text_size_s">
+                                                                12 дней</h4>
+                                                        </div>
+                                                        <div class="label-button__text label-button__text_right">
+                                                            <h4 class="label-button__price text_weight_bold text_size_s">
+                                                                11 640 ₽</h4>
+                                                            <span class="diet__price-one-day text_color_shadow text_size_xs">В день 970 ₽</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </label>
+                                            <label>
+                                                <input type="radio" id="twenty-four-days" name="diet__days"
+                                                       class="input-diet diet-days__radio diet__days">
+                                                <div class="label-button label-button_border label-button_size_l diet__days-tab">
+                                                    <div class="label-button_content_between">
+                                                        <div class="label-button__days">
+                                                            <h4 class="label-button__title text_weight_bold text_size_s">
+                                                                24 дня</h4>
+                                                        </div>
+                                                        <div class="label-button__text label-button__text_right">
+                                                            <h4 class="label-button__price text_weight_bold text_size_s">
+                                                                21 840 ₽</h4>
+                                                            <span class="diet__price-one-day text_color_shadow text_size_xs">В день 910 ₽</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </label>
+                                            <label>
+                                                <input type="radio" id="thirty-days" name="diet__days"
+                                                       class="input-diet diet-days__radio diet__days">
+                                                <div class="label-button label-button_border label-button_size_l diet__days-tab">
+                                                    <div class="label-button_content_between">
+                                                        <div class="label-button__days">
+                                                            <h4 class="label-button__title text_weight_bold text_size_s">
+                                                                30 дней</h4>
+                                                        </div>
+                                                        <div class="label-button__text label-button__text_right">
+                                                            <h4 class="label-button__price text_weight_bold text_size_s">
+                                                                25 500 ₽</h4>
+                                                            <span class="diet__price-one-day text_color_shadow text_size_xs">В день 850 ₽</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="nutrition__total">
+                                        <div class="nutrition__total-top">
+                                            <div class="nutrition__total-text">
+                                                <span class="nutrition__selected-text text_size_xs">Выбрано:</span>
+                                                <span class="nutrition__total-name text_weight_bold text_size_m">Balance, 2 дня</span>
+                                            </div>
+                                            <button class="nutrition__add-product button button_size_all button_color_pink button_radius_circle">
+                                                <span class="button__title text_size_xs text_color_white">Добавить в корзину</span>
+                                            </button>
+                                        </div>
+                                        <div class="order-call">
+                                            <span class="order-call__text text_weight_medium text_size_xs">Возник вопрос?</span>
+                                            <button class="button button_size_none-underline">
+                                                <span class="button__title text_weight_bold text_color_highlighter text_size_xs">Закажите звонок</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nutrition__menu-wrapper nutrition__wrapper-menu_veganism"></div>
+                        <div class="nutrition__menu-wrapper nutrition__wrapper-menu_business-lunch"></div>
+                    </div>
+                </div>
+            </form>
+        </section>
+        <section class="feedback section-mb">
+            <h2 class="feedback__title text_size_l text_weight_bold uppercase center h2-mb">отзывы</h2>
+            <div class="slider__nav-button-wrapper slider__nav-button-wrapper_feedback slider__prev slider-feedback__prev">
+                <div class="slider__nav-button slider__nav-button_prev">
+                </div>
+            </div>
+            <div class="slider__nav-button-wrapper slider__nav-button-wrapper_feedback slider__next slider-feedback__next">
+                <div class="slider__nav-button slider__nav-button_next">
+                </div>
+            </div>
+            <div class="feedback-slider__wrapper">
+                <div class="feedback-slider">
+                    <div class="feedback-slider__item">
+                        <div class="feedback-slider__card-wrapper">
+                            <div class="feedback-slider__phone"></div>
+                            <div class="feedback-slider__card">
+
+                                <div class="feedback-slider__card-img-wrapper">
+                                    <img src="assets/img/client-img.png" alt="client-img"
+                                         class="feedback-slider__card-img">
+                                </div>
+                                <div class="feedback-slider__card-content-wrapper">
+                                    <div class="feedback-slider__card-insta-post">
+                                        <img src="assets/img/insta-post.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feedback-slider__item">
+                        <div class="feedback-slider__card-wrapper">
+                            <div class="feedback-slider__phone"></div>
+                            <div class="feedback-slider__card">
+
+                                <div class="feedback-slider__card-img-wrapper">
+                                    <img src="assets/img/client-img.png" alt="client-img"
+                                         class="feedback-slider__card-img">
+                                </div>
+                                <div class="feedback-slider__card-content-wrapper">
+                                    <div class="feedback-slider__card-insta-post">
+                                        <img src="assets/img/insta-post.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feedback-slider__item">
+                        <div class="feedback-slider__card-wrapper">
+                            <div class="feedback-slider__phone"></div>
+                            <div class="feedback-slider__card">
+
+                                <div class="feedback-slider__card-img-wrapper">
+                                    <img src="assets/img/client-img.png" alt="client-img"
+                                         class="feedback-slider__card-img">
+                                </div>
+                                <div class="feedback-slider__card-content-wrapper">
+                                    <div class="feedback-slider__card-insta-post">
+                                        <img src="assets/img/insta-post.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feedback-slider__item">
+                        <div class="feedback-slider__card-wrapper">
+                            <div class="feedback-slider__phone"></div>
+                            <div class="feedback-slider__card">
+
+                                <div class="feedback-slider__card-img-wrapper">
+                                    <img src="assets/img/client-img.png" alt="client-img"
+                                         class="feedback-slider__card-img">
+                                </div>
+                                <div class="feedback-slider__card-content-wrapper">
+                                    <div class="feedback-slider__card-insta-post">
+                                        <img src="assets/img/insta-post.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feedback-slider__item">
+                        <div class="feedback-slider__card-wrapper">
+                            <div class="feedback-slider__phone"></div>
+                            <div class="feedback-slider__card">
+
+                                <div class="feedback-slider__card-img-wrapper">
+                                    <img src="assets/img/client-img.png" alt="client-img"
+                                         class="feedback-slider__card-img">
+                                </div>
+                                <div class="feedback-slider__card-content-wrapper">
+                                    <div class="feedback-slider__card-insta-post">
+                                        <img src="assets/img/insta-post.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feedback-slider__item">
+                        <div class="feedback-slider__card-wrapper">
+                            <div class="feedback-slider__phone"></div>
+                            <div class="feedback-slider__card">
+
+                                <div class="feedback-slider__card-img-wrapper">
+                                    <img src="assets/img/client-img.png" alt="client-img"
+                                         class="feedback-slider__card-img">
+                                </div>
+                                <div class="feedback-slider__card-content-wrapper">
+                                    <div class="feedback-slider__card-insta-post">
+                                        <img src="assets/img/insta-post.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feedback-slider__item">
+                        <div class="feedback-slider__card-wrapper">
+                            <div class="feedback-slider__phone"></div>
+                            <div class="feedback-slider__card">
+
+                                <div class="feedback-slider__card-img-wrapper">
+                                    <img src="assets/img/client-img.png" alt="client-img"
+                                         class="feedback-slider__card-img">
+                                </div>
+                                <div class="feedback-slider__card-content-wrapper">
+                                    <div class="feedback-slider__card-insta-post">
+                                        <img src="assets/img/insta-post.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section class="article section-mb">
+            <h2 class="article__title text_size_l text_weight_bold h2-mb uppercase center">Название блока</h2>
+            <div class="article__content">
+                <div class="article_box article__right">
+                    <h4 class="article__right-title text_size_m">Заголовок</h4>
+                    <p class="article__text text_size_xs">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vulputate adipiscing turpis ut
+                        consectetur morbi nulla. Gravida id elit non suspendisse cursus non, faucibus. Molestie diam
+                        nunc arcu est ut. Suspendisse sit etiam lorem pellentesque dolor. Laoreet interdum phasellus
+                        mattis proin gravida lobortis. Arcu vulputate venenatis sapien mauris, curabitur. A pellentesque
+                        purus tortor quis mattis habitasse ut. Quam sed scelerisque proin ipsum nisl justo praesent.
+                        Volutpat blandit elit sit sollicitudin tellus odio.
+                    </p>
+                    <p class="article__text text_size_xs">
+                        Vestibulum lectus eget nunc, imperdiet suspendisse. Rhoncus condimentum dignissim in tortor in
+                        ac sed pulvinar. Cras pellentesque eget metus viverra pulvinar magnis. Aliquam dolor risus massa
+                        risus, varius vitae quam egestas ac. Imperdiet feugiat in natoque ultrices facilisis quam turpis
+                        sit natoque. Aliquam lorem aliquet suspendisse aliquam. Arcu nunc sem ornare tincidunt. Amet
+                        orci odio et iaculis sed justo, sem sodales. Habitasse quis cursus auctor mauris, ornare in.
+                        Pulvinar velit mollis in tristique ipsum arcu. Vulputate libero in pretium nisi tempus
+                        facilisis.
+                    </p>
+                    <p class="article__text text_size_xs">
+                        Vestibulum lectus eget nunc, imperdiet suspendisse. Rhoncus condimentum dignissim in tortor in
+                        ac sed pulvinar. Cras pellentesque eget metus viverra pulvinar magnis. Aliquam dolor risus massa
+                        risus, varius vitae quam egestas ac. Imperdiet feugiat in natoque ultrices facilisis quam turpis
+                        sit natoque. Aliquam lorem aliquet suspendisse aliquam. Arcu nunc sem ornare tincidunt. Amet
+                        orci odio et iaculis sed justo, sem sodales. Habitasse quis cursus auctor mauris, ornare in.
+                        Pulvinar velit mollis in tristique ipsum arcu. Vulputate libero in pretium nisi tempus
+                        facilisis.
+                    </p>
+                </div>
+                <div class="article_box article__left">
+
+                </div>
+            </div>
+        </section>
+        <section class="faq section-mb">
+            <h2 class="faq__title text_size_l text_weight_bold uppercase center h2-mb">частые вопросы</h2>
+            <div class="faq__wrapper">
+                <div class="faq__left">
+                    <div class="faq__label-wrapper">
+                        <label for="faq-nutrition" class="faq__label">
+                            <input type="radio" id="faq-nutrition" name="faq-tab" class="faq__input" checked>
+                            <div class="faq-button faq-button_box-shadow faq-button_size_m  faq__tab">
+                                <div class="faq-button_content">
+                                    <div class="faq-button__icon-wrapper faq-button__icon_light">
+                                        <svg width="46" height="35" viewBox="0 0 46 35" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.06923 8.12758V0.897682C7.06923 0.415689 6.7479 0.0943604 6.26591 0.0943604C5.78392 0.0943604 5.46259 0.415689 5.46259 0.897682V8.04725C5.46259 8.85057 4.9806 9.49323 4.33794 9.81456V0.897682C4.33794 0.415689 4.01661 0.0943604 3.53462 0.0943604C3.05262 0.0943604 2.73129 0.415689 2.73129 0.897682V9.89489C2.08864 9.57356 1.60664 8.9309 1.60664 8.12758V0.897682C1.60664 0.415689 1.28531 0.0943604 0.803322 0.0943604C0.321329 0.0943604 0 0.415689 0 0.897682V8.04725C0 9.73422 1.20498 11.1802 2.73129 11.5015V16.9641H2.40997C1.60664 16.9641 0.963986 17.6871 0.963986 18.5708V31.9059C0.963986 32.7896 1.60664 33.5125 2.40997 33.5125H4.57893C5.38226 33.5125 6.02491 32.7896 6.02491 31.9059V18.6511C6.02491 17.7674 5.38226 17.0445 4.57893 17.0445H4.33794V11.5819C5.94458 11.1802 7.06923 9.81455 7.06923 8.12758ZM4.4986 18.5708V31.9059H2.57063V18.5708H4.4986Z"
+                                                  fill="url(#paint0_linear)"/>
+                                            <path d="M41.6122 0.0927596C41.3712 -0.0679048 41.0499 0.0124274 40.8089 0.0927596C40.5679 0.253424 40.4072 0.494421 40.4072 0.815749V18.3282C40.4072 18.4085 40.4072 18.5692 40.4876 18.6495C40.4072 18.8102 40.4072 18.9708 40.4072 19.1315V32.4666C40.4072 33.3503 41.0499 34.0733 41.8532 34.0733H44.0222C44.8255 34.0733 45.4682 33.3503 45.4682 32.4666V18.9708C45.7092 18.8102 45.9501 18.5692 45.9501 18.2478C46.0305 16.7215 46.5125 2.66339 41.6122 0.0927596ZM43.9418 32.3863H42.0139V19.0512H43.9418V32.3863ZM44.4238 17.4445H42.0942V2.70335C44.1906 5.91092 44.5032 13.5574 44.4238 17.4445Z"
+                                                  fill="url(#paint1_linear)"/>
+                                            <path d="M23.4571 0.0943604C14.3796 0.0943604 7.06934 7.48492 7.06934 16.4821C7.06934 25.4793 14.4599 32.8699 23.4571 32.8699C32.4543 32.8699 39.8449 25.5597 39.8449 16.4821C39.8449 7.40459 32.4543 0.0943604 23.4571 0.0943604ZM23.4571 31.3436C15.2632 31.3436 8.67598 24.676 8.67598 16.5625C8.67598 8.44891 15.2632 1.701 23.4571 1.701C31.651 1.701 38.2382 8.36858 38.2382 16.4821C38.2382 24.5957 31.5707 31.3436 23.4571 31.3436Z"
+                                                  fill="url(#paint2_linear)"/>
+                                            <path d="M23.4568 6.43958C17.9139 6.43958 13.335 10.9382 13.335 16.5614C13.335 22.1847 17.9139 26.603 23.4568 26.603C28.9997 26.603 33.5787 22.1044 33.5787 16.4811C33.5787 10.8578 28.9997 6.43958 23.4568 6.43958ZM23.4568 24.9963C18.7975 24.9963 14.9416 21.2207 14.9416 16.4811C14.9416 11.7415 18.7172 7.96589 23.4568 7.96589C28.1964 7.96589 31.972 11.7415 31.972 16.4811C31.972 21.2207 28.1161 24.9963 23.4568 24.9963Z"
+                                                  fill="url(#paint3_linear)"/>
+                                            <defs>
+                                                <linearGradient id="paint0_linear" x1="0" y1="0" x2="24.3231"
+                                                                y2="45.6287" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#FFA091"/>
+                                                    <stop offset="1" stop-color="#F47965"/>
+                                                </linearGradient>
+                                                <linearGradient id="paint1_linear" x1="0" y1="0" x2="24.3231"
+                                                                y2="45.6287" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#FFA091"/>
+                                                    <stop offset="1" stop-color="#F47965"/>
+                                                </linearGradient>
+                                                <linearGradient id="paint2_linear" x1="0" y1="0" x2="24.3231"
+                                                                y2="45.6287" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#FFA091"/>
+                                                    <stop offset="1" stop-color="#F47965"/>
+                                                </linearGradient>
+                                                <linearGradient id="paint3_linear" x1="0" y1="0" x2="24.3231"
+                                                                y2="45.6287" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#FFA091"/>
+                                                    <stop offset="1" stop-color="#F47965"/>
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
+                                    </div>
+                                    <div class="faq-button__text">
+                                        <h4 class="faq-button__title text_size_s">Питание</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                        <label for="faq-products" class="faq__label">
+                            <input type="radio" id="faq-products" name="faq-tab" class="faq__input">
+                            <div class="faq-button faq-button_box-shadow faq-button_size_m  faq__tab">
+                                <div class="faq-button_content">
+                                    <div class="faq-button__icon-wrapper faq-button__icon_light">
+                                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M39.3335 22.6665H37.8134C41.2973 15.5828 40.2039 7.10177 35.0376 1.13319C33.9945 -0.0600388 32.2517 -0.345986 30.882 0.452042L30.7728 0.51857C29.6851 1.15638 29.0531 2.35571 29.1416 3.61333C29.1734 4.13793 29.1801 4.67472 29.1609 5.20267L29.1407 5.63327C28.9897 8.48542 28.1645 11.2613 26.7335 13.7332C26.5263 13.5727 26.3148 13.4164 26.0936 13.2666C25.4341 12.8363 24.6827 12.5665 23.9003 12.4792C24.4246 12.2525 24.9867 12.1267 25.5574 12.1084C25.8726 12.1094 26.1451 11.8899 26.2114 11.582C26.2776 11.2741 26.1192 10.9616 25.8314 10.8331C25.6675 10.7599 22.0982 9.18854 20.0023 10.5853C17.9076 9.18519 14.3355 10.7599 14.1729 10.8331C13.8854 10.9616 13.727 11.2741 13.7932 11.582C13.8592 11.8899 14.132 12.1094 14.4469 12.1084C15.0185 12.1271 15.5813 12.2531 16.1062 12.4798C15.3212 12.5671 14.5678 12.8372 13.9062 13.2684C13.3205 13.6578 12.7752 14.1043 12.2784 14.6017V14.3719C12.3028 11.8777 10.3616 9.80499 7.87105 9.66644C9.04017 8.29561 9.60444 6.50973 9.43445 4.71592C9.26478 2.92211 8.3755 1.27357 6.96957 0.146564C6.77792 -0.0072438 6.51669 -0.0429491 6.29056 0.0534857C6.06443 0.150226 5.9097 0.363542 5.88834 0.608596L5.24839 7.92665L2.14356 1.26655C2.04011 1.04347 1.82221 0.895459 1.57655 0.881421C1.33119 0.867383 1.09773 0.990062 0.969863 1.20002C0.0308452 2.74328 -0.240454 4.60179 0.217916 6.34921C0.676287 8.09663 1.82496 9.58283 3.40026 10.4666C1.13679 11.4645 0.0467143 14.0567 0.917068 16.3726L3.28369 22.6665H0.667131C0.298787 22.6665 0.000327973 22.965 0.000327973 23.333C0.0107039 32.5334 7.46639 39.9894 16.6671 39.9998H23.3336C32.5339 39.9894 39.9899 32.5334 40 23.333C40 22.965 39.7015 22.6665 39.3335 22.6665ZM38.4668 15.166C38.2959 17.7926 37.5586 20.3512 36.3062 22.6665H30.6001C30.6174 22.5179 30.626 22.369 30.6361 22.2197C36.254 15.9967 35.2161 7.91933 35.1694 7.5754C35.1139 7.2156 34.78 6.96719 34.4196 7.01693C34.0592 7.06637 33.805 7.39596 33.8489 7.75728C33.8587 7.83052 34.7153 14.6151 30.5674 20.2044C30.2525 18.092 29.2649 16.1373 27.7516 14.6304C29.2307 12.1466 30.138 9.36432 30.4075 6.48593L36.348 5.39982C37.9508 8.39418 38.6847 11.7767 38.4668 15.166ZM31.4448 1.66663L31.5549 1.6001C32.3691 1.12342 33.4067 1.29096 34.0296 1.99988C34.6158 2.68438 35.1508 3.41161 35.6293 4.17516L30.4963 5.10868C30.5109 4.5786 30.5048 4.04729 30.4734 3.52788C30.4179 2.7735 30.7941 2.05268 31.4448 1.66663ZM19.5177 11.9031C19.5217 11.9079 19.5268 11.9086 19.5308 11.9125C19.5348 11.9165 19.5363 11.922 19.5403 11.9259C19.5711 11.9497 19.604 11.9705 19.6388 11.9879C19.6736 12.0154 19.7112 12.0389 19.7508 12.0584C19.7917 12.0718 19.8335 12.081 19.8763 12.0859C19.958 12.1148 20.0472 12.1148 20.1289 12.0859C20.1698 12.081 20.2104 12.0721 20.2495 12.0593C20.2898 12.0392 20.3279 12.0154 20.3636 11.9879C20.3975 11.9705 20.4298 11.9497 20.4604 11.9266C20.4643 11.9226 20.4656 11.9171 20.4695 11.9131C20.4735 11.9092 20.479 11.9086 20.4829 11.904C21.0503 11.3092 22.0583 11.2552 23.033 11.3998C22.6176 11.5887 22.2185 11.8115 21.8404 12.0666C21.6704 12.1853 21.5654 12.3764 21.5562 12.5833C21.5471 12.7905 21.635 12.9898 21.7937 13.1231C22.7635 13.9654 23.6085 14.9417 24.3028 16.0226C23.698 15.8309 23.0516 15.8111 22.4364 15.9652C21.3402 16.361 20.4576 17.1948 20.0002 18.2665C19.5433 17.1942 18.6617 16.3598 17.5655 15.9631C16.95 15.8096 16.3039 15.8294 15.6991 16.0205C16.3927 14.9392 17.2374 13.9627 18.207 13.1198C18.3657 12.9864 18.4532 12.7871 18.4441 12.5799C18.4349 12.373 18.33 12.182 18.1603 12.0633C17.7806 11.8081 17.3803 11.5851 16.9637 11.3965C17.939 11.2512 18.9476 11.3058 19.5177 11.9031ZM14.6389 14.3844C14.9148 14.2105 15.212 14.0735 15.5236 13.9773C14.7271 14.8858 14.1375 15.9567 13.7963 17.1157C13.7264 17.4062 13.8586 17.7078 14.1195 17.8533C14.3801 17.9992 14.706 17.9534 14.9169 17.7419C15.0109 17.6965 15.1836 17.6306 15.2501 17.6086C15.317 17.5866 15.3649 17.5646 15.3908 17.553C15.6044 17.4569 15.8245 17.3748 16.0488 17.308C16.422 17.1816 16.8227 17.1609 17.2069 17.2479C18.2488 17.5399 19.0355 19.0118 19.3523 20.3417C19.3672 20.3921 19.388 20.4403 19.4142 20.4858C19.4212 20.505 19.4292 20.5236 19.4383 20.5419C19.4811 20.6097 19.5357 20.6695 19.5995 20.7177C19.6141 20.7284 19.6321 20.7339 19.6477 20.7439C19.7008 20.7784 19.7588 20.8053 19.8195 20.8233C19.8296 20.8233 19.8363 20.833 19.8464 20.8352C19.8958 20.8474 19.9465 20.8535 19.9974 20.8532H20.0041C20.0551 20.8535 20.1061 20.8474 20.1555 20.8352C20.1656 20.8352 20.1723 20.8257 20.1824 20.8233C20.2428 20.8053 20.3008 20.7784 20.3536 20.7439C20.3694 20.7339 20.3874 20.7284 20.4021 20.7171C20.4662 20.6692 20.5211 20.6097 20.5635 20.5419C20.5727 20.5236 20.5806 20.505 20.5876 20.4858C20.6139 20.4403 20.6346 20.3921 20.6496 20.3417C20.9663 19.0084 21.7528 17.5417 22.7949 17.2479C23.1792 17.1609 23.5798 17.1816 23.9528 17.308C24.1774 17.3748 24.3971 17.4569 24.6107 17.553C24.637 17.5646 24.6876 17.5845 24.7514 17.6086C24.8155 17.6324 24.9901 17.6992 25.085 17.7419C25.2955 17.9534 25.6215 17.9992 25.8824 17.8533C26.1433 17.7078 26.2751 17.4062 26.2056 17.1157C25.8641 15.957 25.2745 14.8858 24.4783 13.9773C24.7886 14.0728 25.0853 14.2093 25.3602 14.3826C27.8086 15.9594 29.3012 18.6608 29.3336 21.5731C29.3305 21.939 29.3037 22.3043 29.2527 22.6665H10.7476C10.6967 22.3043 10.6698 21.939 10.667 21.5731C10.6988 18.6617 12.1911 15.9609 14.6389 14.3844ZM7.08889 2.17871C8.68373 4.34148 8.42036 7.35293 6.47427 9.20594L7.08889 2.17871ZM1.83442 6.91531C1.2845 5.73856 1.1841 4.40098 1.55244 3.15527L4.53368 9.54865C3.34259 9.02985 2.38251 8.09328 1.83442 6.91531ZM2.37763 16.4724L4.17785 16.1566C4.41222 16.1154 4.60722 15.9521 4.6887 15.7284C4.77019 15.5044 4.72624 15.2542 4.57335 15.0717C4.42046 14.8892 4.18151 14.8019 3.94713 14.8431L1.98426 15.1879C1.74226 13.4112 2.94678 11.7608 4.7122 11.4493L7.03305 11.0425C8.0096 10.8691 9.0127 11.1395 9.76954 11.7804C10.5267 12.4212 10.9588 13.3661 10.949 14.3579L10.9249 16.2713C10.49 16.9399 10.1376 17.6589 9.87574 18.4124L8.38557 18.6791C8.05171 18.7447 7.8207 19.0514 7.84999 19.3908C7.87929 19.7298 8.15944 19.9923 8.49971 19.9999C8.53908 19.9996 8.57814 19.9966 8.6169 19.9898L9.49579 19.8339C9.31757 20.7674 9.28522 21.7229 9.40028 22.6665H4.70824L2.37763 16.4724ZM4.24498 23.9998H38.6527C38.613 24.8973 38.494 25.7897 38.2974 26.6664H1.70319C1.50636 25.7897 1.38765 24.8973 1.34767 23.9998H4.24498ZM23.3336 38.6665H16.6671C10.0012 38.6564 4.10277 34.347 2.06696 27.9997H37.9334C35.8976 34.347 29.9995 38.6564 23.3336 38.6665Z"
+                                                  fill="url(#paint0_linear)"/>
+                                            <path d="M8.65732 14.6891C8.6268 14.5149 8.52823 14.3601 8.38357 14.2585C8.23892 14.1569 8.05948 14.1172 7.88553 14.1477L6.57205 14.3791C6.23147 14.4389 5.99313 14.7489 6.02304 15.0932C6.05295 15.4377 6.34103 15.7023 6.6868 15.7023C6.72586 15.7023 6.76492 15.6989 6.80337 15.6925L8.11624 15.4612C8.29019 15.4304 8.44522 15.3321 8.54654 15.1872C8.64816 15.0425 8.68814 14.8634 8.65732 14.6891Z"
+                                                  fill="url(#paint1_linear)"/>
+                                            <path d="M8.66547 29.998H5.99884C5.6308 29.998 5.33203 30.2965 5.33203 30.6646C5.33203 31.0329 5.6308 31.3314 5.99884 31.3314H8.66547C9.03382 31.3314 9.33228 31.0329 9.33228 30.6646C9.33228 30.2965 9.03382 29.998 8.66547 29.998Z"
+                                                  fill="url(#paint2_linear)"/>
+                                            <path d="M32.0001 29.9985H11.3335C10.9655 29.9985 10.667 30.297 10.667 30.665C10.667 31.0334 10.9655 31.3318 11.3335 31.3318H32.0001C32.3682 31.3318 32.6666 31.0334 32.6666 30.665C32.6666 30.297 32.3682 29.9985 32.0001 29.9985Z"
+                                                  fill="url(#paint3_linear)"/>
+                                            <defs>
+                                                <linearGradient id="paint0_linear" x1="0" y1="0" x2="32.6123"
+                                                                y2="45.3164" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#FFA091"/>
+                                                    <stop offset="1" stop-color="#F47965"/>
+                                                </linearGradient>
+                                                <linearGradient id="paint1_linear" x1="6.02051" y1="14.1377"
+                                                                x2="6.98968" y2="16.416" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#FFA091"/>
+                                                    <stop offset="1" stop-color="#F47965"/>
+                                                </linearGradient>
+                                                <linearGradient id="paint2_linear" x1="5.33203" y1="29.998" x2="5.85209"
+                                                                y2="32.1661" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#FFA091"/>
+                                                    <stop offset="1" stop-color="#F47965"/>
+                                                </linearGradient>
+                                                <linearGradient id="paint3_linear" x1="10.667" y1="29.9985" x2="10.7668"
+                                                                y2="32.287" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#FFA091"/>
+                                                    <stop offset="1" stop-color="#F47965"/>
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
+                                    </div>
+                                    <div class="faq-button__text">
+                                        <h4 class="faq-button__title text_size_s">Продукты</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                        <label for="faq-tariffs" class="faq__label">
+                            <input type="radio" id="faq-tariffs" name="faq-tab" class="faq__input">
+                            <div class="faq-button faq-button_box-shadow faq-button_size_m  faq__tab">
+                                <div class="faq-button_content">
+                                    <div class="faq-button__icon-wrapper faq-button__icon_light">
+                                        <svg width="35" height="41" viewBox="0 0 35 41" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17.6813 38.0806C17.6813 38.4562 17.9857 38.7606 18.3613 38.7606H30.6015C32.4784 38.7584 33.9993 37.2374 34.0015 35.3606V3.40006C33.9993 1.52319 32.4784 0.0022482 30.6015 0H9.52115C7.64428 0.0022482 6.12334 1.52319 6.12109 3.40006V18.3603C6.12109 18.7359 6.42555 19.0403 6.8011 19.0403C7.17666 19.0403 7.48112 18.7359 7.48112 18.3603V3.40006C7.48112 2.27338 8.39447 1.36002 9.52115 1.36002H30.6015C31.7282 1.36002 32.6415 2.27338 32.6415 3.40006V35.3606C32.6415 36.4873 31.7282 37.4006 30.6015 37.4006H18.3613C17.9857 37.4006 17.6813 37.7051 17.6813 38.0806Z"
+                                                  fill="url(#paint0_linear)"/>
+                                            <path d="M30.5994 4.75992C30.5994 4.0088 29.9905 3.3999 29.2394 3.3999H10.8791C10.1279 3.3999 9.51904 4.0088 9.51904 4.75992V10.88C9.51904 11.6311 10.1279 12.24 10.8791 12.24H29.2394C29.9905 12.24 30.5994 11.6311 30.5994 10.88V4.75992ZM13.3842 10.88L16.7231 4.75992H19.2541L15.9152 10.88H13.3842ZM10.8791 4.75992H15.174L11.8352 10.88H10.8791V4.75992ZM29.2394 10.88H17.4643L20.8031 4.75992H29.2394V10.88Z"
+                                                  fill="url(#paint1_linear)"/>
+                                            <path d="M7.68272 40.7985C8.3146 40.7981 8.93897 40.6615 9.51331 40.398C9.75074 40.5076 9.99771 40.5953 10.2511 40.6598C13.5227 41.5037 17.2552 38.3716 18.5609 33.6734C19.3429 30.8643 19.1205 27.9919 17.9652 25.9893C17.3393 24.8156 16.2596 23.9499 14.9779 23.5943C13.5584 23.2697 12.0679 23.5644 10.8788 24.4048C10.6916 24.5237 10.4891 24.6166 10.277 24.6809C10.7095 21.8181 12.6842 21.0769 12.7855 21.0415C13.1289 20.9128 13.3084 20.5349 13.1911 20.1874C13.0739 19.8399 12.7022 19.648 12.351 19.7536C11.4128 20.1312 10.6071 20.7775 10.0349 21.6114C9.95698 21.5181 9.87389 21.4294 9.786 21.3455C9.11447 20.7415 8.29998 20.3188 7.41956 20.1174C6.17242 19.8093 4.11402 20.1051 2.60712 20.4098C2.18069 20.496 1.84097 20.8182 1.73239 21.2395C1.62381 21.6608 1.76546 22.107 2.09711 22.3886C2.5874 22.8055 3.16337 23.2645 3.75702 23.684C2.60112 24.0891 1.63813 24.9112 1.05669 25.9893C-0.0993251 27.9899 -0.321009 30.8622 0.461684 33.6734C1.63062 37.8534 4.70835 40.7985 7.68272 40.7985ZM7.09655 21.4393C7.74652 21.586 8.34956 21.8927 8.85098 22.3315C9.15903 22.6252 9.31135 22.9326 9.25899 23.1516C9.20663 23.3705 8.92782 23.5705 8.51777 23.6867C7.86925 23.8406 7.19257 23.8301 6.54914 23.6561C5.36583 23.1946 4.27913 22.5161 3.34493 21.6556C4.57133 21.3599 5.84072 21.286 7.09315 21.4373L7.09655 21.4393ZM2.23515 26.6693C2.68036 25.8149 3.45584 25.18 4.38127 24.9121C4.63381 24.847 4.89363 24.8143 5.15444 24.8149C5.95914 24.8379 6.74014 25.0924 7.40392 25.5479C7.83858 25.8246 8.32405 26.0119 8.83194 26.0987V27.1908C8.83194 27.5664 9.13639 27.8709 9.51195 27.8709C9.88751 27.8709 10.192 27.5664 10.192 27.1908V26.0987C10.7 26.0126 11.1856 25.8253 11.62 25.5479C12.492 24.9169 13.591 24.6858 14.6433 24.9121C15.5685 25.1801 16.3438 25.815 16.7887 26.6693C17.7652 28.3605 17.9386 30.8411 17.2518 33.3055C16.1414 37.2951 13.1541 40.0077 10.5877 39.3399C10.3284 39.2738 10.0791 39.1732 9.84652 39.0407C9.63925 38.9239 9.38601 38.9239 9.17875 39.0407C8.94523 39.1735 8.69505 39.2746 8.43481 39.3413C5.87389 40.0036 2.88592 37.2958 1.77479 33.3055C1.08661 30.8411 1.25866 28.3605 2.23515 26.6693Z"
+                                                  fill="url(#paint2_linear)"/>
+                                            <path d="M4.39412 32.5789C3.88716 31.0925 3.9578 29.4698 4.59201 28.0331C4.68569 27.8217 4.8512 27.6504 5.05918 27.5496C5.42309 27.4557 5.64199 27.0845 5.5481 26.7206C5.45421 26.3567 5.08309 26.1378 4.71917 26.2317C4.14862 26.4109 3.67649 26.8162 3.41287 27.353C2.79678 28.4186 2.38673 30.4471 3.08238 32.9441C3.18322 33.3059 3.5583 33.5175 3.92016 33.4167C4.28201 33.3159 4.4936 32.9408 4.39276 32.5789H4.39412Z"
+                                                  fill="url(#paint3_linear)"/>
+                                            <path d="M28.5566 29.2402H26.5166C25.3899 29.2402 24.4766 30.1536 24.4766 31.2803V33.3203C24.4766 34.447 25.3899 35.3603 26.5166 35.3603H28.5566C29.6833 35.3603 30.5967 34.447 30.5967 33.3203V31.2803C30.5967 30.1536 29.6833 29.2402 28.5566 29.2402ZM29.2366 33.3203C29.2366 33.6959 28.9322 34.0003 28.5566 34.0003H26.5166C26.141 34.0003 25.8366 33.6959 25.8366 33.3203V31.2803C25.8366 30.9047 26.141 30.6003 26.5166 30.6003H28.5566C28.9322 30.6003 29.2366 30.9047 29.2366 31.2803V33.3203Z"
+                                                  fill="url(#paint4_linear)"/>
+                                            <path d="M30.5967 23.8008C30.5967 22.6741 29.6833 21.7607 28.5566 21.7607H26.5166C25.3899 21.7607 24.4766 22.6741 24.4766 23.8008V25.8408C24.4766 26.9675 25.3899 27.8808 26.5166 27.8808H28.5566C29.6833 27.8808 30.5967 26.9675 30.5967 25.8408V23.8008ZM29.2366 25.8408C29.2366 26.2164 28.9322 26.5208 28.5566 26.5208H26.5166C26.141 26.5208 25.8366 26.2164 25.8366 25.8408V23.8008C25.8366 23.4252 26.141 23.1208 26.5166 23.1208H28.5566C28.9322 23.1208 29.2366 23.4252 29.2366 23.8008V25.8408Z"
+                                                  fill="url(#paint5_linear)"/>
+                                            <path d="M30.5967 16.3193C30.5967 15.1927 29.6833 14.2793 28.5566 14.2793H26.5166C25.3899 14.2793 24.4766 15.1927 24.4766 16.3193V18.3594C24.4766 19.486 25.3899 20.3994 26.5166 20.3994H28.5566C29.6833 20.3994 30.5967 19.486 30.5967 18.3594V16.3193ZM29.2366 18.3594C29.2366 18.7349 28.9322 19.0394 28.5566 19.0394H26.5166C26.141 19.0394 25.8366 18.7349 25.8366 18.3594V16.3193C25.8366 15.9438 26.141 15.6393 26.5166 15.6393H28.5566C28.9322 15.6393 29.2366 15.9438 29.2366 16.3193V18.3594Z"
+                                                  fill="url(#paint6_linear)"/>
+                                            <path d="M21.0807 34.0003H20.387C20.0115 34.0003 19.707 34.3048 19.707 34.6803C19.707 35.0559 20.0115 35.3603 20.387 35.3603H21.0807C22.2073 35.3603 23.1207 34.447 23.1207 33.3203V31.2803C23.1207 30.1536 22.2073 29.2402 21.0807 29.2402H21.0535C20.8745 29.2408 20.7032 29.313 20.578 29.4408C20.4527 29.5686 20.3839 29.7413 20.387 29.9202C20.3934 30.2985 20.7024 30.6014 21.0807 30.6003C21.4562 30.6003 21.7607 30.9047 21.7607 31.2803V33.3203C21.7607 33.5007 21.689 33.6736 21.5615 33.8011C21.434 33.9287 21.261 34.0003 21.0807 34.0003Z"
+                                                  fill="url(#paint7_linear)"/>
+                                            <path d="M18.5347 23.3533C18.6606 23.2056 18.8451 23.1206 19.0392 23.1208H21.0793C21.4548 23.1208 21.7593 23.4252 21.7593 23.8008V25.8408C21.7593 26.2164 21.4548 26.5208 21.0793 26.5208H20.6508C20.2753 26.5208 19.9708 26.8253 19.9708 27.2008C19.9708 27.5764 20.2753 27.8809 20.6508 27.8809H21.0793C22.2059 27.8809 23.1193 26.9675 23.1193 25.8408V23.8008C23.1193 22.6741 22.2059 21.7608 21.0793 21.7608H19.0392C18.4417 21.7587 17.8743 22.0226 17.4908 22.4809C17.2499 22.7691 17.2883 23.1981 17.5765 23.439C17.8648 23.6799 18.2937 23.6416 18.5347 23.3533Z"
+                                                  fill="url(#paint8_linear)"/>
+                                            <path d="M20.0592 19.0394H14.9591C14.5835 19.0394 14.2791 19.3438 14.2791 19.7194C14.2791 20.095 14.5835 20.3994 14.9591 20.3994H20.0592C21.7468 20.3938 23.1136 19.0271 23.1192 17.3394C23.1173 15.6501 21.7484 14.2812 20.0592 14.2793H12.579C11.5076 14.2767 10.5132 14.836 9.95904 15.7531C9.40488 16.6701 9.37207 17.8105 9.87259 18.7579C10.0512 19.0884 10.4639 19.2115 10.7943 19.0329C11.1248 18.8543 11.248 18.4417 11.0694 18.1112C10.943 17.8736 10.8776 17.6084 10.879 17.3394C10.8849 16.4029 11.6426 15.6453 12.579 15.6393H20.0592C20.9981 15.6393 21.7592 16.4005 21.7592 17.3394C21.7532 18.2758 20.9956 19.0334 20.0592 19.0394Z"
+                                                  fill="url(#paint9_linear)"/>
+                                            <defs>
+                                                <linearGradient id="paint0_linear" x1="6.12109" y1="0" x2="39.4487"
+                                                                y2="33.3107" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#FFA091"/>
+                                                    <stop offset="1" stop-color="#F47965"/>
+                                                </linearGradient>
+                                                <linearGradient id="paint1_linear" x1="9.51904" y1="3.3999" x2="13.7239"
+                                                                y2="17.3329" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#FFA091"/>
+                                                    <stop offset="1" stop-color="#F47965"/>
+                                                </linearGradient>
+                                                <linearGradient id="paint2_linear" x1="0" y1="19.7246" x2="17.6649"
+                                                                y2="41.8804" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#FFA091"/>
+                                                    <stop offset="1" stop-color="#F47965"/>
+                                                </linearGradient>
+                                                <linearGradient id="paint3_linear" x1="2.71875" y1="26.21" x2="7.95897"
+                                                                y2="29.0806" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#FFA091"/>
+                                                    <stop offset="1" stop-color="#F47965"/>
+                                                </linearGradient>
+                                                <linearGradient id="paint4_linear" x1="24.4766" y1="29.2402"
+                                                                x2="29.4664" y2="36.1738"
+                                                                gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#FFA091"/>
+                                                    <stop offset="1" stop-color="#F47965"/>
+                                                </linearGradient>
+                                                <linearGradient id="paint5_linear" x1="24.4766" y1="21.7607"
+                                                                x2="29.4664" y2="28.6943"
+                                                                gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#FFA091"/>
+                                                    <stop offset="1" stop-color="#F47965"/>
+                                                </linearGradient>
+                                                <linearGradient id="paint6_linear" x1="24.4766" y1="14.2793"
+                                                                x2="29.4664" y2="21.2128"
+                                                                gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#FFA091"/>
+                                                    <stop offset="1" stop-color="#F47965"/>
+                                                </linearGradient>
+                                                <linearGradient id="paint7_linear" x1="19.707" y1="29.2402" x2="24.8029"
+                                                                y2="33.1898" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#FFA091"/>
+                                                    <stop offset="1" stop-color="#F47965"/>
+                                                </linearGradient>
+                                                <linearGradient id="paint8_linear" x1="17.3325" y1="21.7607"
+                                                                x2="22.4046" y2="28.4248"
+                                                                gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#FFA091"/>
+                                                    <stop offset="1" stop-color="#F47965"/>
+                                                </linearGradient>
+                                                <linearGradient id="paint9_linear" x1="9.51904" y1="14.2793"
+                                                                x2="12.6039" y2="23.8048"
+                                                                gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#FFA091"/>
+                                                    <stop offset="1" stop-color="#F47965"/>
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
+                                    </div>
+                                    <div class="faq-button__text">
+                                        <h4 class="faq-button__title text_size_s">Тарифы</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                        <label for="faq-delivery" class="faq__label">
+                            <input type="radio" id="faq-delivery" name="faq-tab" class="faq__input">
+                            <div class="faq-button faq-button_box-shadow faq-button_size_m  faq__tab">
+                                <div class="faq-button_content">
+                                    <div class="faq-button__icon-wrapper faq-button__icon_light">
+                                        <svg width="46" height="36" viewBox="0 0 46 36" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M36.0433 28.2002C35.0694 28.2002 34.2808 28.9888 34.2808 29.9627C34.2808 30.9365 35.0694 31.7252 36.0433 31.7252C37.0171 31.7252 37.8058 30.9365 37.8058 29.9627C37.8058 28.9888 37.0171 28.2002 36.0433 28.2002Z"
+                                                  fill="url(#paint0_linear)"/>
+                                            <path d="M10.575 28.2002C9.60115 28.2002 8.8125 28.9888 8.8125 29.9627C8.8125 30.9365 9.60115 31.7252 10.575 31.7252C11.5489 31.7252 12.3375 30.9365 12.3375 29.9627C12.3375 28.9888 11.5489 28.2002 10.575 28.2002Z"
+                                                  fill="url(#paint1_linear)"/>
+                                            <path d="M6.17031 21.1502C6.65672 21.1502 7.05156 20.7554 7.05156 20.2689C7.05156 19.7825 6.65672 19.3877 6.17031 19.3877C5.6839 19.3877 5.28906 19.7825 5.28906 20.2689C5.28906 20.7554 5.6839 21.1502 6.17031 21.1502Z"
+                                                  fill="url(#paint2_linear)"/>
+                                            <path d="M0 27.3187C0 28.7766 1.1859 29.9625 2.64375 29.9625H5.2875C5.2875 32.8782 7.6593 35.25 10.575 35.25C13.4907 35.25 15.8625 32.8782 15.8625 29.9625H30.7556C30.7556 32.8782 33.1274 35.25 36.0431 35.25C38.9588 35.25 41.3306 32.8782 41.3306 29.9625H42.4762C43.9341 29.9625 45.12 28.7766 45.12 27.3187V2.64375C45.12 1.1859 43.9341 0 42.4762 0H20.7975C19.3397 0 18.1537 1.1859 18.1537 2.64375V5.2875H10.9647C9.82422 5.2875 8.81594 6.01419 8.45587 7.09544C7.99734 8.47136 6.28441 13.6098 5.52399 15.8914C5.46237 16.0766 5.33845 16.2391 5.17666 16.3462L1.9625 18.489C0.733572 19.3073 0 20.678 0 22.1555V27.3187ZM10.575 33.4875C8.63143 33.4875 7.05 31.9061 7.05 29.9625C7.05 27.9924 8.66 26.4375 10.575 26.4375C12.4945 26.4375 14.1 27.9966 14.1 29.9625C14.1 31.9061 12.5186 33.4875 10.575 33.4875ZM36.0431 33.4875C34.0996 33.4875 32.5181 31.9061 32.5181 29.9625C32.5181 27.9924 34.1281 26.4375 36.0431 26.4375C37.9626 26.4375 39.5681 27.9966 39.5681 29.9625C39.5681 31.9061 37.9867 33.4875 36.0431 33.4875ZM19.9163 2.64375C19.9163 2.15769 20.3114 1.7625 20.7975 1.7625H42.4762C42.9623 1.7625 43.3575 2.15769 43.3575 2.64375V27.3187C43.3575 27.8048 42.9623 28.2 42.4762 28.2H41.028C40.2921 26.1205 38.2999 24.675 36.0431 24.675C33.7853 24.675 31.7925 26.1215 31.0579 28.2H19.9163V2.64375ZM8.86 11.4563H14.6287V15.8625H7.39148L8.86 11.4563ZM2.93945 19.9558L6.15223 17.814C6.23932 17.7565 6.32159 17.6925 6.40077 17.625H15.51C15.9968 17.625 16.3912 17.2305 16.3912 16.7437V10.575C16.3912 10.0882 15.9968 9.69375 15.51 9.69375H9.44762L10.1282 7.65276C10.248 7.292 10.5843 7.05 10.9647 7.05H18.1537V28.2H15.5599C14.8239 26.1205 12.8318 24.675 10.575 24.675C8.31714 24.675 6.32435 26.1215 5.58974 28.2H2.64375C2.15769 28.2 1.7625 27.8048 1.7625 27.3187V26.4375H4.40625C4.893 26.4375 5.2875 26.043 5.2875 25.5562C5.2875 25.0695 4.893 24.675 4.40625 24.675H1.7625V22.1555C1.7625 21.2691 2.20244 20.4467 2.93945 19.9558Z"
+                                                  fill="url(#paint3_linear)"/>
+                                            <path d="M23.7055 19.3873H39.568C40.0547 19.3873 40.4492 18.9928 40.4492 18.5061C40.4492 18.0193 40.0547 17.6248 39.568 17.6248H38.6867C38.6867 14.5229 36.6919 11.9142 33.9545 10.9641C34.1621 10.5869 34.2805 10.1538 34.2805 9.69355C34.2805 8.23571 33.0946 7.0498 31.6367 7.0498C30.1789 7.0498 28.993 8.23571 28.993 9.69355C28.993 10.1552 29.1121 10.5893 29.321 10.9672C26.5682 11.9277 24.5867 14.5487 24.5867 17.6248H23.7055C23.2187 17.6248 22.8242 18.0193 22.8242 18.5061C22.8242 18.9928 23.2187 19.3873 23.7055 19.3873ZM30.7555 9.69355C30.7555 9.20749 31.1507 8.8123 31.6367 8.8123C32.1228 8.8123 32.518 9.20749 32.518 9.69355C32.518 10.1796 32.1228 10.5748 31.6367 10.5748C31.1507 10.5748 30.7555 10.1796 30.7555 9.69355ZM31.6367 12.3373C34.5534 12.3373 36.9242 14.6971 36.9242 17.6248H26.3492C26.3492 14.7091 28.721 12.3373 31.6367 12.3373Z"
+                                                  fill="url(#paint4_linear)"/>
+                                            <path d="M9.69375 21.1502H15.51C15.9968 21.1502 16.3912 20.7557 16.3912 20.2689C16.3912 19.7822 15.9968 19.3877 15.51 19.3877H9.69375C9.207 19.3877 8.8125 19.7822 8.8125 20.2689C8.8125 20.7557 9.207 21.1502 9.69375 21.1502Z"
+                                                  fill="url(#paint5_linear)"/>
+                                            <defs>
+                                                <linearGradient id="paint0_linear" x1="34.2808" y1="28.2002"
+                                                                x2="37.1547" y2="32.1937"
+                                                                gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#FFA091"/>
+                                                    <stop offset="1" stop-color="#F47965"/>
+                                                </linearGradient>
+                                                <linearGradient id="paint1_linear" x1="8.8125" y1="28.2002" x2="11.6865"
+                                                                y2="32.1937" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#FFA091"/>
+                                                    <stop offset="1" stop-color="#F47965"/>
+                                                </linearGradient>
+                                                <linearGradient id="paint2_linear" x1="5.28906" y1="19.3877"
+                                                                x2="6.72605" y2="21.3845"
+                                                                gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#FFA091"/>
+                                                    <stop offset="1" stop-color="#F47965"/>
+                                                </linearGradient>
+                                                <linearGradient id="paint3_linear" x1="0" y1="0" x2="25.8958"
+                                                                y2="46.0586" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#FFA091"/>
+                                                    <stop offset="1" stop-color="#F47965"/>
+                                                </linearGradient>
+                                                <linearGradient id="paint4_linear" x1="22.8242" y1="7.0498" x2="31.3489"
+                                                                y2="23.9717" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#FFA091"/>
+                                                    <stop offset="1" stop-color="#F47965"/>
+                                                </linearGradient>
+                                                <linearGradient id="paint5_linear" x1="8.8125" y1="19.3877" x2="9.30594"
+                                                                y2="22.336" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#FFA091"/>
+                                                    <stop offset="1" stop-color="#F47965"/>
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
+                                    </div>
+                                    <div class="faq-button__text">
+                                        <h4 class="faq-button__title text_size_s">Оплата и доставка</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                        <label for="faq-promo-code" class="faq__label">
+                            <input type="radio" id="faq-promo-code" name="faq-tab" class="faq__input">
+                            <div class="faq-button faq-button_box-shadow faq-button_size_m  faq__tab">
+                                <div class="faq-button_content">
+                                    <div class="faq-button__icon-wrapper faq-button__icon_light">
+                                        <svg width="34" height="34" viewBox="0 0 34 34" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M18.5109 0.85575L0 19.3666L14.5495 33.9161L32.8349 15.6308L33.0584 15.4073L34 0L18.5109 0.85575ZM31.4319 14.6745L14.5495 31.5569L2.35937 19.3666L19.2397 2.48628L32.2205 1.76911L31.4319 14.6745Z"
+                                                  fill="url(#paint0_linear)"/>
+                                            <path d="M26.1893 11.0635C27.0806 11.0635 27.9185 10.7165 28.5488 10.0862C29.8496 8.78534 29.8496 6.66843 28.5487 5.36734C27.9185 4.73715 27.0806 4.39014 26.1893 4.39014C25.2981 4.39014 24.4602 4.73715 23.8299 5.36734C23.1997 5.99764 22.8525 6.83549 22.8525 7.72683C22.8525 8.61817 23.1997 9.45601 23.83 10.0863C24.4602 10.7165 25.2981 11.0635 26.1893 11.0635ZM25.0095 6.54709C25.3247 6.23199 25.7437 6.05837 26.1892 6.05837C26.6348 6.05837 27.0538 6.23199 27.3689 6.54697C28.0194 7.19752 28.0194 8.25603 27.369 8.90646C27.0538 9.22156 26.6348 9.39517 26.1892 9.39517C25.7437 9.39517 25.3247 9.22156 25.0096 8.90646C24.6944 8.59137 24.5208 8.17239 24.5208 7.72683C24.5208 7.28127 24.6944 6.86218 25.0095 6.54709Z"
+                                                  fill="url(#paint1_linear)"/>
+                                            <defs>
+                                                <linearGradient id="paint0_linear" x1="0" y1="0" x2="27.6305"
+                                                                y2="38.4887" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#FFA091"/>
+                                                    <stop offset="1" stop-color="#F47965"/>
+                                                </linearGradient>
+                                                <linearGradient id="paint1_linear" x1="22.8525" y1="4.39014"
+                                                                x2="28.2938" y2="11.9493"
+                                                                gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#FFA091"/>
+                                                    <stop offset="1" stop-color="#F47965"/>
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
+                                    </div>
+                                    <div class="faq-button__text">
+                                        <h4 class="faq-button__title text_size_s">Промокоды</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                        <label for="faq-storage" class="faq__label">
+                            <input type="radio" id="faq-storage" name="faq-tab" class="faq__input">
+                            <div class="faq-button faq-button_box-shadow faq-button_size_m  faq__tab">
+                                <div class="faq-button_content">
+                                    <div class="faq-button__icon-wrapper faq-button__icon_light">
+                                        <svg width="18" height="20" viewBox="0 0 18 20" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8.56543 0H1.07201C0.480794 0 0 0.479615 0 1.06865V5.0028C0 5.27721 0.107326 5.52533 0.278604 5.71488C0.107326 5.905 0 6.1539 0 6.42937V18.2136C0 18.8047 0.480891 19.2857 1.07201 19.2857H2.49855V20H3.21245V19.2857H6.42489V20H7.13879V19.2857H8.56533C9.15654 19.2857 9.63734 18.8047 9.63734 18.2136V6.42928C9.63734 6.1538 9.53001 5.90491 9.35873 5.71488C9.53001 5.52533 9.63734 5.27721 9.63734 5.0028V1.06865C9.63743 0.479615 9.15654 0 8.56543 0ZM0.713898 1.06865C0.713898 0.869822 0.871265 0.7143 1.07201 0.7143H8.56533C8.76279 0.7143 8.92344 0.873301 8.92344 1.06865V5.0028C8.92344 5.20163 8.76607 5.35715 8.56533 5.35715H1.07201C0.874549 5.35715 0.713898 5.19815 0.713898 5.0028V1.06865ZM8.56543 18.5713H1.07201C0.874549 18.5713 0.713898 18.4109 0.713898 18.2135V6.42928C0.713898 6.2318 0.874549 6.07145 1.07201 6.07145H8.56533C8.76279 6.07145 8.92344 6.2319 8.92344 6.42928V18.2135C8.92344 18.4109 8.76288 18.5713 8.56543 18.5713Z"
+                                                  fill="url(#paint1_linear)"/>
+                                            <path d="M7.85269 1.4286H7.13879V4.2857H7.85269V1.4286Z"
+                                                  fill="url(#paint1_linear)"/>
+                                            <path d="M7.85269 7.8571H7.13879V10.7142H7.85269V7.8571Z"
+                                                  fill="url(#paint1_linear)"/>
+                                            <path d="M17.5506 8.72731L16.2307 9.08098L15.0394 8.39278L16.2307 7.70458L17.5506 8.05825C17.5816 8.06656 17.6126 8.07043 17.6431 8.07043C17.8009 8.07043 17.945 7.96507 17.9877 7.80568C18.0388 7.61526 17.9257 7.41924 17.7354 7.3683L17.1051 7.19935L17.2957 7.08925C17.4665 6.99057 17.5249 6.77222 17.4264 6.60133C17.3277 6.43005 17.1091 6.37147 16.9387 6.47055L16.748 6.58074L16.9169 5.95024C16.968 5.75983 16.8551 5.5638 16.6645 5.51287C16.4739 5.46125 16.2783 5.57463 16.2274 5.76533L15.8738 7.08568L14.9916 7.59526V6.57639L15.9578 5.60962C16.0972 5.47014 16.0972 5.24416 15.9578 5.10458C15.8184 4.96501 15.5925 4.96511 15.453 5.10458L14.9916 5.56641V5.35715C14.9916 5.15977 14.8317 5 14.6346 5C14.4376 5 14.2777 5.15977 14.2777 5.35715V5.56641L13.8161 5.10458C13.6767 4.96511 13.4508 4.96511 13.3114 5.10458C13.1719 5.24406 13.172 5.47005 13.3114 5.60962L14.2777 6.57649V7.95279L13.0863 7.26459L12.7326 5.94415C12.6815 5.75335 12.4855 5.63997 12.2955 5.69168C12.105 5.74262 11.992 5.93864 12.0431 6.12906L12.212 6.75965L12.031 6.65507C11.8595 6.55638 11.6417 6.61534 11.5433 6.78585C11.4449 6.95674 11.5032 7.17509 11.674 7.27377L11.855 7.37836L11.2247 7.54731C11.0344 7.59825 10.9213 7.79427 10.9724 7.98469C11.0151 8.14408 11.1592 8.24943 11.317 8.24943C11.3475 8.24943 11.3785 8.24557 11.4095 8.23726L12.7293 7.88359L13.6115 8.39316L12.7293 8.90274L11.4095 8.54907C11.2175 8.49678 11.0233 8.61151 10.9724 8.80154C10.9213 8.99196 11.0344 9.18798 11.2247 9.23892L11.855 9.40788L11.674 9.51236C11.5032 9.61105 11.4449 9.8294 11.5433 10.0003C11.6095 10.115 11.7295 10.1788 11.8528 10.1788C11.9133 10.1788 11.9748 10.1634 12.031 10.1311L12.212 10.0265L12.0431 10.6571C11.992 10.8475 12.105 11.0435 12.2955 11.0945C12.3263 11.1028 12.3575 11.1066 12.388 11.1066C12.5458 11.1066 12.6899 11.0017 12.7326 10.8419L13.0863 9.52145L14.2777 8.83325V10.2096L13.3114 11.1763C13.1721 11.3158 13.1721 11.5418 13.3114 11.6814C13.3812 11.7511 13.4725 11.786 13.5638 11.786C13.6552 11.786 13.7465 11.7511 13.8161 11.6814L14.2777 11.2196V11.44C14.2777 11.6374 14.4376 11.7972 14.6346 11.7972C14.8317 11.7972 14.9916 11.6374 14.9916 11.44V11.2195L15.4531 11.6814C15.5229 11.751 15.6142 11.7859 15.7055 11.7859C15.7969 11.7859 15.8881 11.751 15.9578 11.6813C16.0972 11.5418 16.0972 11.3158 15.9578 11.1762L14.9916 10.2095V9.19011L15.8738 9.69968L16.2274 11.02C16.2701 11.1798 16.4142 11.2848 16.572 11.2848C16.6025 11.2848 16.6337 11.2809 16.6645 11.2726C16.8551 11.2217 16.968 11.0256 16.9169 10.8352L16.748 10.2047L16.9387 10.3149C16.995 10.3473 17.0564 10.3627 17.1168 10.3627C17.2402 10.3627 17.3601 10.2985 17.4264 10.1841C17.5248 10.0132 17.4665 9.79489 17.2957 9.69621L17.1051 9.58611L17.7354 9.41715C17.9257 9.36622 18.0388 9.17019 17.9877 8.97978C17.9366 8.78975 17.742 8.67492 17.5506 8.72731Z"
+                                                  fill="url(#paint1_linear)"/>
+                                            <defs>
+                                                <linearGradient id="paint0_linear" x1="0" y1="0" x2="27.6305"
+                                                                y2="38.4887" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#FFA091"/>
+                                                    <stop offset="1" stop-color="#F47965"/>
+                                                </linearGradient>
+                                                <linearGradient id="paint1_linear" x1="22.8525" y1="4.39014"
+                                                                x2="28.2938" y2="11.9493"
+                                                                gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#FFA091"/>
+                                                    <stop offset="1" stop-color="#F47965"/>
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
+                                    </div>
+                                    <div class="faq-button__text">
+                                        <h4 class="faq-button__title text_size_s">Хранение</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="faq__content">
+                        <div class="faq__item drop-box">
+                            <div class="faq__item-header drop-header">
+                                <h4 class=" faq__item-title text_size_s">Почему выгодно питаться в Simple Kitchen?</h4>
+                                <div class="faq__item-arrow">
+                                </div>
+                            </div>
+                            <div class="faq__item-cont drop-container">
+                                <div class="faq__item-wrapper drop-wrapper">
+                                    <div class="faq__item-text__wrapper">
+                                        <p class="faq__item-text text_size_xs">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus
+                                            sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus
+                                            dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,
+                                            purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor
+                                            rhoncus dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit ut
+                                            aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna,
+                                            porttitor rhoncus dolor. Lorem ipsum dolor sit amet, consectetur adipiscing
+                                            elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla
+                                            urna, porttitor rhoncus dolor.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq__item faq__item_border drop-box">
+                            <div class="faq__item-header  drop-header">
+                                <h4 class=" faq__item-title text_size_s text_color_dark">Можно ли менять местами приемы
+                                    блюд в рационах?</h4>
+                                <div class="faq__item-arrow">
+                                </div>
+                            </div>
+                            <div class="faq__item-cont drop-container">
+                                <div class="faq__item-wrapper drop-wrapper">
+                                    <div class="faq__item-text__wrapper">
+                                        <p class="faq__item-text text_size_xs">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus
+                                            sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus
+                                            dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,
+                                            purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor
+                                            rhoncus dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit ut
+                                            aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna,
+                                            porttitor rhoncus dolor. Lorem ipsum dolor sit amet, consectetur adipiscing
+                                            elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla
+                                            urna, porttitor rhoncus dolor.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq__item faq__item_border drop-box">
+                            <div class="faq__item-header  drop-header">
+                                <h4 class=" faq__item-title text_size_s text_color_dark">Типы рационов</h4>
+                                <div class="faq__item-arrow">
+                                </div>
+                            </div>
+                            <div class="faq__item-cont drop-container">
+                                <div class="faq__item-wrapper drop-wrapper">
+                                    <div class="faq__item-text__wrapper">
+                                        <p class="faq__item-text text_size_xs">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus
+                                            sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus
+                                            dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,
+                                            purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor
+                                            rhoncus dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit ut
+                                            aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna,
+                                            porttitor rhoncus dolor. Lorem ipsum dolor sit amet, consectetur adipiscing
+                                            elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla
+                                            urna, porttitor rhoncus dolor.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq__item drop-box">
+                            <div class="faq__item-header  drop-header">
+                                <h4 class=" faq__item-title text_size_s text_color_dark">Расчет КБЖУ</h4>
+                                <div class="faq__item-arrow">
+                                </div>
+                            </div>
+                            <div class="faq__item-cont drop-container">
+                                <div class="faq__item-wrapper drop-wrapper">
+                                    <div class="faq__item-text__wrapper">
+                                        <p class="faq__item-text text_size_xs">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus
+                                            sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus
+                                            dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,
+                                            purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor
+                                            rhoncus dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit ut
+                                            aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna,
+                                            porttitor rhoncus dolor. Lorem ipsum dolor sit amet, consectetur adipiscing
+                                            elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla
+                                            urna, porttitor rhoncus dolor.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq__right">
+                    <div class="faq__right-title text_size_m text_weight_bold">Остались вопросы</div>
+                    <div class="faq__right-box">
+                        <button class="faq__button button button_radius_cub button_size_xs button_color_pink">
+                            <span class="button__title text_weight_semibold text_size_s text_color_white">Заказать звонок</span>
+                        </button>
+                        <div class="faq__right-content text_weight_medium">
+                            <span class="faq__right-text text_size_s text_weight_medium">Или позвоните нам</span>
+                            <a href="tel:+7(495)42-251-31" class="header__phone text_size_s text_weight_medium">
+                                +7 (495) 649-81-68
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="footer">
+        <div class="footer__partners footer__box">
+            <div class="footer__logo logo logo_size_m logo_color_black">
+                <svg width="163" height="49" viewBox="0 0 163 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M87.928 8.664C87.928 9.208 88.168 9.64 88.648 9.96C89.128 10.28 89.712 10.528 90.4 10.704C91.088 10.88 91.776 11.08 92.464 11.304C93.152 11.512 93.736 11.872 94.216 12.384C94.696 12.88 94.936 13.536 94.936 14.352C94.936 15.376 94.528 16.208 93.712 16.848C92.912 17.488 91.872 17.808 90.592 17.808C89.44 17.808 88.456 17.552 87.64 17.04C86.84 16.528 86.28 15.864 85.96 15.048L87.304 14.256C87.528 14.88 87.928 15.376 88.504 15.744C89.096 16.096 89.792 16.272 90.592 16.272C91.376 16.272 92.032 16.12 92.56 15.816C93.088 15.496 93.352 15.008 93.352 14.352C93.352 13.808 93.112 13.376 92.632 13.056C92.152 12.736 91.568 12.488 90.88 12.312C90.192 12.136 89.504 11.944 88.816 11.736C88.128 11.512 87.544 11.152 87.064 10.656C86.584 10.144 86.344 9.48 86.344 8.664C86.344 7.688 86.728 6.872 87.496 6.216C88.28 5.56 89.264 5.232 90.448 5.232C91.424 5.232 92.28 5.456 93.016 5.904C93.752 6.336 94.296 6.928 94.648 7.68L93.328 8.448C92.864 7.328 91.904 6.768 90.448 6.768C89.76 6.768 89.168 6.936 88.672 7.272C88.176 7.592 87.928 8.056 87.928 8.664Z"
+                          fill="white"/>
+                    <path d="M99.0693 2.64C98.8453 2.864 98.5733 2.976 98.2533 2.976C97.9333 2.976 97.6613 2.864 97.4373 2.64C97.2133 2.416 97.1013 2.144 97.1013 1.824C97.1013 1.504 97.2133 1.232 97.4373 1.008C97.6613 0.784 97.9333 0.672 98.2533 0.672C98.5733 0.672 98.8453 0.784 99.0693 1.008C99.2933 1.232 99.4053 1.504 99.4053 1.824C99.4053 2.144 99.2933 2.416 99.0693 2.64ZM97.4613 17.52V5.52H99.0453V17.52H97.4613Z"
+                          fill="white"/>
+                    <path d="M115.199 5.232C116.543 5.232 117.623 5.664 118.439 6.528C119.271 7.392 119.687 8.56 119.687 10.032V17.52H118.103V10.032C118.103 8.992 117.831 8.192 117.287 7.632C116.759 7.056 116.055 6.768 115.175 6.768C114.183 6.768 113.375 7.104 112.751 7.776C112.143 8.432 111.839 9.464 111.839 10.872V17.52H110.255V10.032C110.255 8.976 109.999 8.168 109.487 7.608C108.991 7.048 108.311 6.768 107.447 6.768C106.487 6.768 105.671 7.104 104.999 7.776C104.327 8.448 103.991 9.48 103.991 10.872V17.52H102.407V5.52H103.991V7.272C104.855 5.912 106.079 5.232 107.663 5.232C109.391 5.232 110.607 5.96 111.311 7.416C112.175 5.96 113.471 5.232 115.199 5.232Z"
+                          fill="white"/>
+                    <path d="M129.182 5.232C130.894 5.232 132.35 5.84 133.55 7.056C134.766 8.272 135.374 9.76 135.374 11.52C135.374 13.28 134.766 14.768 133.55 15.984C132.35 17.2 130.894 17.808 129.182 17.808C127.054 17.808 125.438 16.928 124.334 15.168V22.32H122.75V5.52H124.334V7.872C125.438 6.112 127.054 5.232 129.182 5.232ZM125.702 14.904C126.614 15.816 127.734 16.272 129.062 16.272C130.39 16.272 131.51 15.816 132.422 14.904C133.334 13.976 133.79 12.848 133.79 11.52C133.79 10.192 133.334 9.072 132.422 8.16C131.51 7.232 130.39 6.768 129.062 6.768C127.734 6.768 126.614 7.232 125.702 8.16C124.79 9.072 124.334 10.192 124.334 11.52C124.334 12.848 124.79 13.976 125.702 14.904Z"
+                          fill="white"/>
+                    <path d="M138.008 17.52V0H139.592V17.52H138.008Z" fill="white"/>
+                    <path d="M148.497 5.232C150.273 5.232 151.705 5.864 152.793 7.128C153.897 8.376 154.449 9.856 154.449 11.568C154.449 11.744 154.433 11.992 154.401 12.312H143.865C144.025 13.528 144.537 14.496 145.401 15.216C146.281 15.92 147.361 16.272 148.641 16.272C149.553 16.272 150.337 16.088 150.993 15.72C151.665 15.336 152.169 14.84 152.505 14.232L153.897 15.048C153.369 15.896 152.649 16.568 151.737 17.064C150.825 17.56 149.785 17.808 148.617 17.808C146.729 17.808 145.193 17.216 144.009 16.032C142.825 14.848 142.233 13.344 142.233 11.52C142.233 9.728 142.817 8.232 143.985 7.032C145.153 5.832 146.657 5.232 148.497 5.232ZM148.497 6.768C147.249 6.768 146.201 7.144 145.353 7.896C144.521 8.632 144.025 9.592 143.865 10.776H152.817C152.657 9.512 152.169 8.528 151.353 7.824C150.537 7.12 149.585 6.768 148.497 6.768Z"
+                          fill="white"/>
+                    <path d="M96.376 45.52H94.264L88.264 39.736V45.52H86.68V28.72H88.264V38.824L93.976 33.52H96.136L89.944 39.28L96.376 45.52Z"
+                          fill="white"/>
+                    <path d="M100.147 30.64C99.9234 30.864 99.6514 30.976 99.3314 30.976C99.0114 30.976 98.7394 30.864 98.5154 30.64C98.2914 30.416 98.1794 30.144 98.1794 29.824C98.1794 29.504 98.2914 29.232 98.5154 29.008C98.7394 28.784 99.0114 28.672 99.3314 28.672C99.6514 28.672 99.9234 28.784 100.147 29.008C100.371 29.232 100.483 29.504 100.483 29.824C100.483 30.144 100.371 30.416 100.147 30.64ZM98.5394 45.52V33.52H100.123V45.52H98.5394Z"
+                          fill="white"/>
+                    <path d="M109.845 35.056H106.389V42.328C106.389 42.984 106.517 43.456 106.773 43.744C107.029 44.016 107.413 44.16 107.925 44.176C108.437 44.176 109.077 44.16 109.845 44.128V45.52C108.165 45.776 106.901 45.656 106.053 45.16C105.221 44.664 104.805 43.72 104.805 42.328V35.056H102.285V33.52H104.805V30.64L106.389 30.16V33.52H109.845V35.056Z"
+                          fill="white"/>
+                    <path d="M117.35 45.808C115.542 45.808 114.038 45.208 112.838 44.008C111.638 42.792 111.038 41.296 111.038 39.52C111.038 37.744 111.638 36.256 112.838 35.056C114.038 33.84 115.542 33.232 117.35 33.232C118.534 33.232 119.598 33.52 120.542 34.096C121.486 34.656 122.174 35.416 122.606 36.376L121.31 37.12C120.99 36.4 120.47 35.832 119.75 35.416C119.046 34.984 118.246 34.768 117.35 34.768C116.022 34.768 114.902 35.232 113.99 36.16C113.078 37.072 112.622 38.192 112.622 39.52C112.622 40.848 113.078 41.976 113.99 42.904C114.902 43.816 116.022 44.272 117.35 44.272C118.246 44.272 119.046 44.064 119.75 43.648C120.454 43.216 121.006 42.64 121.406 41.92L122.726 42.688C122.23 43.648 121.502 44.408 120.542 44.968C119.582 45.528 118.518 45.808 117.35 45.808Z"
+                          fill="white"/>
+                    <path d="M130.616 33.232C132.072 33.232 133.216 33.68 134.048 34.576C134.896 35.456 135.32 36.648 135.32 38.152V45.52H133.736V38.152C133.736 37.08 133.448 36.248 132.872 35.656C132.312 35.064 131.512 34.768 130.472 34.768C129.32 34.768 128.384 35.136 127.664 35.872C126.944 36.592 126.584 37.712 126.584 39.232V45.52H125V28.72H126.584V35.392C127.48 33.952 128.824 33.232 130.616 33.232Z"
+                          fill="white"/>
+                    <path d="M143.927 33.232C145.703 33.232 147.135 33.864 148.223 35.128C149.327 36.376 149.879 37.856 149.879 39.568C149.879 39.744 149.863 39.992 149.831 40.312H139.295C139.455 41.528 139.967 42.496 140.831 43.216C141.711 43.92 142.791 44.272 144.071 44.272C144.983 44.272 145.767 44.088 146.423 43.72C147.095 43.336 147.599 42.84 147.935 42.232L149.327 43.048C148.799 43.896 148.079 44.568 147.167 45.064C146.255 45.56 145.215 45.808 144.047 45.808C142.159 45.808 140.623 45.216 139.439 44.032C138.255 42.848 137.663 41.344 137.663 39.52C137.663 37.728 138.247 36.232 139.415 35.032C140.583 33.832 142.087 33.232 143.927 33.232ZM143.927 34.768C142.679 34.768 141.631 35.144 140.783 35.896C139.951 36.632 139.455 37.592 139.295 38.776H148.247C148.087 37.512 147.599 36.528 146.783 35.824C145.967 35.12 145.015 34.768 143.927 34.768Z"
+                          fill="white"/>
+                    <path d="M158.015 33.232C159.471 33.232 160.615 33.68 161.447 34.576C162.295 35.456 162.719 36.648 162.719 38.152V45.52H161.135V38.152C161.135 37.08 160.847 36.248 160.271 35.656C159.711 35.064 158.911 34.768 157.871 34.768C156.719 34.768 155.783 35.136 155.063 35.872C154.343 36.592 153.983 37.712 153.983 39.232V45.52H152.399V33.52H153.983V35.392C154.879 33.952 156.223 33.232 158.015 33.232Z"
+                          fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M6.31456 10.7329L6.36222 2.33289C6.01906 2.16024 5.66987 2.02918 5.32069 1.94188C4.922 2.04155 4.52331 2.19829 4.13357 2.40882L4.18081 10.7329C4.18233 11.0019 3.97883 11.2279 3.71108 11.2545C3.42462 11.283 3.16932 11.0738 3.14087 10.7874L2.44089 3.73989C1.02603 5.26225 0 7.62252 0 10.588C0 14.8649 1.91103 18.4166 4.42121 19.1111C5.71354 35.3735 19.32 48.1677 35.9148 48.1677C42.6142 48.1677 48.8266 46.0825 53.9383 42.5257C55.8979 43.2542 58.9747 44.3127 62.0144 44.5707C63.8632 44.7275 65.7889 44.5985 67.4798 43.853C69.2068 43.0915 70.6186 41.716 71.4354 39.538C72.8914 35.6551 72.0465 32.753 70.4733 30.6134C69.294 29.0095 67.6663 27.8151 66.5552 26.9999C66.3126 26.8218 66.0947 26.6619 65.9114 26.5197C66.693 24.1611 67.2042 21.6793 67.4083 19.111C69.9184 18.4164 71.8294 14.8648 71.8294 10.588C71.8294 5.81288 69.169 1.94188 66.5087 1.94188C63.8483 1.94188 61.188 5.81288 61.188 10.588C61.188 14.7492 62.997 18.2238 65.4067 19.0485C64.6883 27.7265 60.2255 35.3422 53.638 40.2759L53.5579 40.2458L53.5112 40.3703C48.5928 44.0133 42.5054 46.1677 35.9148 46.1677C20.4039 46.1677 7.68004 34.2348 6.4228 19.0484C8.83248 18.2236 10.6414 14.7491 10.6414 10.588C10.6414 7.5309 9.55097 5.11697 8.06825 3.60119L7.35449 10.7874C7.32604 11.0738 7.07074 11.283 6.78428 11.2545C6.51654 11.2279 6.31303 11.0019 6.31456 10.7329ZM62.1835 42.5778C59.9458 42.3879 57.6593 41.7152 55.8482 41.087C58.136 39.2244 60.1581 37.0478 61.8488 34.6231C62.4411 34.988 63.159 35.4478 63.8379 35.9116C64.356 36.2656 64.8453 36.6179 65.2365 36.9293C65.6446 37.2543 65.8953 37.496 65.9868 37.6311L66.8146 37.0701C66.6268 36.7929 66.2603 36.4662 65.8594 36.147C65.4416 35.8143 64.9302 35.4468 64.4021 35.086C63.7235 34.6223 63.0072 34.1629 62.4082 33.7932C63.4947 32.125 64.4279 30.3477 65.1878 28.4815C65.2963 28.5622 65.4072 28.6439 65.5199 28.7269C66.6175 29.5359 67.886 30.4708 68.862 31.7982C70.06 33.4275 70.767 35.6244 69.5627 38.8357C68.934 40.5123 67.9049 41.4798 66.6729 42.023C65.4046 42.5822 63.853 42.7195 62.1835 42.5778Z"
+                          fill="white"/>
+                </svg>
+            </div>
+            <div class="footer__partners-box partners-box">
+                <div class="partners-box__item">
+                    <div class="partners-box__partner partners-box__partner_visa"></div>
+                </div>
+                <div class="partners-box__item">
+                    <div class="partners-box__partner partners-box__partner_apple"></div>
+                </div>
+                <div class="partners-box__item">
+                    <div class="partners-box__partner partners-box__partner_g-pay"></div>
+                </div>
+                <div class="partners-box__item">
+                    <div class="partners-box__partner partners-box__partner_mir"></div>
+                </div>
+                <div class="partners-box__item">
+                    <div class="partners-box__partner partners-box__partner_master"></div>
+                </div>
+            </div>
+            <div class="partners-box__copyright copyright footer__partners-cop">
+                <span class="copyright__text text text_size_xxs text_weight_medium">
+                    © 2019 Simple-Kitchen — сервис доставки здорового питания
+                </span>
+            </div>
+        </div>
+        <div class="footer__contacts footer__box">
+            <ul class="footer-list">
+                <li class="footer-list__item">
+                    <div class="footer-list__image">
+                        <img src="assets/icon/phone.svg" alt="">
+                    </div>
+                    <a href="tel:+7(495)649-81-68" class="footer-list__text text_size_xs text_weight_medium">+7 (495)
+                        649-81-68</a>
+                </li>
+                <li class="footer-list__item">
+                    <div class="footer-list__image">
+                        <img src="assets/icon/letter.svg" alt="">
+                    </div>
+                    <a href="mailto:info@simple-kitchen.pro" class="footer-list__text text_size_xs text_weight_medium">info@simple-kitchen.pro</a>
+                </li>
+                <li class="footer-list__item">
+                    <div class="footer-list__image">
+                        <img src="assets/icon/map.svg" alt="">
+                    </div>
+                    <span class="footer-list__text footer-list__text_address  text_size_xs text_weight_medium">
+                        г. Москва, Кутузовский проспект, дом 36, строение 4
+                    </span>
+                </li>
+            </ul>
+        </div>
+        <div class="footer__copyright">
+                <span class="footer__copyright subscribe-footer__copyright_mobile text_weight_medium copyright__text text text_size_xxs">
+                    Указывая свои данные, Вы соглашаетесь с условиями<a href="#" class="underline"> публичной оферты</a> и <a
+                        href="#" class="underline">обработки персональных данных</a>
+                </span>
+            <span class="copyright__text text_weight_medium  subscribe-footer__copyright_mobile text_size_xxs">
+                    © 2019 Simple-Kitchen — сервис доставки здорового питания
+                </span>
+            <span class="copyright__text text text_size_xxs text_weight_medium">
+                    Разработка сайта - <a href="https://choose.digital" class="underline" target="_blank">Choose</a>
+                </span>
+        </div>
+        <div class="footer__subscribe footer__box">
+            <div class="subscribe-footer__item-desc-wrapper">
+                <div class="subscribe-footer__item">
+                <span class="footer__subscribe-text subscribe__text text_size_xs text_weight_semibold text_weight_medium">
+                    Есть вопрос? Напишите нам
+                </span>
+                    <div class="subscribe-footer__soc-wrapper">
+                        <a href="#" class="soc__item_footer">
+                            <img src="assets/icon/telegram.svg" alt="telegram-icon">
+                        </a>
+                        <a href="#" class="soc__item_footer">
+                            <img src="assets/icon/whatsup.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="subscribe-footer__item">
+                <span class="footer__subscribe-text subscribe__text text_size_xs text_weight_semibold text_weight_medium">
+                    Подписывайтесь в социальных сетях
+                </span>
+                    <div class="subscribe-footer__soc-wrapper">
+                        <a href="#" class="soc__item_footer">
+                            <img src="assets/icon/facebook.svg" alt="facebook-icon">
+                        </a>
+                        <a href="#" class="soc__item_footer">
+                            <img src="assets/icon/vk.svg" alt="vk-icon">
+                        </a>
+                        <a href="#" class="soc__item_footer">
+                            <img src="assets/icon/inst.svg" alt="inst-icon">
+                        </a>
+                    </div>
+                </div>
+                <div class="subscribe-footer__item subscribe-footer__item_mobile">
+                <span class="footer__subscribe-text subscribe__text text_size_xs text_weight_semibold text_weight_medium">
+                    оплачивайте заказы на сайте
+                </span>
+                    <div class="subscribe-footer__pay-wrapper">
+                        <div class="soc__item_mobile-pay">
+                            <img src="assets/icon/visa.svg" alt="">
+                        </div>
+                        <div class="soc__item_mobile-pay">
+                            <img src="assets/icon/m-card.svg" alt="">
+                        </div>
+                        <div class="soc__item_mobile-pay">
+                            <img src="assets/icon/mir.svg" alt="">
+                        </div>
+                        <div class="soc__item_mobile-pay">
+                            <img src="assets/icon/g-pay.svg" alt="">
+                        </div>
+                        <div class="soc__item_mobile-pay">
+                            <img src="assets/icon/apple-pay.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <span class="footer__copyright subscribe-footer__copyright copyright__text text text_size_xxs text_weight_medium">
+                    Указывая свои данные, Вы соглашаетесь с условиями<a href="#" class="underline"> публичной оферты</a> и <a
+                        href="#" class="underline">обработки персональных данных</a>
+                </span>
+            </div>
+        </div>
+    </footer>
+    <div class="modal hidden modal_scroll modal__sign-up">
+        <div class="password modal__container">
+            <button class="button modal__close-btn">
+                <img class="button modal__close-icon" src="assets/icon/close.svg" alt="">
+            </button>
+            <div class="modal__box">
+                <h1 class="modal__title text_size_l text_weight_bold">Регистрация</h1>
+                <button class="button modal__button-none-underline button_size_none-underline">
+                    <span class="button__title text_weight_semibold text_color_highlighter text_size_s">
+                        У меня уже есть аккаунт
+                    </span>
+                </button>
+                <div class="input__group input__group_big">
+                    <input type="text" name="username"
+                           class="form__input form__input_modal form__input_big text_size_s error-text" placeholder=" ">
+                    <span class="ch-input__label text_size_s">ФИО*</span>
+                </div>
+                <div class="input__group input__group_big">
+                    <input type="text" name="username"
+                           class="form__input form__input_modal form__input_big text_size_s error-text" placeholder=" ">
+                    <span class="ch-input__label text_size_s">E-mail*</span>
+                </div>
+                <div class="input__group input__group_big">
+                    <input type="text" name="username"
+                           class="form__input form__input_modal form__input_big text_size_s error-text mask-tel"
+                           placeholder=" ">
+                    <span class="ch-input__label text_size_s">Телефон*</span>
+                </div>
+                <div class="input__group input__group_big">
+                    <input type="password" name="username"
+                           class="form__input form__input_modal form__input_big text_size_s error-text" placeholder=" ">
+                    <span class="ch-input__label text_size_s">Пароль*</span>
+                </div>
+                <div class="input__group input__group_big">
+                    <input type="password" name="username"
+                           class="form__input form__input_modal form__input_big text_size_s error-text" placeholder=" ">
+                    <span class="ch-input__label text_size_s">Подтвердите пароль*</span>
+                </div>
+                <span class="modal__description-left text_size_xxs">Пароль может содержать латинские строчные и заглавные буквы, а также  цифры 0-9</span>
+                <div class="subscribe modal__subscribe">
+                    <label class="subscribe__label">
+                        <input id="subscribe-modal" class="subscribe__input" name="subscribe" type="checkbox" checked>
+                        <span class="subscribe__check"></span>
+                        <span class="subscribe__text text_size_xxs">Подписаться на рассылку новостей, новинок и спецпредложений</span>
+                    </label>
+                </div>
+                <button class="button modal__width-mb button_size_modal button_radius_circle button_color_pink modal__button">
+                    <span class="button__title text_weight_semibold text_color_white text_size_s">Зарегистрироваться</span>
+                </button>
+                <span class="modal__description text_size_xxxs">Указывая свои данные на сайте, Вы соглашаетесь с условиями <a
+                        href="#" class="text_color_highlighter">публичной оферты</a> и <a href="#"
+                                                                                          class="text_color_highlighter">обработки персональных данных</a></span>
+            </div>
+        </div>
+    </div>
+    <div class="modal hidden modal__log-in">
+        <div class="password modal__container">
+            <button class="button modal__close-btn">
+                <img class="button modal__close-icon" src="assets/icon/close.svg" alt="">
+            </button>
+            <div class="modal__box">
+                <h1 class="modal__title text_size_l text_weight_bold">Войти в профиль</h1>
+                <button class="button modal__button-none-underline button_size_none-underline">
+                    <span class="button__title text_weight_semibold text_color_highlighter text_size_s">
+                        Зарегистрироваться
+                    </span>
+                </button>
+                <div class="input__group input__group_big">
+                    <input type="text" name="username"
+                           class="form__input form__input_modal form__input_big text_size_s error-text" placeholder=" ">
+                    <span class="ch-input__label text_size_s">Логин*</span>
+                </div>
+                <div class="input__group input__group_big">
+                    <input type="text" name="username"
+                           class="form__input form__input_modal form__input_big text_size_s error-text" placeholder=" ">
+                    <span class="ch-input__label text_size_s">Пароль*</span>
+                </div>
+                <div class="modal__button-flex">
+                    <button class="button modal__width-mb button_size_modal button_radius_circle button_color_pink modal__button">
+                        <span class="button__title text_weight_semibold text_color_white text_size_s">Войти</span>
+                    </button>
+                    <button class="button modal__button-none-underline button_size_none-underline">
+                    <span class="button__title text_weight_semibold text_color_highlighter text_size_s">
+                        Забыли пароль?
+                    </span>
+                    </button>
+                </div>
+                <span class="modal__description modal__description_mb text_size_xxxs">Указывая свои данные на сайте, Вы соглашаетесь с условиями <a
+                        href="#" class="text_color_highlighter">публичной оферты</a> и <a href="#"
+                                                                                          class="text_color_highlighter">обработки персональных данных</a>
+                </span>
+                <h2 class="modal__under-title text_size_m">Войти через социальные сети</h2>
+                <div class="modal__soc-wrapper">
+                    <div href="#" class="soc__item soc__item_modal">
+                        <a href="">
+                            <img src="assets/icon/vk.svg" alt="vk-icon">
+                        </a>
+                    </div>
+                    <div href="#" class="soc__item soc__item_modal">
+                        <a href="">
+                            <img src="assets/icon/facebook.svg" alt="vk-icon">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal hidden modal__password-successful">
+        <div class="password modal__container">
+            <button class="button modal__close-btn">
+                <img class="button modal__close-icon" src="assets/icon/close.svg" alt="">
+            </button>
+            <div class="modal__box">
+                <button class="modal__header-button button back-button">
+                    <div class="back-button__icon-wrapper">
+                        <svg class="back-button__icon" width="36" height="8" viewBox="0 0 36 8" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.646446 3.64645C0.451183 3.84171 0.451183 4.15829 0.646446 4.35355L3.82843 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.7308 7.34027 4.7308 7.02369 4.53553 6.82843L1.70711 4L4.53553 1.17157C4.7308 0.976311 4.7308 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82843 0.464466L0.646446 3.64645ZM36 3.5L1 3.5V4.5L36 4.5V3.5Z"
+                                  fill="#101828"/>
+                        </svg>
+                    </div>
+                    <span class="back-button__title text_weight_semibold text_size_xs">Вернуться к авторизации</span>
+                </button>
+                <h1 class="modal__title text_size_l text_weight_bold">Успешно!</h1>
+                <span class="modal__description modal__description_mb text_size_xs">Инструкция по восстановлению пароля отправлена на почту</span>
+                <button class="button button_size_modal button_radius_circle button_color_pink modal__button">
+                    <span class="button__title text_weight_semibold text_color_white text_size_s">Вернуться в магазин</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="modal hidden modal__recovery-pass">
+        <div class="password modal__container">
+            <button class="button modal__close-btn">
+                <img class="button modal__close-icon" src="assets/icon/close.svg" alt="">
+            </button>
+            <div class="modal__box">
+                <button class="modal__header-button button back-button">
+                    <div class="back-button__icon-wrapper">
+                        <svg class="back-button__icon" width="36" height="8" viewBox="0 0 36 8" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.646446 3.64645C0.451183 3.84171 0.451183 4.15829 0.646446 4.35355L3.82843 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.7308 7.34027 4.7308 7.02369 4.53553 6.82843L1.70711 4L4.53553 1.17157C4.7308 0.976311 4.7308 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82843 0.464466L0.646446 3.64645ZM36 3.5L1 3.5V4.5L36 4.5V3.5Z"
+                                  fill="#101828"/>
+                        </svg>
+                    </div>
+                    <span class="back-button__title text_weight_semibold text_size_xs">Вернуться к авторизации</span>
+                </button>
+                <h1 class="modal__title text_size_l text_weight_bold">Восстановление пароля</h1>
+                <span class="modal__description modal__description_mb text_size_xs">
+                    Введите ваш E-mail
+                </span>
+                </span>
+                <div class="input__group input__group_big">
+                    <input type="text" name="username"
+                           class="form__input form__input_modal form__input_big text_size_s error-text" placeholder=" ">
+                    <span class="ch-input__label text_size_s">E-mail*</span>
+                </div>
+                <button class="button modal__width-mb button_size_modal button_radius_circle button_color_pink modal__button">
+                    <span class="button__title text_weight_semibold text_color_white text_size_s">Восстановить</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="modal hidden modal__reg-finish">
+        <div class="password modal__container">
+            <button class="button modal__close-btn">
+                <img class="button modal__close-icon" src="assets/icon/close.svg" alt="">
+            </button>
+            <div class="modal__box">
+                <h1 class="modal__title text_size_l text_weight_bold">Успешно!</h1>
+                <span class="modal__description modal__description_mb text_size_xs">Регистрация завершена</span>
+                <button class="button button_size_modal button_radius_circle button_color_pink modal__button">
+                    <span class="button__title text_weight_semibold text_color_white text_size_s"> Войти в профиль</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="modal hidden modal__call-request">
+        <div class="password modal__container">
+            <button class="button modal__close-btn">
+                <img class="button modal__close-icon" src="assets/icon/close.svg" alt="">
+            </button>
+            <div class="modal__box">
+                <h1 class="modal__title text_size_l text_weight_bold">Заказать звонок</h1>
+                <span class="modal__description modal__description_mb text_size_xs">
+                    Мы свяжемся с вами в ближайшее время
+                </span>
+                </span>
+                <div class="input__group input__group_big">
+                    <input type="text" name="username"
+                           class="form__input form__input_modal form__input_big text_size_s error-text" placeholder=" ">
+                    <span class="ch-input__label text_size_s">+7 (495) 649-81-68</span>
+                </div>
+                <button class="button modal__width-mb button_size_modal button_radius_circle button_color_pink modal__button">
+                    <span class="button__title text_weight_semibold text_color_white text_size_s">Позвоните мне</span>
+                </button>
+                <span class="modal__description text_size_xxxs">Указывая свои данные на сайте, Вы соглашаетесь с условиями <a
+                        href="#" class="text_color_highlighter">публичной оферты</a> и <a href="#"
+                                                                                          class="text_color_highlighter">обработки персональных данных</a>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="modal hidden modal__call-successful">
+        <div class="password modal__container">
+            <button class="button modal__close-btn">
+                <img class="button modal__close-icon" src="assets/icon/close.svg" alt="">
+            </button>
+            <div class="modal__box">
+                <h1 class="modal__title text_size_l text_weight_bold">Успешно!</h1>
+                <span class="modal__description modal__description_mb text_size_xs">Мы свяжемся с вами в ближайшее время</span>
+                <button class="button button_size_modal button_radius_circle button_color_pink modal__button">
+                    <span class="button__title text_weight_semibold text_color_white text_size_s">Продолжить покупки</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="modal hidden modal__my-profile">
+        <div class="password modal__container">
+            <button class="button modal__close-btn">
+                <img class="button modal__close-icon" src="assets/icon/close.svg" alt="">
+            </button>
+            <div class="modal__box">
+                <h1 class="modal__title text_size_l text_weight_bold">Успешно</h1>
+                <span class="modal__description modal__description_mb text_size_xs">Данные измененны</span>
+                <button class="button button_size_modal button_radius_circle button_color_pink modal__button">
+                    <span class="button__title text_weight_semibold text_color_white text_size_s">Продолжить покупки</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="modal hidden modal__product-in-cart">
+        <div class="password modal__container">
+            <div class="modal__box">
+                <h1 class="modal__title text_size_l text_weight_bold">Товар в корзине</h1>
+                <span class="modal__description modal__description_mb text_size_xs">Поздравляем, теперь вы можете перейти к оформлению заказа</span>
+                <button class="button modal__width-mb button_size_modal button_radius_circle button_color_pink modal__button">
+                    <span class="button__title text_weight_semibold text_color_white text_size_s">Оформить заказ</span>
+                </button>
+                <button class="button button_size_underline modal__button">
+                    <span class="button__title text_weight_semibold text_color_highlighter text_size_xs">Продолжить покупки</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

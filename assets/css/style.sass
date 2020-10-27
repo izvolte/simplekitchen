@@ -1,0 +1,3840 @@
+@charset "UTF-8"
+@import "fonts.css"
+@import "anim.css"
+
+$text-light: #ffffff
+$shadow-light: #ececec
+$smog: #606060
+$light: #ffffff
+$text-dark: #000000
+$red: #FE1B1B
+$text-shadow: #ACACAC
+$border-shadow: #ACACAC
+$shadow: #f7f7f7
+$icon-dark: #101828
+$icon-light: #fffff
+$border-dark: #101828
+$gradient: linear-gradient(144.26deg, #FFA091 0%, #F47965 100%)
+$gradient-hover: linear-gradient(144.26deg, #FFB0A4 0%, #F8624A 100%)
+$smoke: linear-gradient(93.45deg, #FFFFFF 0%, #EBEBEB 100%)
+$icon-pink: #FFAFA3
+$pink: #FFAFA3
+$text-pink: #FFAFA3
+$text-highlighter: #E58171
+$bg-flat: #FAFAFA
+$bg-pink-light: rgba(229, 129, 113, 0.2)
+
+*
+  box-sizing: border-box
+  outline: none
+  margin: 0
+  padding: 0
+  -webkit-tap-highlight-color: transparent
+
+
+html,
+body
+  height: 100%
+
+body
+  font-family: "Gilroy", sans-serif
+  color: $text-dark
+  font-size: 1.0417vw
+  display: block
+  margin: 0
+  @media only screen and (max-width: 650px)
+    font-size: 3vw
+
+a
+  color: inherit
+  text-decoration: none
+
+ul
+  list-style-type: none
+
+input
+  -webkit-appearance: none
+
+.h2-mb
+  margin-bottom: 3.6458vw
+  @media only screen and (max-width: 650px)
+    margin-bottom: 6.2500vw
+
+.section-mb
+  margin-bottom: 5.2083vw
+  @media only screen and (max-width: 650px)
+    margin-bottom: 18.7500vw
+
+.text
+  font-weight: 400
+  &_color
+    &_white
+      color: $text-light
+    &_pink
+      color: #FFA090
+      //color: transparent
+      //-webkit-background-clip: text
+      //-webkit-text-fill-color: transparent
+      //background-image: $gradient
+    &_dark
+      color: $text-dark
+    &_highlighter
+      color: $text-highlighter
+    &_shadow
+      color: $text-shadow
+  &_size
+    &_xl
+      font-size: 3.3333vw //64px
+      @media only screen and (max-width: 650px)
+        font-size: 6.2500vw //20px применил для заголовка корзины
+    &_l
+      font-size: 2.0833vw //40px
+      @media only screen and (max-width: 650px)
+        font-size: 5.6250vw //18px применил для заголоков в корзине.
+    &_m
+      font-size: 1.4583vw //28px
+      @media only screen and (max-width: 650px)
+        font-size: 4.6875vw //15px
+    &_s
+      font-size: 1.2500vw //24px
+      @media only screen and (max-width: 650px)
+        font-size: 3.7500vw //12px
+    &_xs
+      font-size: 1.0417vw //20px
+      @media only screen and (max-width: 650px)
+        font-size: 3.1250vw //10px
+    &_xxs
+      font-size: 0.8333vw //16px
+      @media only screen and (max-width: 650px)
+        font-size: 2.8125vw //9px
+    &_xxxs
+      font-size: 0.7292vw //14px
+      @media only screen and (max-width: 650px)
+        font-size: 2.5000vw //8px
+  &_weight
+    &_extrabold
+      font-weight: 800
+    &_bold
+      font-weight: 700
+    &_semibold
+      font-weight: 600
+    &_medium
+      font-weight: 500
+
+.uppercase
+  text-transform: uppercase
+.center
+  text-align: center
+
+.wrapper
+  display: flex
+  flex-direction: column
+  min-height: 100%
+  position: relative
+.content
+  flex: 1 0 auto
+  overflow: hidden
+
+.footer
+  flex: 0 0 auto
+
+.hidden
+  display: none !important
+
+.overflow
+  overflow: hidden !important
+
+.opacity
+  opacity: 0
+
+.none
+  display: none!important
+
+.underline
+  border-bottom: 1px solid $text-dark
+
+.page-header
+  position: relative
+  margin-bottom: 4.1667vw
+  @media only screen and (max-width: 650px)
+    margin-bottom: 9.6875vw
+
+.button
+  position: relative
+  cursor: pointer
+  outline: none
+  border: none
+  display: flex
+  justify-content: center
+  align-items: center
+  transition: all 0.25s ease
+  font-family: "Gilroy", sans-serif
+  &:hover:after
+    opacity: 1
+  &:active:after
+    transition: all 0.25s ease
+    box-shadow: inset 0 0.1042vw 0.1042vw rgba(0, 0, 0, 0.25)
+    @media only screen and (max-width: 650px)
+      box-shadow: inset 0.0000vw 0.6250vw 0.6250vw rgba(0, 0, 0, 0.25)
+  &_shadow
+    box-shadow: 0.0000vw 0.0000vw 1.1458vw rgba(0, 0, 0, 0.25)
+  &_color
+    &_none
+      background: $light
+      &:after
+        content: ''
+        position: absolute
+        opacity: 0
+        left: 0
+        top: 0
+        width: 100%
+        height: 100%
+        transition: all 0.25s ease
+        background: $smoke
+    &_pink
+      background: $gradient
+      &:after
+        content: ''
+        position: absolute
+        opacity: 0
+        left: 0
+        top: 0
+        width: 100%
+        height: 100%
+        transition: all 0.25s ease
+        background: $gradient-hover
+    &_smoke
+      background: $light
+      &:after
+        content: ''
+        position: absolute
+        opacity: 0
+        left: 0
+        top: 0
+        width: 100%
+        height: 100%
+        transition: all 0.25s ease
+        background: $smoke
+    &_dark
+    &_not-active
+  &_radius
+    &_cub
+      border-radius: 0.8333vw
+      @media only screen and (max-width: 650px)
+        border-radius: 2.5000vw //8px
+      &:after
+        border-radius: 0.8333vw
+        @media only screen and (max-width: 650px)
+          border-radius: 2.5000vw //8px
+    &_circle
+      border-radius: 2.6563vw
+      @media only screen and (max-width: 650px)
+        border-radius: 6.8750vw //22px
+      &:after
+        border-radius: 2.6563vw
+        @media only screen and (max-width: 650px)
+          border-radius: 6.8750vw //22px
+  &_size
+    &_xxl // появляется на 320 в корзине
+      @media only screen and (max-width: 650px)
+        width: 93.7500vw
+        height: 11.5625vw
+    &_xl
+      height: 4.3750vw
+      width: 20.6250vw
+    &_l
+      height: 4.3750vw
+      width: 18.8542vw
+      @media only screen and (max-width: 650px)
+        width: 93.7500vw
+        height: 11.5625vw
+    &_m //403x85
+      height: 4.3750vw
+      width: 20.9896vw
+      @media only screen and (max-width: 650px) //190x40
+        width: 59.3750vw
+        height: 12.5000vw
+    &_xm
+      width: 17.6042vw
+      height: 4.4271vw
+      @media only screen and (max-width: 650px)
+        width: 93.7500vw
+        height: 11.5625vw
+    &_s
+      height: 4.3750vw
+      width: 16.5104vw
+    &_xs // 290x90 прямая
+      width: 15.1042vw
+      height: 4.6875vw
+      @media only screen and (max-width: 650px)
+        width: 46.2500vw
+        height: 11.8750vw
+        background: linear-gradient(144.26deg, #FFA091 0%, #F47965 100%)
+        border-radius: 7.8125vw
+      &:after
+        @media only screen and (max-width: 650px)
+          width: 46.2500vw
+          height: 11.8750vw
+          background: linear-gradient(144.26deg, #FFA091 0%, #F47965 100%)
+          border-radius: 7.8125vw
+    &_xxs //300x85
+      width: 15.6250vw
+      height: 4.4271vw
+      @media only screen and (max-width: 650px)
+        width: 93.7500vw
+        height: 11.5625vw
+    &_xxxs
+      width: 9.9479vw
+      height: 2.6042vw
+    &_to-home //233x85
+      width: 12.1354vw
+      height: 4.4271vw
+      @media only screen and (max-width: 650px)
+        width: 93.7500vw
+        height: 11.5625vw
+    &_all
+      height: 4.4271vw
+      padding: 0 2.6042vw
+      @media only screen and (max-width: 650px)
+        height: 12.5000vw //40px
+        padding: 0 5.9375vw
+    &_modal
+      height: 4.4271vw
+      padding-right: 3.6458vw
+      padding-left: 3.6458vw
+      @media only screen and (max-width: 650px)
+        padding-right: 9.3750vw
+        padding-left: 9.3750vw
+        height: 12.5000vw
+    &_underline
+      position: relative
+      background: none
+      &:after
+        position: absolute
+        content: ''
+        bottom: 0
+        left: 0
+        width: 100%
+        height: 1px
+        background: $text-highlighter
+    &_none-underline
+      background: none
+  &__title
+    z-index: 100
+    position: relative
+  &_theme
+    &_mobile-radius
+      @media only screen and (max-width: 650px)
+        border-radius: 2.5000vw
+
+
+.cart-button
+  &__wrapper
+    position: relative
+    width: 2.8646vw
+    height: 2.6042vw
+    border-radius: 0.8333vw
+    background: $gradient
+    @media only screen and (max-width: 650px)
+      width: 9.6875vw
+      height: 8.7500vw
+      border-radius: 2.8226vw
+    &:after
+      content: ''
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      background: url(../icon/cart.svg) center no-repeat
+      background-size: contain
+      width: 1.4063vw
+      height: 1.3542vw
+      @media only screen and (max-width: 650px)
+        width: 4.6531vw
+        height: 4.4938vw
+  &__num
+    position: absolute
+    top: 0
+    right: 0
+    transform: translate(50%, -50%)
+    width: 1.3542vw
+    height: 1.1979vw
+    display: flex
+    justify-content: center
+    align-items: center
+    border: 0.0156vw solid $text-shadow
+    box-sizing: border-box
+    border-radius: 0.4167vw
+    background: $text-light
+    @media only screen and (max-width: 650px)
+      width: 4.6875vw
+      height: 4.0625vw
+      border-radius: 1.5625vw
+  &__text
+    text-align: center
+    color: transparent
+    -webkit-background-clip: text
+    background-image: $gradient
+    overflow: hidden
+
+.back-button
+  background: none
+  display: flex
+  align-items: center
+  position: relative
+  @media only screen and (max-width: 650px)
+  &__icon-wrapper
+    position: relative
+    width: 1.8750vw
+    height: 0.4167vw
+    margin-right: 0.7813vw
+    @media only screen and (max-width: 650px)
+      margin-right: 2.3000vw
+      width: 5.6250vw
+      height: 1.2500vw
+  &__icon
+    position: absolute
+    right: 0
+    left: 0
+    width: 100%
+    height: 100%
+    object-fit: contain
+  &__title
+    display: inline-block
+
+
+
+
+.drop-container
+  opacity: 0
+.drop-box.active .drop-container
+  opacity: 1
+
+
+// Содержимое контента
+//Header start
+.header
+  position: fixed
+  left: 0
+  top: 0
+  width: 100%
+  height: 4.9479vw
+  padding: 1.1979vw 3.1250vw
+  display: flex
+  align-items: center
+  justify-content: space-between
+  z-index: 1100
+  transition: background-color 0.25s ease-in-out
+  background: $text-light
+  &:after
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: $light
+    z-index: -1
+  @media only screen and (max-width: 650px)
+    height: 20.0000vw
+    padding: 6.2500vw 3.1250vw 4.6875vw
+    justify-content: unset
+  &__logo
+  &__nav
+  &__right
+    display: flex
+  &__login
+    margin-right: 0.7813vw
+    @media only screen and (max-width: 650px)
+      margin-right: 3.1250vw
+  &__cart-button
+    margin-right: 2.8125vw
+    @media only screen and (max-width: 650px)
+      margin-right: 8.4375vw
+      z-index: 1000
+  &__right
+  &__number
+    margin-right: 0.5208vw
+  &__info
+    display: flex
+    align-items: center
+    margin-right: 4.1667vw
+    @media only screen and (max-width: 650px)
+      display: none
+  &__number
+
+
+//burger
+.burger
+  display: none
+  @media only screen and (max-width: 650px)
+    transition: 0.25s ease-in-out
+    position: relative
+    display: block
+    width: 10.9375vw
+    height: 5.6250vw
+    outline: none
+    &.active
+      span
+        transform: rotate(45deg)
+      &:before
+        transform: scale(0)
+      &:after
+        bottom: 2.5000vw
+        transform: rotate(-45deg)
+    span
+      position: absolute
+      top: 2.5000vw
+      left: 0
+      background: $text-highlighter
+      width: 10.9375vw
+      height: 0.6250vw
+      border-radius: 3.7500vw
+      transition: all 0.25s ease-in-out
+    &:before
+      content: ''
+      position: absolute
+      top: 0
+      right: 0
+      background: $text-highlighter
+      width: 5.6250vw
+      height: 0.6250vw
+      border-radius: 3.7500vw
+      transition: all 0.25s ease-in-out
+    &:after
+      content: ''
+      position: absolute
+      bottom: 0
+      left: 0
+      background: $text-highlighter
+      width: 10.9375vw
+      height: 0.6250vw
+      border-radius: 3.7500vw
+      transition: all 0.25s ease-in-out
+
+
+//burger end
+
+//logo component
+
+.logo
+  z-index: 1000
+  &__icon
+    @media only screen and (max-width: 650px)
+      fill: $text-highlighter!important
+  &_color
+    &_black
+      svg
+        path
+          fill: $text-dark
+  &_color
+    &_head
+      svg
+        path
+          @media only screen and (max-width: 650px)
+            fill: $text-dark
+
+  &__wrapper
+    padding: 1.0417vw 0.6771vw
+    background: #F38270
+    @media only screen and (max-width: 650px)
+      background: none
+      padding: 0
+      margin-right: 17.5000vw
+  &_size
+    &_m
+      width: 9.9479vw
+      @media only screen and (max-width: 650px)
+        width: 23.7500vw
+      svg
+        width: 100%
+        height: 100%
+        path
+          @media only screen and (max-width: 650px)
+
+
+//logo component end
+//nav-menu
+.nav
+  transition: all 0.35s ease-in-out
+  position: relative
+  @media only screen and (max-width: 650px)
+    display: flex
+    flex-direction: column
+    align-items: center
+    position: fixed
+    z-index: -100
+    top: -150%
+    left: 0
+    padding-left: 3.1250vw
+    padding-bottom: 3.1250vw
+    width: 100%
+    height: 100%
+    &.active
+      transition: all 0.45s ease-in-out
+      border-top: 1px solid $border-shadow
+      top: 20vw
+      padding-top: 9.3750vw
+      background: $light
+      height: 73.1250vw
+      box-shadow: 0.0000vw 2.5000vw 3.7500vw rgba(0, 0, 0, 0.15)
+  &__list
+    display: flex
+    @media only screen and (max-width: 650px)
+      flex-direction: column
+      width: 100%
+  &__item
+    width: fit-content
+    position: relative
+    margin: 0 3.2146vw 0 1.6146vw
+    text-transform: uppercase
+    &.current
+      a
+        color: $text-highlighter
+        &:after
+          content: ''
+          position: absolute
+          bottom: 1px
+          left: 0
+          width: 100%
+          height: 1px
+          background: $text-highlighter
+    &_questions
+      display: none
+      @media only screen and (max-width: 650px)
+        display: block
+    &_calc
+      display: none
+      @media only screen and (max-width: 650px)
+        display: block
+    &_faq
+      @media only screen and (max-width: 650px)
+        display: none
+    @media only screen and (max-width: 650px)
+      margin-bottom: 6.2500vw
+    a
+      font-size: 1.0417vw
+      @media only screen and (max-width: 650px)
+        text-transform: uppercase
+        font-size: 4.6875vw
+        padding: 0
+  &__contacts
+    display: none
+    position: relative
+    @media only screen and (max-width: 650px)
+      padding: 1.2500vw 5vw 1.25vw 1.25vw
+      display: flex
+      justify-content: space-between
+      width: 84.3750vw
+      height: 8.7500vw
+      border-radius: 1.8750vw
+      background-image: $gradient
+      transition: all 0.25s ease-in-out
+      &:active:after
+        transition: all 0.25s ease
+        box-shadow: inset 0.0000vw 0.6250vw 0.6250vw rgba(0, 0, 0, 0.25)
+      &:hover:after
+        opacity: 1
+      &:after
+        transition: all 0.25s ease-in-out
+        opacity: 0
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        border-radius: 1.8750vw
+        background-image: $gradient-hover
+  &__number
+    background: $light
+    font-size: 3.7500vw
+    color: $text-shadow
+    width: 39.9375vw
+    height: 6.2500vw
+    border-radius: 1.8750vw
+    display: flex
+    align-items: center
+    justify-content: center
+    font-weight: normal
+    outline: none
+    border: none
+    padding: 3.1250vw 0.9375vw
+    text-align: center
+    font-family: "Gilroy", sans-serif
+  &__number-wrapper
+    z-index: 100
+  &__button
+    background: none
+  &__button-title
+    font-size: 3.7500vw
+
+
+
+
+//nav-menu
+
+.login
+  display: flex
+  align-items: center
+  padding-right: 0.7813vw
+  @media only screen and (max-width: 650px)
+    padding-right: 3.1250vw
+  &__text
+    margin-right: 0.5208vw
+    @media only screen and (max-width: 650px)
+      margin-right: 2.1875vw
+  &__icon
+    width: 100%
+    height: 100%
+    &-wrapper
+      width: 1.5104vw
+      height: 1.5104vw
+      @media only screen and (max-width: 650px)
+        width: 5.3125vw
+        height: 5.3125vw
+  &__button
+    z-index: 1000
+    background: white
+
+
+//Header end
+//.pink__shadow
+  box-shadow: 0 0 17.5625vw 13.2083vw $icon-pink
+.white__shadow
+  box-shadow: 0 0 15.5625vw 10.2083vw $light
+
+//start-slider
+.promo-name
+  font-weight: 800
+
+.start-slider
+  &__prev
+    left: 37.8021vw
+  &__next
+    right: 37.8021vw
+  &__container
+    position: relative
+    margin-top: 5.1vw
+    @media only screen and (max-width: 650px)
+      margin-top: 0
+      padding-top: 20.0000vw
+
+.slider
+  &__pink-text
+    display: inline-block
+    position: relative
+  &__nav-button
+    cursor: pointer
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 1.8750vw
+    height: 1.8750vw
+    background: $gradient
+    border-radius: 100%
+    z-index: 100
+    @media only screen and (max-width: 650px)
+      width: 6.2500vw
+      height: 6.2500vw
+    &:after
+      position: absolute
+      content: ''
+      top: 50%
+      left: 50%
+      width: 1.0938vw
+      height: 0.5208vw
+      transform: translate(-50%, -50%)
+      @media only screen and (max-width: 650px)
+        width: 12px
+        height: 6px
+    &_prev
+      &:after
+        background: url(../icon/arrow-slider-prev.svg) center no-repeat
+        background-size: contain
+    &_next
+      &:after
+        background: url(../icon/arrow-slider.svg) center no-repeat
+        background-size: contain
+    &-wrapper
+      position: absolute
+      width: 2.8646vw
+      height: 2.6042vw
+      border: 0.0156vw solid $text-shadow
+      box-sizing: border-box
+      border-radius: 0.8333vw
+      z-index: 50
+      @media only screen and (max-width: 650px)
+        width: 9.6875vw
+        height: 8.7500vw
+        box-sizing: border-box
+        border-radius: 2.8182vw
+      &_start
+        bottom: 15%
+        @media only screen and (max-width: 650px)
+          display: none
+
+      &_diet
+        top: 16vw
+        @media only screen and (max-width: 650px)
+          top: 42.1875vw
+      &_feedback
+        top: 50%
+
+.slider-for
+  &__item
+    position: relative
+    //margin-bottom: 1.8229vw
+    z-index: 100
+    padding: 1.1979vw 3.1250vw 0.7813vw
+    @media only screen and (max-width: 650px)
+      margin-bottom: 6.2500vw
+      padding: 0
+  &__shadow
+    &_pink
+      top: 30%
+      right: 25%
+      position: absolute
+      z-index: -1
+    &_light
+      top: 50%
+      right: 50%
+      position: absolute
+      z-index: 50
+  &__wrapper
+    position: relative
+  &__card
+    position: relative
+    width: 93.7500vw
+    height: 33.8542vw
+    border-radius: 3.6458vw
+    overflow: hidden
+    box-shadow: 0.0000vw 0.0000vw 0.7813vw rgba(0, 0, 0, 0.25)
+    @media only screen and (max-width: 650px)
+      width: 100%
+      max-width: 100%
+      padding-left: 3.125vw
+      border-radius: unset
+      height: 108.4375vw
+      box-shadow: none
+    &_color
+      &_gradient
+        background: $gradient
+      &_shadow
+        background: $shadow-light
+  &__content
+    display: flex
+    justify-content: space-between
+    flex-direction: column
+    height: 23.0208vw
+    position: absolute
+    left: 0
+    top: 50%
+    transform: translate(3.6979vw, -50%)
+    @media only screen and (max-width: 650px)
+      height: 66.8750vw
+      z-index: 100
+  &__text
+    width: 46.9271vw
+    @media only screen and (max-width: 650px)
+      width: 88.1250vw
+    &_subtitle
+      display: block
+  &__subtitle
+    @media only screen and (max-width: 650px)
+      width: 61.5625vw
+  &__image-desc
+    width: 93.7500vw
+    height: 33.8542vw
+    @media only screen and (max-width: 650px)
+      display: none!important
+  &__image-mob
+    width: 100%
+    height: 100%
+    object-fit: contain
+    display: none
+    @media only screen and (max-width: 650px)
+      display: block!important
+  &__image-wrapper
+    position: absolute
+    top: 0
+    left: 0
+    @media only screen and (max-width: 650px)
+      width: 100%
+      position: absolute
+
+.slider-nav
+  @media only screen and (max-width: 650px)
+    width: 90%
+    .slick-list
+      overflow: visible
+  &__wrapper
+  &__item
+    padding-top: 1.8229vw
+    position: relative
+    height: 13.4896vw
+    display: flex
+    align-items: center
+    justify-content: center
+    opacity: 0
+    transition: transform 0.25s linear, opacity 0.25s linear
+    transform: scale(0.4)
+    &.slick-slide
+      @media only screen and (max-width: 650px)
+
+    &[data-slider="0"]
+      transform: translateX(-10%) scale(0.4)
+      opacity: 0.3
+    &[data-slider="1"]
+      transform: translateX(-40%) scale(0.6)
+      opacity: 0.4
+    &[data-slider="2"]
+      transform: translateX(-50%) scale(0.8)
+      opacity: 0.5
+    &[data-slider="3"]
+      transform: scale(1)
+      opacity: 1
+    &[data-slider="4"]
+      transform: translateX(50%) scale(0.8)
+      opacity: 0.5
+    &[data-slider="5"]
+      transform: translateX(40%) scale(0.6)
+      opacity: 0.4
+    &[data-slider="6"]
+      transform: translateX(10%) scale(0.4)
+      opacity: 0.3
+    @media only screen and (max-width: 650px)
+      transform: scale(1) translateY(0)!important
+      padding-top: 0
+      height: 35.3125vw
+      opacity: 0.7
+      margin-right: 1.5625vw
+      margin-left: 1.5625vw
+    &.slick-current
+      opacity: 1
+      transform: scale(1)
+      @media only screen and (max-width: 650px)
+        transform: scale(1) translate(0)
+
+  &__card
+    position: relative
+    width: 100%
+    height: 6vw
+    text-align: center
+    margin: auto
+    display: flex
+    align-items: center
+    justify-content: center
+    @media only screen and (max-width: 650px)
+      margin: unset
+      height: 16.5625vw
+      border-radius: 3.1250vw
+    &-text
+      display: none
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+      position: relative
+      border-radius: 1.1458vw
+      @media only screen and (max-width: 650px)
+        border-radius: 3.1250vw
+    &:before
+      content: ''
+      width: 80%
+      height: 30%
+      position: absolute
+      left: 50%
+      top: 100%
+      background: #ACACAC
+      filter: blur(22px)
+      border-radius: 33px
+      transform: translateX(-50%)
+
+  &__shadow
+    position: absolute
+    content: ''
+    bottom: -0.3125vw
+    left: 50%
+    transform: translate( -50%, 100%)
+    width: 10.1042vw
+    height: 1.6667vw
+    background: $text-shadow
+    filter: blur(2.6042vw)
+    border-radius: 1.7188vw
+    z-index: -1
+    @media only screen and (max-width: 650px)
+      width: 35.3125vw
+      height: 6.8750vw
+      opacity: 0.6
+      filter: blur(10.8476vw)
+      border-radius: 7.1594vw
+//start-slider end
+//advantages
+.advantages
+  background: $shadow
+  padding: 3.0208vw 6.1979vw
+  width: 100%
+  @media only screen and (max-width: 650px)
+    padding: 5.9375vw 4.3750vw 15.6250vw
+  &__content
+    display: flex
+    justify-content: center
+    @media only screen and (max-width: 650px)
+      flex-wrap: wrap
+      justify-content: space-between
+  &__item
+    display: flex
+    align-items: center
+    flex-direction: column
+    text-align: center
+    margin-right: 6.3542vw
+    @media only screen and (max-width: 650px)
+      margin-right: 0
+      margin-bottom: 8.1250vw
+    &:last-child
+      margin-right: 0
+    &:nth-child(3n)
+      margin-bottom: 0
+    &-img
+      height: 6.2500vw
+      width: 6.2500vw
+      border-radius: 100%
+      box-shadow: 0.0000vw 0.0000vw 0.6250vw rgba(0, 0, 0, 0.25)
+      margin-bottom: 1.0417vw
+      display: flex
+      align-items: center
+      justify-content: center
+      @media only screen and (max-width: 650px)
+        width: 16.5625vw
+        height: 16.5625vw
+        box-shadow: 0.0000vw 0.0000vw 1.5625vw rgba(0, 0, 0, 0.25)
+        margin-bottom: 1.5625vw
+    &-icon
+      width: 2.9167vw
+      height: 2.9167vw
+      object-fit: contain
+      @media only screen and (max-width: 650px)
+        width: 7.8125vw
+        height: 7.8125vw
+    &-title
+      margin-bottom: 0.7813vw
+      @media only screen and (max-width: 650px)
+        width: 42.5000vw
+        margin-bottom: 1.2500vw
+    &-text
+      width: 17.1875vw
+      @media only screen and (max-width: 650px)
+        width: 40.6250vw
+//advantages end
+//article
+
+.article
+  padding-right: 6.9271vw
+  padding-left: 6.9271vw
+  &__content
+    display: flex
+    justify-content: space-between
+    @media only screen and (max-width: 650px)
+      justify-content: center
+      flex-direction: column
+  &_box
+  &__right
+    overflow: hidden
+    width: 37.0313vw
+    height: 34.5833vw
+    @media only screen and (max-width: 650px)
+      width: 100%
+      height: auto
+      order: 1
+    &-title
+      margin-bottom: 0.7292vw
+  &__text
+    margin-bottom: 1.7708vw
+    &:last-child
+      margin-bottom: 0
+  &__left
+    background: $shadow
+    width: 37.0313vw
+    height: 34.5833vw
+    @media only screen and (max-width: 650px)
+      width: 100%
+      height: 87.5000vw
+      margin-bottom: 6.2500vw
+
+//article end
+
+//nutrition
+label
+  cursor: pointer
+
+
+.nutrition
+  position: relative
+  padding-right: 2.5vw
+  padding-left: 2.5vw
+  @media only screen and (max-width: 650px)
+    padding: 0 3.125vw
+  &__title
+    margin-bottom: 3.6458vw
+  &__box
+    position: relative
+    z-index: 10
+  &__radio
+    position: absolute
+    opacity: 0
+    top: 0
+    right: 0
+  label
+    &:first-child
+      .nutrition__tab
+        &:after
+          transition: all 0.25s ease-in-out
+          opacity: 0
+          top: -0.559vw
+          left: 50%
+          transform: translateX(-50%)
+          width: 18.2292vw
+          height: 6.1979vw
+          background: url(../img/tableft.svg) center no-repeat
+          background-size: contain
+    &:last-child
+      .nutrition__tab
+        &:after
+          transition: all 0.25s ease-in-out
+          opacity: 0
+          top: -0.559vw
+          left: 50%
+          transform: translateX(-50%)
+          background: url(../img/tabright.svg) center no-repeat
+          background-size: contain
+          width: 18.2292vw
+          height: 6.1979vw
+  &__tab
+    position: relative
+    display: flex
+    justify-content: center
+    flex-direction: column
+    align-items: center
+    box-shadow: 0.0000vw 0.1042vw 0.5208vw rgba(0, 0, 0, 0.25)
+    border-radius: 1.1458vw 1.1458vw 0.0000vw 0.0000vw
+    margin-right: 7.5px
+    margin-left: 7.5px
+    z-index: 1
+    color: #434343
+    transition: box-shadow 0.25s ease-in-out
+    @media only screen and (max-width: 650px)
+      margin: 0
+      &:before
+        display: none
+      &:after
+        display: none
+    &:before
+      transition: all 0.25s ease-in-out
+      content: ''
+      width: 110%
+      height: 2vw
+      background: $light
+      position: absolute
+      bottom: -2vw
+      left: -5%
+    &:after
+      content: ''
+      position: absolute
+      transition: opacity 0.25s ease-in-out
+      opacity: 0
+      top: -0.559vw
+      left: 50%
+      transform: translateX(-50%)
+      width: 18.2292vw
+      height: 6.1979vw
+      background: url(../img/tabcenter.svg) center no-repeat
+      background-size: contain
+    &_size
+      &_xl
+        width: 14.0625vw
+        height: 5.1042vw
+        @media only screen and (max-width: 650px)
+          width: 43.7500vw
+          height: 15.6250vw
+          border: 1px solid #101828
+          border-radius: 3.7500vw
+    &-wrapper
+      //padding-left: 2.7vw
+      position: relative
+      top: 0
+      left: 0
+      display: flex
+      flex-wrap: wrap
+    &-title
+      margin-bottom: 0.4167vw
+      z-index: 100
+      transition: color 0.25s ease-in-out
+    &-subtitle
+      display: block
+      z-index: 100
+      transition: color 0.25s ease-in-out
+      @media only screen and (max-width: 650px)
+        font-size: 3.125vw
+        color: $text-shadow
+
+  &__label-wrapper
+    padding: 0 2vw
+    width: 100%
+    display: flex
+    justify-content: space-between
+    @media only screen and (max-width: 650px)
+      flex-wrap: wrap
+      justify-content: unset
+      padding: 0
+      margin-bottom: 6.25vw
+      label
+        display: block
+        margin-right: 6.2500vw
+        margin-bottom: 3.125vw
+        &:nth-child(2n+2)
+          margin-right: 0
+        &:nth-last-child(-n+2)
+          margin-bottom: 0
+  &__menu-wrapper
+    position: relative
+    z-index: 100
+    width: 100%
+    //width: 93.1771vw
+    box-shadow: 0 0.1042vw 0.5208vw rgba(0, 0, 0, 0.25)
+    border-radius: 1.1458vw
+    padding: 3.8021vw 2.4479vw
+    display: none
+    @media only screen and (max-width: 650px)
+      height: unset
+      width: 100%
+      padding: 0
+      border-radius: unset
+      box-shadow: unset
+  &__menu
+    display: flex
+    justify-content: space-between
+    @media only screen and (max-width: 650px)
+      flex-direction: column
+      justify-content: center
+    &_column
+      height: 51.5625vw
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+    &_unspace
+      height: 51.5625vw
+      display: flex
+      flex-direction: column
+  &__menu-left
+    position: relative
+    width: 18.7500vw
+    @media only screen and (max-width: 650px)
+      width: 100%
+      height: 100%
+  &__menu-mid
+    position: relative
+    @media only screen and (max-width: 650px)
+      width: 100%
+      height: 100%
+  &__menu-right
+  &__menu-right-top
+    border-bottom: 1px solid $border-shadow
+    margin-bottom: 1.7188vw
+    @media only screen and (max-width: 650px)
+      border-bottom: none
+  &__menu-choose-title
+      margin-bottom: 1.5625vw
+      @media only screen and (max-width: 650px)
+        margin-bottom: 2.5000vw
+  &__menu-about
+      &-title
+        margin-bottom: 0.8854vw
+        @media only screen and (max-width: 650px)
+          margin-bottom: 2.5000vw
+      &-text
+        margin-bottom: 1.0417vw
+        @media only screen and (max-width: 650px)
+          height: 18.7500vw
+          margin-bottom: 8.1250vw
+      &_sport
+      &_balance
+  &__diet-tab-wrapper
+    margin-bottom: 2.3438vw
+    @media only screen and (max-width: 650px)
+      display: flex
+      flex-wrap: wrap
+      margin-bottom: 6.5625vw
+    label
+      display: block
+      margin-bottom: 1.5625vw
+      &:last-child
+        margin-bottom: 0
+      @media only screen and (max-width: 650px)
+        margin-bottom: 3.125vw
+        margin-right: 6.2500vw
+        &:nth-child(2n+2)
+          margin-right: 0
+        &:nth-last-child(-n+2)
+          margin-bottom: 0
+
+  &__diet-day-wrapper
+    margin-bottom: 2.3438vw
+    @media only screen and (max-width: 650px)
+      display: none
+    label
+      display: block
+      margin-bottom: 1.5625vw
+      &:last-child
+        margin-bottom: 0
+  &__partner-box
+    &-wrapper
+      @media only screen and (max-width: 650px)
+        display: none
+    &-title
+      margin-bottom: 1.0938vw
+  &__week-tab
+    &_wrapper
+      padding-bottom: 0.6771vw
+      display: flex
+      border-bottom: 1px solid $text-shadow
+      margin-bottom: 1.3021vw
+      position: relative
+      @media only screen and (max-width: 650px)
+        padding-bottom: 1.5625vw
+        margin-bottom: 3.7500vw
+      label
+        margin-right: 3.3333vw
+        @media only screen and (max-width: 650px)
+          margin-right: 6.8750vw
+        &:last-child
+          margin-right: 0
+  &__total-top
+    @media only screen and (max-width: 650px)
+      display: flex
+      justify-content: space-between
+      align-items: center
+      margin-bottom: 4.6875vw
+  &__total-text
+    margin-bottom: 1.5625vw
+    @media only screen and (max-width: 650px)
+      text-align: left
+      margin-bottom: 0
+  &__total-name
+    display: block
+    text-align: center
+    @media only screen and (max-width: 650px)
+      text-align: left
+      margin-bottom: 0
+  &__selected-text
+    display: block
+    text-align: center
+    margin-bottom: 0.4167vw
+    @media only screen and (max-width: 650px)
+      text-align: left
+  &__add-product
+    margin: 0 auto 1.6146vw
+    @media only screen and (max-width: 650px)
+      margin: 0
+
+.day-number
+  width: 100%
+  background: #FAFAFA
+  box-shadow: 0.0000vw 0.0000vw 0.6250vw rgba(0, 0, 0, 0.25)
+  border-radius: 3.8194vw
+  cursor: pointer
+  overflow: hidden
+  position: absolute
+  top: 0
+  left: 0
+  z-index: 1000
+  span
+    display: block
+  &.active
+    & .day-number__header:after
+      transform: rotate(-180deg)
+  &__wrapper
+    height: 13.1250vw
+    width: 100%
+    position: relative
+    display: none
+    @media only screen and (max-width: 650px)
+      display: block
+      margin-bottom: 6.25vw
+  &__header
+    position: relative
+    width: 100%
+    height: 13.1250vw
+    cursor: pointer
+    box-shadow: 0.0000vw 0.0000vw 0.6250vw rgba(0, 0, 0, 0.25)
+    border-radius: 3.8194vw
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 4.0625vw 12.5000vw 4.0625vw 3.7500vw
+    &:after
+      transition: all 0.25s ease-in-out
+      content: ""
+      position: absolute
+      top: 4.3750vw
+      right: 4.2188vw
+      width: 1.5625vw
+      height: 3.8750vw
+      background: url(../icon/drop-arrow.svg) center no-repeat
+      background-size: contain
+      z-index: 10000
+  &__value
+  &__price-day
+  &__price
+  &__item
+    display: flex
+    justify-content: space-between
+    align-items: center
+    border-bottom: 0.5px solid $border-shadow
+    &:last-child
+      border: none
+      padding-bottom: 3.125vw
+    label
+      width: 100%
+      input
+        &:checked
+          & ~ .day-number
+            &__item-wrap
+              background: #E58171
+              color: $text-light!important
+              .text_color_shadow
+                color: $text-light!important
+
+
+
+  &__item-wrap
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 1.7188vw 12.5000vw 1.2500vw 3.7500vw
+  &__cont
+    height: 0
+    transition: all 0.25s ease-in-out
+
+
+
+.product-name
+  display: block
+  text-align: center
+  margin-bottom: 1.6667vw
+.order-call
+  display: flex
+  justify-content: center
+  &__text
+    margin-right: 0.5208vw
+
+
+
+.food-calories
+  display: flex
+  &-wrapper
+    display: flex
+    justify-content: space-between
+    margin-bottom: 1.2500vw
+    @media only screen and (max-width: 650px)
+      margin-bottom: 6.5625vw
+  &__about
+    display: flex
+    justify-content: space-between
+    width: 24vw
+    @media only screen and (max-width: 650px)
+      width: 65vw
+  &__name
+    margin-right: 0.2604vw
+  &__value
+    white-space: nowrap
+.label-button
+  display: flex
+  justify-content: center
+  align-items: center
+  &_border
+    border: 0.0365vw solid $border-dark
+  &_box-shadow
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25)
+  &_text-color
+    &_shadow
+      color: $text-shadow
+  &_size
+    &_l
+      padding: 0.6250vw 1.5625vw
+      width: 18.7500vw
+      height: 4.0625vw
+      border-radius: 0.7813vw
+      @media only screen and (max-width: 650px)
+        width: 43.7500vw
+        height: 11.2500vw
+        box-shadow: 0.0000vw 0.0000vw 0.6250vw rgba(0, 0, 0, 0.25)
+        border-radius: 3.1250vw
+    &_m
+      width: 15.1042vw
+      height: 4.6875vw
+      border-radius: 0.7813vw
+    &_s
+      width: 2.6563vw
+      height: 2.3958vw
+      border-radius: 0.7292vw
+      padding: 0.4688vw 0.5208vw
+      @media only screen and (max-width: 650px)
+        width: 7.1875vw
+        height: 6.5625vw
+        border-radius: 2.0641vw
+  &_content
+    &_center
+      display: flex
+      align-items: center
+    &_between
+      width: 100%
+      height: 100%
+      display: flex
+      justify-content: space-between
+      align-items: center
+      @media only screen and (max-width: 650px)
+
+  &__title
+    width: 5.2083vw
+  &__icon
+    margin-right: 1.8750vw
+    width: 3.0208vw
+    height: 2.9167vw
+    @media only screen and (max-width: 650px)
+      width: 8.7500vw
+      height: 6.5625vw
+      margin-right: 5.9375vw
+    svg
+      width: 100%
+      height: 100%
+      object-fit: contain
+  &__text
+    display: flex
+    flex-direction: column
+    position: relative
+    width: 70%
+    &_right
+      align-items: flex-end
+    &_left
+      align-items: flex-start
+  &__days
+
+.input-diet
+    position: absolute
+    top: 50%
+    left: 0
+    opacity: 0
+
+.diet
+  &-title
+    color: $text-dark
+  &-cal
+    display: block
+    color: $text-dark
+  &__price-one-day
+    text-align: right
+    margin-right: 2.5px
+    @media only screen and (max-width: 650px)
+      margin-right: 1px
+
+
+#detox:checked ~ * [for="detox"],
+#weight-loss:checked ~ * [for="weight-loss"],
+#balance:checked ~ * [for="balance"],
+#weight-gainer:checked ~ * [for="weight-gainer"],
+#veganism:checked ~ * [for="veganism"],
+#business-lunch:checked ~ * [for="business-lunch"]
+  color: #F47965!important
+  z-index: 1000
+  & .nutrition__tab-subtitle
+    color: #F47965!important
+  & .nutrition__tab
+    color: #F47965!important
+    border-color: #F47965
+
+
+
+#detox:checked ~ * [for="detox"] > .nutrition__tab,
+#weight-loss:checked ~ * [for="weight-loss"] > .nutrition__tab,
+#balance:checked ~ * [for="balance"] > .nutrition__tab,
+#weight-gainer:checked ~ * [for="weight-gainer"] > .nutrition__tab,
+#veganism:checked ~ * [for="veganism"] > .nutrition__tab,
+#business-lunch:checked ~ * [for="business-lunch"] > .nutrition__tab
+  &:after
+    opacity: 1
+  box-shadow: none
+
+
+#detox:checked ~ .nutrition__wrapper-menu_detox,
+#weight-loss:checked ~ .nutrition__wrapper-menu_weight-loss,
+#balance:checked ~ .nutrition__wrapper-menu_balance,
+#weight-gainer:checked ~ .nutrition__wrapper-menu_sport,
+#veganism:checked ~ .nutrition__wrapper-menu_veganism,
+#business-lunch:checked ~ .nutrition__wrapper-menu_business-lunch
+  display: block
+
+
+.nutrition__diet-day-wrapper
+  .diet-days__radio:checked
+    & ~ .label-button
+      background: $gradient-hover
+      border: none
+      color: $text-light!important
+      svg
+        path
+          fill: $light
+      .diet__price-one-day
+        color: $text-light
+
+
+.nutrition__diet-tab-wrapper
+  .input-diet:checked
+    & ~ .label-button
+      background: $gradient-hover
+      border: none
+      color: $text-light!important
+      svg
+        path
+          fill: $light
+
+.nutrition__week-tab_wrapper
+  .input-diet:checked
+    & ~ .label-button
+      color: $text-light
+      background: $gradient-hover
+
+#diet-life:checked ~ *.label-button__icon_dark svg path
+  fill: $text-light
+  color: red
+  //$text-light
+
+.slider-diet
+  position: relative
+  width: 38.1250vw
+  margin: 0 auto
+  @media only screen and (max-width: 650px)
+    //display: block
+    width: 100%
+  &__prev
+    left: 0
+  &__next
+    right: 0
+  &__item
+    position: relative
+  &__card
+  &__banner
+    width: 100%
+    height: 100%
+    &-wrapper
+      height: 20.2604vw
+      width: 27.2917vw
+      margin: 0 auto 3.3854vw
+      @media only screen and (max-width: 650px)
+        width: 67.1875vw
+        height: 49.6875vw
+    &-title
+      position: absolute
+      display: flex
+      justify-content: center
+      align-items: center
+      top: 0
+      left: 5.4vw
+      //width: 6.1458vw
+      padding: 0 0.6250vw
+      height: 2.0484vw
+      border-radius: 0.4917vw
+      background: $gradient-hover
+      border-radius: 0.3125vw
+      z-index: 2000
+      @media only screen and (max-width: 650px)
+        position: absolute
+        //width: 19.0625vw
+        padding: 0 2.1875vw
+        height: 5.6250vw
+        border-radius: 1.2500vw
+  &__title
+    margin-bottom: 0.6250vw
+    @media only screen and (max-width: 650px)
+      margin-bottom: 2.5000vw
+  &__description
+    margin-bottom: 3.3854vw
+    height: 3.5938vw
+    width: 38.1250vw
+    @media only screen and (max-width: 650px)
+      height: 18.7500vw
+      width: 100%
+      margin-bottom: 7.5000vw
+  &__meal
+    position: relative
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: url('../img/food-img.png') center no-repeat
+    background-size: contain
+    z-index: -1
+    &:after
+      content: ''
+      position: absolute
+      background: #E8E8E8
+      opacity: 0
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      border-radius: 0.7813vw
+      transition: 0.25s ease-in-out opacity
+    img
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      object-fit: contain
+    &.active
+      &:after
+        opacity: 0.5
+      & .slider-diet__meal-title
+        background: $gradient-hover
+      & .slider-diet__meal-title span
+        color: $text-dark!important
+    &-title
+      position: absolute
+      display: flex
+      justify-content: center
+      align-items: center
+      top: 0
+      left: 0
+      //width: 3.9063vw
+      padding: 0 0.3125vw
+      height: 1.3021vw
+      background: $smog
+      border-radius: 0.3125vw
+      z-index: 2000
+      transition: 0.25s ease-in-out background-color
+      @media only screen and (max-width: 650px)
+        position: absolute
+        //width: 11.2500vw
+        padding: 0 0.6250vw
+        height: 3.4375vw
+        border-radius: 0.9375vw
+        span
+          font-size: 2.5vw
+    &-wrapper
+      cursor: pointer
+      margin-right: 4.1146vw
+      margin-bottom: 2.0833vw
+      position: relative
+      width: 6.3542vw
+      height: 4.7396vw
+      border-radius: 0.7813vw
+      @media only screen and (max-width: 650px)
+        width: 20.6250vw
+        height: 15.6250vw
+        margin-right: 2.5000vw
+        margin-bottom: 3.125vw
+      &:nth-child(4n)
+        margin-right: 0
+      &:nth-last-child(-n+4)
+        margin-bottom: 0
+  &__meals-wrapper
+    width: 39.1250vw
+    position: relative
+    display: flex
+    flex-wrap: wrap
+    @media only screen and (max-width: 650px)
+      width: 100%
+      margin-bottom: 10.0000vw
+//nutrition end
+
+//feedback
+.slider-feedback
+
+  &__prev
+    left: 35.9375vw
+    display: block
+    @media only screen and (max-width: 650px)
+      left: 10.9375vw
+  &__next
+    right: 35.9375vw
+    display: block
+    @media only screen and (max-width: 650px)
+      right: 10.9375vw
+
+.feedback
+  position: relative
+  &__title
+  &-slider
+    .slick-list
+      overflow: visible
+    &__item
+      position: relative
+      height: 40.0417vw
+      width: 25.2604vw
+      display: flex!important
+      justify-content: center
+      align-items: center
+      transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out
+      transform: scale(0.6)
+      opacity: 0
+      @media only screen and (max-width: 650px)
+        height: 100%
+        width: 100%
+      &[data-slider="0"]
+        transform: translateX(-20%) scale(0.6)
+        opacity: 0.4
+        @media only screen and (max-width: 650px)
+          transform: translateX(-90%) scale(0.8)
+          opacity: 0.5
+      &[data-slider="1"]
+        transform: translateX(-30%) scale(0.8)
+        opacity: 0.5
+        @media only screen and (max-width: 650px)
+          transform: translateX(0%) scale(1)
+          opacity: 1
+      &[data-slider="2"]
+        transform: scale(1)
+        opacity: 1
+        @media only screen and (max-width: 650px)
+          transform: translateX(90%) scale(0.8)
+          opacity: 0.5
+      &[data-slider="3"]
+        transform: translateX(30%) scale(0.8)
+        opacity: 0.5
+      &[data-slider="4"]
+        transform: translateX(20%) scale(0.6)
+        opacity: 0.4
+      &.slick-current
+        opacity: 1
+        transform: scale(1)
+    &__card
+      display: flex
+      flex-direction: column
+      align-items: center
+      position: relative
+      width: 16.7708vw
+      height: 34.8438vw
+      border-radius: 1.9792vw
+      overflow: hidden
+      box-shadow: 0px 0px 2.5vw rgba(0, 0, 0, 0.25)
+      @media only screen and (max-width: 650px)
+        width: 44.3750vw
+        height: 91.8750vw
+        border-radius: 5.3026vw
+      &-wrapper
+        display: flex
+        justify-content: center
+        align-items: center
+        @media only screen and (max-width: 650px)
+          height: 96.5625vw
+      &-img
+        top: 2vw
+        width: 100%
+        height: 100%
+        object-fit: contain
+        &-wrapper
+          overflow: hidden
+          width: 16.5625vw
+          height: 16.6667vw
+          @media only screen and (max-width: 650px)
+            width: 44.3750vw
+            height: 44.6875vw
+            border-radius: 5.3026vw 5.3026vw 0.0000vw 0.0000vw
+      &-content-wrapper
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 16.5625vw
+        height: 19.4792vw
+        @media only screen and (max-width: 650px)
+          width: 41.8750vw
+          height: 45.6250vw
+          border-radius: 0.0000vw 0.0000vw 5.3026vw 5.3026vw
+      &-insta-post
+          width: 15.6771vw
+          height: 16.9792vw
+          @media only screen and (max-width: 650px)
+            width: 41.8750vw
+            height: 45.6250vw
+          img
+            width: 100%
+            height: 100%
+            object-fit: contain
+    &__phone
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      background: url('../img/phone-shad.png') center no-repeat
+      background-size: contain
+      z-index: 1000
+      width: 21.8750vw
+      height: 39.6875vw
+      @media only screen and (max-width: 650px)
+        width: 48.7500vw
+        height: 96.5625vw
+        width: 58.1250vw
+        height: 105.3125vw
+.block
+  width: 500px
+  height: 300px
+  background: #E58171
+  &-wrapper
+    display: flex
+    justify-content: center
+
+//feedback end
+
+//faq
+.faq
+  padding-right: 3.1250vw
+  padding-left: 3.1250vw
+  &__wrapper
+    display: flex
+    justify-content: space-between
+    @media only screen and (max-width: 650px)
+      flex-direction: column
+  &__left
+    position: relative
+    display: flex
+    align-items: flex-start
+    @media only screen and (max-width: 650px)
+      flex-direction: column
+  &__label-wrapper
+    margin-right: 2.3438vw
+    @media only screen and (max-width: 650px)
+      display: flex
+      flex-wrap: wrap
+      margin-right: 0
+      margin-bottom: 6.25vw
+    label
+      display: block
+      margin-bottom: 1.8229vw
+      @media only screen and (max-width: 650px)
+        margin-right: 6.8750vw
+        margin-bottom: 3.4375vw
+        &:nth-child(2n+2)
+          margin-right: 0
+        &:nth-last-child(-n+2)
+          margin-bottom: 0
+    //label.faq__label_promo
+      @media only screen and (max-width: 650px)
+        display: none
+
+  &__content
+    width: 58.8542vw
+    background: #FAFAFA
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25)
+    border-radius: 22px
+    overflow: hidden
+    @media only screen and (max-width: 650px)
+      width: 100%
+      margin-bottom: 8.7500vw
+      border-radius: 1.8750vw
+  &__item
+    overflow: hidden
+    border-bottom: 1px solid $border-shadow
+    &.active .faq__item-arrow:after
+      transform: translate(-50%, -50%) rotate(0)
+    &.active.faq__item
+      border-bottom: 1px solid $border-shadow
+    &.active > .faq__item-header
+      background: $gradient-hover
+      & > .faq__item-title
+        color: $text-light
+    &:last-child
+      border: none
+  &__item-header
+    cursor: pointer
+    position: relative
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 4.6875vw
+    padding: 1.5625vw 2.0833vw
+    @media only screen and (max-width: 650px)
+      width: 93.7500vw
+      height: 15.6250vw
+      padding: 5.3125vw 3.1250vw
+  &__item-title
+  &__item-arrow
+    position: relative
+    width: 2.3438vw
+    height: 2.3438vw
+    border: 1px solid #FFFFFF
+    box-sizing: border-box
+    border-radius: 0.7292vw
+    background: $gradient
+    @media only screen and (max-width: 650px)
+      width: 5.6250vw
+      height: 5.3125vw
+      border-radius: 1.2500vw
+    &:after
+      content: ""
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%) rotate(180deg)
+      width: 0.4167vw
+      height: 0.9896vw
+      background: url(../icon/faq-arrow.svg) center no-repeat
+      background-size: contain
+      transition: all 0.5s
+      @media only screen and (max-width: 650px)
+        width: 1.5625vw
+        height: 2.5000vw
+  &__item-cont
+    height: 0
+    transition: 0.35s ease-in-out
+  &__item-text
+    padding: 1.5625vw 2.0833vw
+    @media only screen and (max-width: 650px)
+      padding: 2.5000vw 3.1250vw
+  &__right-box
+    @media only screen and (max-width: 650px)
+      display: flex
+      align-items: center
+
+  &__right-title
+    display: none
+    @media only screen and (max-width: 650px)
+      display: block
+      text-align: center
+      margin-bottom: 6.2500vw
+  &__right-content
+    display: flex
+    flex-direction: column
+    align-items: center
+    @media only screen and (max-width: 650px)
+      margin-right: 8.1250vw
+      margin-left: 3.125vw
+  &__right-text
+    display: block
+
+  &__button
+    margin-bottom: 1.8229vw
+    @media only screen and (max-width: 650px)
+      order: 1
+  &__input
+    position: absolute
+    top: 30%
+    left: 0
+    opacity: 0
+
+.faq-button
+  display: flex
+  justify-content: center
+  align-items: center
+  &_border
+    border: 0.0365vw solid $border-dark
+  &_box-shadow
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25)
+  &_text-color
+    &_shadow
+      color: $text-shadow
+  &_size
+    &_m
+      width: 15.1042vw
+      height: 4.6875vw
+      border-radius: 0.7813vw
+      @media only screen and (max-width: 650px)
+        width: 43.4375vw
+        height: 13.4375vw
+        box-shadow: 0.0000vw 0.0000vw 1.4971vw rgba(0, 0, 0, 0.25)
+        border-radius: 2.6948vw
+  &_content
+    display: flex
+    align-items: center
+  &__icon-wrapper
+    width: 2.3958vw
+    height: 1.8229vw
+    min-width: 2.3499vw
+    margin-right: 1.0417vw
+    @media only screen and (max-width: 650px)
+      width: 6.8750vw
+      height: 6.2500vw
+      margin-right: 3.1250vw
+    svg
+      width: 100%
+      height: 100%
+      object-fit: contain
+  &__text
+    display: flex
+    flex-direction: column
+    position: relative
+    width: 6.5625vw
+    @media only screen and (max-width: 650px)
+      width: 19.6875vw
+  &__days
+  &__title
+
+.faq__label-wrapper
+  .faq__input:checked ~ .faq-button
+    background: $gradient-hover
+    color: $text-light
+    svg
+      path
+        fill: $light
+
+//faq-end
+//basket
+.text
+  &__group
+    margin-bottom: 1.5625vw
+    @media only screen and (max-width: 650px)
+      margin-bottom: 3.4375vw
+.basket
+  padding: 7.5521vw 9.8958vw 5.2083vw
+  @media only screen and (max-width: 650px)
+    padding: 26.5625vw 3.1250vw 4.6875vw
+  &__content
+    display: flex
+    align-items: flex-start
+    @media only screen and (max-width: 650px)
+      flex-direction: column
+  &__empty-basket
+    margin: 10.4167vw auto
+    @media only screen and (max-width: 650px)
+      margin: unset
+      padding: 65.6250vw 3.125px 6.5625vw
+
+  &__left
+    margin-right: 4.1667vw
+    width: 32.7083vw
+    background: $bg-flat
+    box-shadow: 0.0000vw 0.0000vw 0.7813vw rgba(0, 0, 0, 0.25)
+    border-radius: 3.1771vw
+    padding: 2.0833vw
+    @media only screen and (max-width: 650px)
+      border: none
+      box-shadow: none
+      padding: 0 0 1.6875vw 0
+      background: none
+      width: 100%
+  &__right
+    background: #FAFAFA
+    box-shadow: 0.0000vw 0.0000vw 0.7813vw rgba(0, 0, 0, 0.25)
+    border-radius: 3.1771vw
+    padding: 2.0833vw
+    width: 43.3333vw
+    @media only screen and (max-width: 650px)
+      display: none
+      width: 100%
+      padding: 0
+      border: none
+      border-radius: unset
+      box-shadow: none
+      background: $light
+      &.active
+        display: block
+
+  &__left-title
+    text-align: center
+    margin-bottom: 3.1250vw
+    @media only screen and (max-width: 650px)
+      text-align: left
+  &__right-title
+    text-align: center
+    margin-bottom: 3.1250vw
+    @media only screen and (max-width: 650px)
+      text-align: left
+      display: none
+      margin-bottom: 3.1250vw
+
+  &__product
+    margin-bottom: 1.5625vw
+    @media only screen and (max-width: 650px)
+      margin-bottom: 4.6875vw
+    &:last-child
+      margin-bottom: 2.3438vw
+
+.product-basket
+  display: flex
+  width: 28.5417vw
+  height: 9.0625vw
+  background: $gradient-hover
+  box-shadow: 0.0000vw 0.0000vw 0.5208vw rgba(0, 0, 0, 0.25)
+  border-radius: 1.1458vw
+  padding: 1.0417vw 1.5625vw 0.9375vw
+  @media only screen and (max-width: 650px)
+    padding: 3.1250vw 5.0000vw
+    width: 93.7500vw
+    height: 29.6875vw
+    box-shadow: 0 0 1.5625vw rgba(0, 0, 0, 0.25)
+    border-radius: 3.7500vw
+  &__wrapper
+    @media only screen and (max-width: 650px)
+      margin-bottom: 3.1250vw
+  &__left
+    margin-right: 2.0833vw
+    display: flex
+    flex-direction: column
+    align-items: center
+    @media only screen and (max-width: 650px)
+      margin-right: 3.875vw
+  &__icon-wrapper
+    width: 4.6875vw
+    height: 4.6875vw
+    border-radius: 5.2083vw
+    background: $light
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-bottom: 0.7292vw
+    @media only screen and (max-width: 650px)
+      width: 15.3125vw
+      height: 15.3125vw
+      border-radius: 17.1875vw
+      margin-bottom: 3vw
+  &__icon
+    height: 2.8922vw
+    width: 3.0729vw
+    object-fit: contain
+    @media only screen and (max-width: 650px)
+      width: 10.3125vw
+      height: 9.6875vw
+  &__delete
+    font-family: "Gilroy", sans-serif
+    background: none
+  &__title
+    margin-bottom: 1px
+    @media only screen and (max-width: 650px)
+      margin-bottom: 0.6250vw
+  &__right
+    display: flex
+    flex-direction: column
+    margin-left: auto
+  &__right-top
+    text-align: right
+    display: flex
+    flex-direction: column
+  &__price
+    margin-bottom: 1px
+    @media only screen and (max-width: 650px)
+      margin-bottom: 0.6250vw
+    &-one-day
+      margin-right: 3px
+      @media only screen and (max-width: 650px)
+        margin-right: 1.5px
+  &__right-bottom
+    margin-top: auto
+    display: flex
+    justify-content: flex-end
+    align-items: center
+  &__calc
+    width: 4.1667vw
+    height: 1.5151vw
+    border-radius: 0.8712vw
+    background: $light
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 1px
+    @media only screen and (max-width: 650px)
+      padding: 0.6250vw
+      width: 20.9375vw
+      height: 7.8125vw
+      border-radius: 4.6875vw
+      span
+        font-size: 3.7500vw
+  &__calc-name
+    margin-right: 0.5208vw
+    @media only screen and (max-width: 650px)
+      margin-right: 1.5625vw
+  &__push
+    cursor: pointer
+    background: none
+    width: 1.2120vw
+    height: 1.2120vw
+    border: 0.0379vw solid $text-highlighter
+    border-radius: 100%
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    @media only screen and (max-width: 650px)
+      width: 5.9375vw
+      height: 5.9375vw
+    &:hover
+      background: $text-highlighter
+      svg
+        path
+          fill: $light
+    &__svg
+      width: 60%
+      height: 60%
+      object-fit: contain
+  &__continue-button
+    position: relative
+    margin: 0 auto
+    background: none
+    font-weight: 500
+    &:after
+      content: ''
+      position: absolute
+      bottom: 0
+      left: 0
+      width: 100%
+      height: 1px
+      background: $text-highlighter
+    @media only screen and (max-width: 650px)
+      display: block
+      margin: 0 auto
+      background: none
+  &__button
+    display: none
+    @media only screen and (max-width: 650px)
+      display: block
+      margin-bottom: 6.2500vw
+
+.input
+  &__70
+    z-index: 70
+  &__60
+    z-index: 60
+  &__50
+    z-index: 50
+  &__group
+    border-radius: 100px
+    position: relative
+    @media only screen and (max-width: 650px)
+      border-radius: 5.3125vw
+    &.error
+      & .form__input
+        border: 1px solid $red
+      & .form__input::placeholder
+        color: $red
+    &_big
+      margin-bottom: 1.5625vw
+      @media only screen and (max-width: 650px)
+        margin-bottom: 3.1250vw
+        width: 100%
+    &_mini
+      margin-bottom: 0
+      &:last-child
+        margin-right: 0
+  &__item
+    display: flex
+    align-items: center
+    height: 2.3438vw
+    width: 100%
+    padding: 0 2.0833vw
+    transition: all 0.25s ease-in-out
+    &:hover
+      background: $icon-pink
+    &.active
+      background: $text-shadow
+    &:last-child
+      margin-bottom: 0
+.drop-input
+  width: 100%
+  cursor: pointer
+  background: $light
+  position: absolute
+  top: 0
+  left: 0
+  overflow: hidden
+  border: 1px solid $icon-dark
+  box-sizing: border-box
+  border-radius: 2.17vw
+  &.active
+    & .drop-input__header::after
+      transform: rotate(-180deg)
+  @media only screen and (max-width: 650px)
+    border-radius: 5.7vw
+  &__wrapper
+    width: 18.2292vw
+    height: 4.1667vw
+    position: relative
+    margin-bottom: 1.5625vw
+    @media only screen and (max-width: 650px)
+      height: 10.9375vw
+      border-radius: 6.8750vw
+      width: 45.3125vw
+      margin-bottom: 3.1250vw
+  &__wrapper-big
+    width: 100%
+    height: 4.1667vw
+    position: relative
+    margin-bottom: 1.5625vw
+    @media only screen and (max-width: 650px)
+      height: 10.9375vw
+      border-radius: 6.8750vw
+      width: 100%
+      margin-bottom: 3.1250vw
+  &.active
+    border: 1px solid $icon-dark
+  &__header
+    position: relative
+    &:before
+      content: ''
+      position: absolute
+      left: 50%
+      top: 50%
+      transform: translate(-50%, -50%)
+      width: calc(100% + 1px)
+      height: calc(100% + 1px)
+      border: 1px solid #000
+      border-radius: 5.2083vw
+      pointer-events: none
+    &:after
+      transition: all 0.25s ease-in-out
+      content: ''
+      position: absolute
+      top: 1.5625vw
+      right: 1.8229vw
+      width: 0.4688vw
+      height: 1.0938vw
+      background: url(../icon/drop-arrow.svg) center no-repeat
+      background-size: contain
+      z-index: 10000
+      @media only screen and (max-width: 650px)
+        width: 1.5625vw
+        height: 3.8750vw
+        top: 3.4375vw
+        right: 3.9063vw
+    & .form__input
+      cursor: pointer
+      border: none
+  &__list
+    padding: 0.4688vw 0
+  &__cont
+    height: 0
+    transition: 0.25s ease-in-out
+    @media only screen and (max-width: 650px)
+  &__item
+    display: flex
+    align-items: center
+    height: 2.3438vw
+    width: 100%
+    padding: 0 2.0833vw
+    transition: all 0.25s ease-in-out
+    @media only screen and (max-width: 650px)
+      height: 5.5vw
+      padding: 0 4.0833vw
+    &:hover
+      background: $icon-pink
+    &.active
+      background: $icon-pink
+    &:last-child
+      margin-bottom: 0
+
+.form
+  &__data
+    margin-bottom: 3.1250vw
+    @media only screen and (max-width: 650px)
+      margin-bottom: 6.2500vw
+  &__address-data
+    position: relative
+  &__name
+    margin-bottom: 1.5104vw
+    @media only screen and (max-width: 650px)
+      margin-bottom: 3.1250vw
+  &__block
+    justify-content: space-between
+    display: flex
+    height: 4.1667vw
+    @media only screen and (max-width: 650px)
+      height: 10.9375vw
+  &__block-profile-contacts
+    display: flex
+    margin-bottom: 1.5625vw
+    justify-content: space-between
+    @media only screen and (max-width: 650px)
+      margin-bottom: 6.2500vw
+  &__block-home
+    display: flex
+    margin-bottom: 3.1250vw
+    justify-content: space-between
+    @media only screen and (max-width: 650px)
+      margin-bottom: 3.1250vw
+  &__block-home-profile
+    display: flex
+    margin-bottom: 1.7708vw
+    justify-content: space-between
+    @media only screen and (max-width: 650px)
+      margin-bottom: 6.2500vw
+  &__input
+    -webkit-appearance: none
+    height: 4.1667vw
+    background: $light
+    border: 1px solid $icon-dark
+    box-sizing: border-box
+    border-radius: 2.1771vw
+    padding: 1.3542vw 2.0833vw
+    color: $icon-dark
+    font-family: "Gilroy", sans-serif
+    transition: all 0.25s ease-in-out
+    @media only screen and (max-width: 650px)
+      border: 1px solid $icon-dark
+    &_mob
+      display: none
+    &:focus, &:not(:placeholder-shown)
+      background: white
+      & + .ch-input__label
+        transform: translateY(-1vw) scale(0.8)
+        @media only screen and (max-width: 650px)
+          transform: translateY(-3vw) scale(0.8)
+      & + .ch-input__label-center
+        transform: translateY(-1vw) scale(0.8) translateX(-50%)
+        @media only screen and (max-width: 650px)
+          transform: translateY(-3vw) scale(0.8) translateX(-50%)
+    @media only screen and (max-width: 650px)
+      height: 10.9375vw
+      border-radius: 6.8750vw
+      padding: 3.1250vw 3.7500vw
+    &_big
+      width: 100%
+      @media only screen and (max-width: 650px)
+        width: 100%
+    &_mini
+      width: 18.2292vw
+      @media only screen and (max-width: 650px)
+        width: 45.3125vw
+    &_s
+      text-align: center
+      width: 15.0000vw
+      @media only screen and (max-width: 650px)
+        width: 37.1875vw
+    &_ps
+      width: 12.9167vw
+      @media only screen and (max-width: 650px)
+        width: 40.3125vw
+    &_xs
+      text-align: center
+      width: 10.5729vw
+      @media only screen and (max-width: 650px)
+        width: 27.8125vw
+    &_xxs
+      text-align: center
+      width: 8.5938vw
+      @media only screen and (max-width: 650px)
+        width: 23.1250vw
+    &_modal
+      width: 100%
+  &__textarea
+    height: 13.0729vw
+    width: 39.1667vw
+    left: 48.8542vw
+    top: 92.6042vw
+    background: #FFFFFF
+    border: 1px solid #101828
+    box-sizing: border-box
+    border-radius: 2.0833vw
+    padding: 2.0833vw
+    resize: none
+    font-family: "Gilroy", sans-serif
+    &::placeholder
+      color: $text-shadow
+    @media only screen and (max-width: 650px)
+      height: 28.4375vw
+      width: 100%
+      padding: 4.6875vw
+      border-radius: 5.6250vw
+  &__delivery-mkd
+    margin-bottom: 2.6042vw
+  &__free
+    display: block
+    margin-bottom: 1.0417vw
+    @media only screen and (max-width: 650px)
+      margin-bottom: 2.1875vw
+      font-size: 2.5000vw
+
+.ch-input
+  &__label
+    position: absolute
+    top: 1.3542vw
+    left: 2.22vw
+    color: $text-shadow
+    transition: all 0.25s ease-in-out
+    transform-origin: left
+    pointer-events: none
+    @media only screen and (max-width: 650px)
+      top: 3.1250vw
+      left: 4.6875vw
+  &__label-center
+    position: absolute
+    top: 1.3542vw
+    left: 50%
+    transform: translate(-50%, 0)
+    color: $text-shadow
+    transition: all 0.25s ease-in-out
+    transform-origin: left
+    pointer-events: none
+    width: 100%
+    text-align: center
+    @media only screen and (max-width: 650px)
+      top: 3.1250vw
+      width: 100%
+      text-align: center
+  &__info
+    cursor: pointer
+    position: absolute
+    top: 50%
+    right: 2.0833vw
+    transform: translateY(-50%)
+    width: 1.8750vw
+    height: 1.8750vw
+    border-radius: 100%
+    background: $gradient-hover
+    display: flex
+    justify-content: center
+    align-items: center
+    @media only screen and (max-width: 650px)
+      width: 7.0625vw
+      height: 7.0625vw
+      right: 1.6875vw
+      font-size: 2.5000vw
+    &:hover
+      span
+        opacity: 1
+    span
+      position: absolute
+      width: 24.0104vw
+      opacity: 0
+      transition: 0.25s ease-in-out
+      background: $text-highlighter
+      border-radius: 0.7292vw
+      padding: 0.7813vw 0.7813vw 1.0417vw
+      pointer-events: none
+      transform: translate(5vw, -3vw)
+      bottom: 0
+      right: 0
+      @media only screen and (max-width: 650px)
+        width: 88.1250vw
+        border-radius: 4.3750vw
+        padding: 3.4375vw 4.6875vw
+        transform: translate(3vw, -10vw)
+      &:after
+        content: ''
+        position: absolute
+        width: 1.3021vw
+        height: 1.3021vw
+        transform: translate(0, 44%) rotate(45deg) skew(10deg, 10deg)
+        background: #E58171
+        bottom: 0
+        right: 5.2083vw
+        border-radius: 0.2083vw
+        @media only screen and (max-width: 650px)
+          width: 6.2500vw
+          height: 6.2500vw
+          right: 4.6875vw
+          border-radius: 1.5625vw
+          transform: translate(0, 23%) rotate(45deg) skew(10deg, 10deg)
+
+
+
+.payment
+  &__method-wrapper
+    position: relative
+    display: flex
+    flex-direction: column
+    margin-bottom: 2.6042vw
+    @media only screen and (max-width: 650px)
+      margin-bottom: 6.2500vw
+  &__label
+    position: relative
+    margin-bottom: 1.5625vw
+    display: flex
+    align-items: center
+    &:last-child
+      margin-bottom: 0
+    @media only screen and (max-width: 650px)
+      margin-bottom: 3.1250vw
+    &_mkd
+    &_pay
+  &__input
+    opacity: 0
+    position: absolute
+    top: 0
+    right: 0
+    &:checked
+      & ~ .payment__radio:after
+        opacity: 1
+      & ~ .payment__check:after
+        opacity: 1
+  &__radio
+    cursor: pointer
+    padding: 2px
+    top: 0
+    left: 0
+    display: block
+    width: 1.0417vw
+    height: 1.0417vw
+    border: 1px solid $border-shadow
+    border-radius: 100%
+    margin-right: 0.5208vw
+    &:after
+      opacity: 0
+      display: block
+      content: ""
+      width: 100%
+      height: 100%
+      border-radius: 100%
+      background: $border-dark
+      box-shadow: inset 0vw 0vw 0.25vw rgba(0, 0, 0, 0.2)
+    @media only screen and (max-width: 650px)
+      width: 4.3750vw
+      height: 4.3750vw
+      border: 0.1129vw solid #ACACAC
+      padding: 2px
+      margin-right: 2.1875vw
+  &__check
+    cursor: pointer
+    padding: 0.8333vw 0.8854vw
+    top: 0
+    left: 0
+    display: block
+    width: 2.8646vw
+    height: 2.6042vw
+    border: 1px solid $border-shadow
+    border-radius: 0.8333vw
+    margin-right: 0.5208vw
+    &:after
+      opacity: 0
+      display: block
+      content: ""
+      width: 100%
+      height: 100%
+      background: url(../icon/check.svg) center no-repeat
+      background-size: contain
+    @media only screen and (max-width: 650px)
+      width: 6.2500vw
+      height: 5.6250vw
+      border-radius: 1.8750vw
+      padding: 1.5625vw
+      margin-right: 1.2500vw
+  &__method
+  &__mkd
+    @media only screen and (max-width: 650px)
+      font-size: 2.8125vw
+
+.questions
+  display: flex
+  position: relative
+  margin-bottom: 2.6042vw
+  @media only screen and (max-width: 650px)
+    flex-direction: column
+    margin-bottom: 6.2500vw
+  &__label
+    position: relative
+    display: flex
+    align-items: center
+    margin-bottom: 0
+    margin-right: 2.1875vw
+    @media only screen and (max-width: 650px)
+      margin-bottom: 1.8750vw
+    &:last-child
+      margin-right: 0
+      @media only screen and (max-width: 650px)
+        margin-bottom: 1.8750vw
+  &__method
+  &__input
+    opacity: 0
+    position: absolute
+    top: 0
+    right: 0
+    &:checked
+      & ~ .questions__radio:after
+        opacity: 1
+  &__radio
+    cursor: pointer
+    padding: 2px
+    top: 0
+    left: 0
+    display: block
+    width: 1.0417vw
+    height: 1.0417vw
+    border: 1px solid $border-shadow
+    border-radius: 100%
+    margin-right: 0.5208vw
+    &:after
+      opacity: 0
+      display: block
+      content: ""
+      width: 100%
+      height: 100%
+      border-radius: 100%
+      background: $border-dark
+      box-shadow: inset 0vw 0vw 0.25vw rgba(0, 0, 0, 0.2)
+    @media only screen and (max-width: 650px)
+      margin-right: 2.1875vw
+      width: 4.375vw
+      height: 4.375vw
+      border: 0.1129vw solid #ACACAC
+      padding: 2px
+
+.subscribe
+  position: relative
+  margin-bottom: 1.5625vw
+  @media only screen and (max-width: 650px)
+    height: 7.5000vw
+    margin-bottom: 6.2500vw
+  &__label
+    position: relative
+    display: flex
+    align-items: center
+  &__input
+    opacity: 0
+    position: absolute
+    top: 0
+    right: 0
+    &:checked
+      & ~ .subscribe__check:after
+        opacity: 1
+  &__check
+    margin-right: 0.5208vw
+    cursor: pointer
+    padding: 0.8333vw 0.8854vw
+    top: 0
+    left: 0
+    display: block
+    width: 2.8646vw
+    height: 2.6042vw
+    border: 1px solid $border-shadow
+    border-radius: 0.8333vw
+    &:after
+      opacity: 0
+      display: block
+      content: ""
+      width: 100%
+      height: 100%
+      background: url(../icon/check.svg) center no-repeat
+      background-size: contain
+    @media only screen and (max-width: 650px)
+      width: 6.2500vw
+      height: 5.6250vw
+      border-radius: 1.8750vw
+      padding: 1.5625vw
+      margin-right: 1.2500vw
+  &__text
+    @media only screen and (max-width: 650px)
+      font-size: 2.8125vw
+
+
+
+.promo-code
+  margin-bottom: 1.8750vw
+  display: flex
+  align-items: center
+  @media only screen and (max-width: 650px)
+    margin-bottom: 6.2500vw
+  & .input__group
+    margin-right: 2.0833vw
+  &__button
+    position: relative
+    background: none
+    font-weight: unset
+    &:hover
+      transition: all 0.25s ease-in-out
+      color: $text-highlighter
+    &:hover:after
+      background: $text-highlighter
+    &:after
+      transition: all 0.25s ease-in-out
+      content: ''
+      position: absolute
+      bottom: 0
+      left: 0
+      width: 100%
+      height: 1px
+      background: $border-dark
+
+.total
+  border-top: 1px solid $border-shadow
+  padding-top: 1.7708vw
+  display: flex
+  flex-direction: column
+  align-items: center
+  @media only screen and (max-width: 650px)
+    padding-top: 4.8438vw
+  &__cost
+    width: 100%
+    display: flex
+    justify-content: space-between
+    margin-bottom: 1.5104vw
+    @media only screen and (max-width: 650px)
+      margin-bottom: 6.25vw
+  &__button
+    text-align: center
+    margin-bottom: 1.2500vw
+    @media only screen and (max-width: 650px)
+      margin-bottom: 4.6875vw
+
+.drop-input__calendar
+  display: flex
+  justify-content: center
+  align-items: center
+
+#date-calendar
+  position: relative
+  margin-top: 0.5vw
+
+.datepicker
+  font-family: "Gilroy", sans-serif
+  width: unset
+  padding: 0.5729vw 1.5625vw 0.7292vw
+  font-size: 0.7292vw
+  border: none
+  margin-right: 1vw
+  position: relative!important
+  @media only screen and (max-width: 650px)
+    font-size: 3.5vw
+  &--nav
+    padding: 0
+    border: none
+    margin-bottom: 0
+  &--nav-title
+    font-size: 1.2500vw
+    color: $text-highlighter
+    font-weight: 400
+    i
+      color: #000000
+      font-weight: 600
+    @media only screen and (max-width: 650px)
+      font-size: 3.5vw
+  &--nav-action
+    position: relative
+    @media only screen and (max-width: 650px)
+      width: 19px
+    &:hover
+      background: none
+    svg
+      display: none
+  &--nav-action[data-action='prev']:after
+    content: ''
+    position: absolute
+    top: 50%
+    left: 0.4167vw
+    transform: translateY(-50%)
+    height: 1.0411vw
+    width: 0.6188vw
+    background: url(../icon/dataset-prev.svg) center no-repeat
+    background-size: contain
+    @media only screen and (max-width: 650px)
+      height: 3.0411vw
+      width: 2.6188vw
+      left: 1vw
+  &--nav-action[data-action='next']:after
+    content: ''
+    position: absolute
+    top: 50%
+    right: 0.4167vw
+    transform: translateY(-50%)
+    height: 1.0411vw
+    width: 0.6188vw
+    background: url(../icon/dataset-next.svg) center no-repeat
+    background-size: contain
+    @media only screen and (max-width: 650px)
+      height: 3.0411vw
+      width: 2.6188vw
+      right: 1vw
+  &--days-names
+    background: #EBECEC
+    padding: 1px 0vw
+    margin: 0
+
+  &--day-name
+    font-size: 0.7292vw
+    color: #6D6E71
+    text-transform: unset
+    width: 1.0417vw!important
+    height: 0.8333vw
+    @media only screen and (max-width: 650px)
+      font-size: 3.5vw
+      height: 4vw
+    &.-weekend-
+      color: $text-highlighter
+  &--cell
+    border-radius: 0.3125vw
+  &--cell-day
+    width: 1.2vw
+    height: 1.3542vw
+    margin: 1px 0.359vw
+    @media only screen and (max-width: 650px)
+      width: 4vw
+      height: 4vw
+      margin: 0.1vw 0.7vw
+    &:hover
+      background: none
+    &.-weekend-
+      color: $text-highlighter
+    &.-current-
+      color: $text-dark!important
+    &.-selected-
+      background: $light!important
+      border: 1px solid $text-highlighter
+      color: $text-dark!important
+    &.-focus-
+      color: $text-dark!important
+      background: none
+    &.-other-month-
+      opacity: 0
+  &--months
+    border-top: 2px solid #EBECEC
+    padding-top: 1.5104vw
+  &--cells-months
+    flex-direction: column
+    height: 6.9375vw
+    width: 14.4792vw
+    @media only screen and (max-width: 650px)
+      height: 25vw
+      width: 35vw
+  &--cell-month
+    border-radius: 0.3125vw
+    width: 2.2917vw
+    height: 1.3542vw
+    margin-right: 3.3854vw
+    margin-bottom: 0.3646vw
+    @media only screen and (max-width: 650px)
+      width: 10vw
+      height: 4vw
+      margin: 0.1vw 0.7vw
+    &:nth-child(4n+4)
+      margin-bottom: 0
+    &:nth-last-child(-n+4)
+      margin-right: 0
+    &.-weekend-
+      color: $text-highlighter
+    &.-current-
+      color: #6D6E71
+      border: 1px solid $text-highlighter
+    &.-selected-
+      background: $light!important
+    &.-focus-
+      background: $text-shadow!important
+  &--years
+    border-top: 2px solid #EBECEC
+    padding-top: 1.5104vw
+  &--cells-years
+    flex-direction: column
+    height: 6.9375vw
+    width: 14.4792vw
+    @media only screen and (max-width: 650px)
+      height: 25vw
+      width: 35vw
+  &--cell-year
+    border-radius: 0.3125vw
+    height: 1.3542vw
+    width: 2.2917vw
+    margin-right: 3.3854vw
+    margin-bottom: 0.3646vw
+    @media only screen and (max-width: 650px)
+      width: 10vw
+      height: 4vw
+      margin: 0.1vw 0.7vw
+    &:nth-child(4n+4)
+      margin-bottom: 0
+    &:nth-last-child(-n+4)
+      margin-right: 0
+    &.-weekend-
+      color: $text-highlighter
+    &.-current-
+      color: #6D6E71
+      border: 1px solid $text-highlighter
+    &.-selected-
+      background: $text-shadow!important
+    &-focus-
+      background: $text-shadow!important
+
+
+
+.datepicker-inline
+  position: relative!important
+
+
+//basket end
+
+//profile
+
+.profile
+  padding: 7.5521vw 19.2708vw 5.2083vw
+  @media only screen and (max-width: 650px)
+    padding: 26.5625vw 3.1250vw 4.6875vw
+  &__content
+    display: flex
+    align-items: flex-start
+    @media only screen and (max-width: 650px)
+      flex-direction: column
+  &__left
+    position: relative
+    margin-right: 7.2917vw
+    @media only screen and (max-width: 650px)
+      display: flex
+      margin-right: 0
+      justify-content: space-between
+      width: 100%
+      margin-bottom: 10.9375vw
+  &__nav
+    position: relative
+    margin-bottom: 6.3021vw
+    @media only screen and (max-width: 650px)
+      display: flex
+      margin-bottom: 0
+  &__button-item
+    cursor: pointer
+    position: relative
+    background: none
+    margin-bottom: 2.0833vw
+    @media only screen and (max-width: 650px)
+      margin-right: 7.8125vw
+      margin-bottom: 0
+      &:last-child
+        margin-right: 0
+    &:before
+      position: absolute
+      content: ''
+      left: -1.0417vw
+      opacity: 0
+      width: 0.5208vw
+      height: 0.5208vw
+      top: 0.6250vw
+      border-radius: 100%
+      background: $text-highlighter
+      @media only screen and (max-width: 650px)
+        content: unset
+    &:hover
+      color: $text-highlighter
+      transform: translateX(1.0417vw)
+      @media only screen and (max-width: 650px)
+        transform: translateX(0)
+    &:hover:before
+      opacity: 1
+    &.active
+      color: $text-highlighter
+      transform: translateX(1.0417vw)
+      @media only screen and (max-width: 650px)
+        transform: translateX(0)
+      &:before
+        opacity: 1
+  &__log-out
+    background: none
+  &__my-orders
+  &__right-wrapper
+    position: relative
+    display: flex
+    flex-wrap: wrap
+  &__right
+    transition: all 0.25s ease-in-out
+    position: relative
+    top: 0
+    left: 0
+    background: #FAFAFA
+    box-shadow: 0.0000vw 0.0000vw 0.7813vw rgba(0, 0, 0, 0.25)
+    border-radius: 3.1771vw
+    padding: 2.0833vw
+    width: 43.3333vw
+    @media only screen and (max-width: 650px)
+      width: 100%
+      padding: 0
+      border: none
+      border-radius: unset
+      box-shadow: none
+      background: none
+      &.active
+        display: block
+
+  &__order
+    //position: relative
+    //top: 0
+    //left: 0
+    margin-bottom: 2.6042vw
+    @media only screen and (max-width: 650px)
+      margin-bottom: 4.6875vw
+      border-bottom: 1px solid #F3F3F3
+      &:last-child
+        margin-bottom: 0
+        border-bottom: 0
+  &__add-address-wrapper
+    width: 100%
+    justify-content: flex-end
+    display: flex
+    margin-bottom: 1.8750vw
+  &__add-address-button
+    background: none
+    margin-right: 1vw
+    @media only screen and (max-width: 650px)
+  &__add-order
+    margin-bottom: 2.6042vw
+    display: flex
+    @media only screen and (max-width: 650px)
+      margin-bottom: 10.3125vw
+.add-order
+  display: flex
+  @media only screen and (max-width: 650px)
+    width: 100%
+  &__button
+    background: none
+
+.change-button
+  margin: 0 auto
+.form-title
+  text-align: center
+  margin-bottom: 3.1250vw
+  @media only screen and (max-width: 650px)
+    text-align: left
+    display: none
+    margin-bottom: 3.1250vw
+
+.order-box
+  position: relative
+  padding: 2.6042vw
+  width: 33.7500vw
+  height: 19.0625vw
+  background: $bg-flat
+  box-shadow: 0.0000vw 0.0000vw 0.7813vw rgba(0, 0, 0, 0.25)
+  border-radius: 3.1771vw
+  @media only screen and (max-width: 650px)
+    width: 93.7500vw
+    padding: 4.6875vw 2.5000vw
+    height: auto
+  &.active .order-box__replay
+    opacity: 1
+  &__content
+  &__header
+    display: flex
+    justify-content: space-between
+    margin-bottom: 1.0417vw
+    @media only screen and (max-width: 650px)
+      margin-bottom: 2.5000vw
+  &__number
+  &__status
+    color: $text-shadow
+    @media only screen and (max-width: 650px)
+      color: #F08F35
+    &.active
+      color: #63C82A
+    &.close
+      color: $text-shadow
+  &__product
+    margin-bottom: 1.0417vw
+    @media only screen and (max-width: 650px)
+      margin-bottom: 2.5000vw
+      width: 100%
+      padding: 4vw 2vw 2.7vw 2vw
+  &__info
+    display: flex
+    justify-content: space-between
+    @media only screen and (max-width: 650px)
+      flex-direction: column
+  &__replay
+    cursor: pointer
+    background: none
+    opacity: 0
+    position: absolute
+    right: -10.0521vw
+    top: 8.5417vw
+    &:hover
+      & .order-box__replay-icon
+        transform: rotate(-360deg)
+    @media only screen and (max-width: 650px)
+      bottom: 4.5781vw
+      top: unset
+      right: 5.6875vw
+  &__replay-content
+    display: flex
+    align-items: center
+  &__replay-icon-wrapper
+    width: 1.9271vw
+    height: 1.9271vw
+    margin-right: 0.9896vw
+    border-radius: 100%
+    @media only screen and (max-width: 650px)
+      order: 1
+      width: 6.5625vw
+      height: 6.5625vw
+      margin-right: 0
+  &__replay-icon
+    transition: all 0.35s ease-in-out
+    width: 100%
+    height: 100%
+    object-fit: contain
+    @media only screen and (max-width: 650px)
+  &__replay-text
+    color: $text-shadow
+    @media only screen and (max-width: 650px)
+      margin-right: 3.4375vw
+  &__date
+    @media only screen and (max-width: 650px)
+      margin-bottom: 2px
+  &__input
+    margin-right: 1.6667vw
+    @media only screen and (max-width: 650px)
+      margin-right: 6.2500vw!important
+
+
+.product-basket-profile
+  display: flex
+  width: 28.5417vw
+  height: 9.0625vw
+  background: $gradient-hover
+  box-shadow: 0.0000vw 0.0000vw 0.5208vw rgba(0, 0, 0, 0.25)
+  border-radius: 1.1458vw
+  padding: 1.0417vw 1.5625vw 0.9375vw
+  @media only screen and (max-width: 650px)
+    width: 79.3750vw
+    height: 25.0000vw
+    box-shadow: 0.0000vw 0.0000vw 1.4446vw rgba(0, 0, 0, 0.25)
+    border-radius: 3.1780vw
+    margin-bottom: 3.4375vw
+    padding: 2.8125vw 4.3750vw 2.1875vw
+  &__left
+    margin-right: 2.0833vw
+    display: flex
+    flex-direction: column
+    align-items: center
+    @media only screen and (max-width: 650px)
+      margin-right: 5.9375vw
+  &__icon-wrapper
+    width: 4.6875vw
+    height: 4.6875vw
+    border-radius: 5.2083vw
+    background: $light
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-bottom: 0.7292vw
+    @media only screen and (max-width: 650px)
+      width: 12.8125vw
+      height: 12.8125vw
+      border-radius: 100%
+      margin-bottom: 3vw
+  &__icon
+    height: 2.8922vw
+    width: 3.0729vw
+    object-fit: contain
+    @media only screen and (max-width: 650px)
+      height: 8.0781vw
+      width: 8.5469vw
+  &__delete
+    font-family: "Gilroy", sans-serif
+    background: none
+    @media only screen and (max-width: 650px)
+      font-size: 3.1250vw
+  &__title
+    margin-bottom: 1px
+    @media only screen and (max-width: 650px)
+      margin-bottom: 0.6250vw
+  &__right
+    display: flex
+    flex-direction: column
+    margin-left: auto
+  &__right-top
+    text-align: right
+    display: flex
+    flex-direction: column
+  &__price
+    margin-bottom: 1px
+    @media only screen and (max-width: 650px)
+      margin-bottom: 0.6250vw
+    &-one-day
+      margin-right: 3px
+      @media only screen and (max-width: 650px)
+        margin-right: 1.5px
+  &__right-bottom
+    margin-top: auto
+    display: flex
+    justify-content: flex-end
+    align-items: center
+  &__calc
+    width: 4.1667vw
+    height: 1.5151vw
+    border-radius: 0.8712vw
+    background: $light
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 1px
+    @media only screen and (max-width: 650px)
+      padding: 0.6250vw
+      width: 13.7500vw
+      height: 5.0000vw
+      border-radius: 2.8125vw
+  &__calc-name
+    margin-right: 0.5208vw
+    @media only screen and (max-width: 650px)
+      margin-right: 1.5625vw
+  &__push
+    cursor: pointer
+    background: none
+    width: 1.2120vw
+    height: 1.2120vw
+    border: 0.0379vw solid $text-highlighter
+    border-radius: 100%
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    @media only screen and (max-width: 650px)
+      width: 3.7500vw
+      height: 3.7500vw
+    &:hover
+      background: $text-highlighter
+      svg
+        path
+          fill: $light
+    &__svg
+      width: 60%
+      height: 60%
+      object-fit: contain
+
+//profile end
+
+//thanks
+
+.thanks
+  padding: 15.3125vw 0 15.2083vw
+  @media only screen and (max-width: 650px)
+    padding: 65.6250vw 3.125px 6.5625vw
+  &__content
+    display: flex
+    flex-direction: column
+    align-items: center
+    position: relative
+    @media only screen and (max-width: 650px)
+      padding-bottom: 42.5000vw
+      width: 100%
+      //height: calc(100vh - 100vw)
+  &__title
+    margin-bottom: 2.0833vw
+    @media only screen and (max-width: 650px)
+      margin-bottom: 7.1875vw
+  &__icon-wrapper
+    height: 6.7703vw
+    width: 5.7927vw
+    margin-bottom: 1.5625vw
+    @media only screen and (max-width: 650px)
+      height: 20.9344vw
+      width: 17.9125vw
+      margin-bottom: 5.0000vw
+  &__icon
+    width: 100%
+    height: 100%
+    object-fit: contain
+  &__info
+    width: 30.2604vw
+    text-align: center
+    margin-bottom: 3.6458vw
+    @media only screen and (max-width: 650px)
+      width: 72.8125vw
+  &__button
+    @media only screen and (max-width: 650px)
+      position: absolute
+      bottom: 0
+      left: 50%
+      transform: translateX(-50%)
+//thanks end
+.page-404
+  padding: 15.3125vw 0 15.2083vw
+  @media only screen and (max-width: 650px)
+    padding: 65.6250vw 3.125px 6.5625vw
+  &__content
+    display: flex
+    flex-direction: column
+    align-items: center
+    position: relative
+    @media only screen and (max-width: 650px)
+      padding-bottom: 42.5000vw
+      width: 100%
+      //height: calc(100vh - 100vw)
+  &__icon-wrapper
+    width: 44.3984vw
+    height: 15.5599vw
+    margin-bottom: 5.2083vw
+    @media only screen and (max-width: 650px)
+      width: 100%
+      height: 32.8562vw
+      margin-bottom: 10.8937vw
+  &__icon
+    width: 100%
+    height: 100%
+    object-fit: contain
+  &__info
+    width: 24.2188vw
+    text-align: center
+    margin-bottom: 4.4271vw
+    @media only screen and (max-width: 650px)
+      width: 90.8125vw
+  &__button
+    @media only screen and (max-width: 650px)
+      position: absolute
+      bottom: 0
+      left: 50%
+      transform: translateX(-50%)
+
+
+//footer
+
+
+.partners-box
+  display: flex
+  flex-wrap: wrap
+  width: 24.0625vw
+  @media only screen and (max-width: 650px)
+    position: absolute
+    width: 47.5000vw
+    right: 0
+    top: 21.5625vw
+  &__item
+    margin-right: 2.6042vw
+    margin-bottom: 1.6667vw
+    &:nth-child(n+4)
+      margin-bottom: 0
+    @media only screen and (max-width: 650px)
+      &:nth-child(2)
+        margin-right: 5vw
+  &__partner
+    width: 4.6875vw
+    height: 1.5104vw
+    @media only screen and (max-width: 650px)
+      width: 12.8125vw
+      height: 6.2500vw
+    &_visa
+      background: url("../icon/visa.svg") center no-repeat
+      background-size: contain
+    &_apple
+      background: url("../icon/apple-pay.svg") center no-repeat
+      background-size: contain
+    &_g-pay
+      background: url("../icon/g-pay.svg") center no-repeat
+      background-size: contain
+    &_mir
+      background: url("../icon/mir.svg") center no-repeat
+      background-size: contain
+    &_master
+      background: url("../icon/m-card.svg") center no-repeat
+      background-size: contain
+  &__copyright
+    @media only screen and (max-width: 650px)
+      display: none
+
+
+.footer
+  padding: 1.5625vw 3.1250vw
+  background: $pink
+  display: flex
+  justify-content: space-between
+  align-items: center
+  position: relative
+  @media only screen and (max-width: 650px)
+    padding: 3.7500vw 3.1250vw
+    align-items: unset
+    justify-content: unset
+    flex-wrap: wrap
+  > .footer__copyright
+    position: absolute
+    bottom: 1.6vw
+    left: 37.4vw
+    @media only screen and (max-width: 650px)
+      position: unset
+      display: flex
+      flex-direction: column
+      .footer__copyright
+        order: 1
+      .copyright__text
+        order: 3
+  &-list
+    &__item
+      position: relative
+      display: flex
+      align-items: center
+      margin-bottom: 2.6042vw
+      @media only screen and (max-width: 650px)
+        margin-bottom: 4.6875vw
+      &:last-child
+        margin-bottom: 0
+    &__image
+      position: absolute
+      top: 0
+      left: 0
+      width: 1.4583vw
+      height: 1.4583vw
+      img
+        width: 100%
+        height: 100%
+        object-fit: contain
+      @media only screen and (max-width: 650px)
+        height: 3.3281vw
+        width: 3.3844vw
+    &__text
+      padding-left: 2.2396vw
+      width: 16.3542vw
+      @media only screen and (max-width: 650px)
+        padding-left: 5.0000vw
+        width: unset
+      &_address
+        width: 43.4375vw
+        @media only screen and (max-width: 650px)
+          width: unset
+  &__box
+    height: 13.8021vw
+    width: 24.0625vw
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    @media only screen and (max-width: 650px)
+      height: unset
+      width: unset
+      margin-bottom: 5.6250vw
+  &__partners-box
+    @media only screen and (max-width: 650px)
+      display: none
+    &_mob
+      @media only screen and (max-width: 650px)
+        display: flex
+
+  &__copyright
+    width: 21.6146vw
+    display: block
+    @media only screen and (max-width: 650px)
+      width: unset
+      order: 4
+  &__contacts
+    @media only screen and (max-width: 650px)
+      width: 100%
+      order: 1
+  &__subscribe
+    @media only screen and (max-width: 650px)
+      width: 100%
+      order: 2
+    &-text
+      display: block
+      margin-bottom: 0.5208vw
+      @media only screen and (max-width: 650px)
+        width: unset
+        margin-bottom: 2.5000vw
+        text-transform: uppercase
+
+  &__logo
+
+.subscribe-footer
+  &__text
+    width: 18.9063vw
+    @media only screen and (max-width: 650px)
+      width: 100%
+      text-transform: uppercase
+  &__item
+    margin-bottom: 1.3021vw
+    @media only screen and (max-width: 650px)
+      margin-bottom: 3.3021vw
+    &:last-child
+      margin-bottom: 0
+    &_mobile
+      display: none
+      @media only screen and (max-width: 650px)
+        display: flex
+        flex-direction: column
+        align-self: flex-end
+        margin-left: auto
+    &_desc
+      @media only screen and (max-width: 650px)
+        display: none
+  &__copyright
+    @media only screen and (max-width: 650px)
+      display: none!important
+    &_mobile
+      display: none
+      @media only screen and (max-width: 650px)
+        display: block
+        width: 76vw
+        margin-bottom: 3.125vw
+        order: 2
+  &__soc-wrapper
+    display: flex
+    .soc__item_footer
+      &:last-child
+        margin-right: unset
+  &__pay-wrapper
+    display: flex
+    justify-content: space-between
+
+
+.soc
+  &__item
+    position: relative
+    img
+      width: 100%
+      height: 100%
+      object-fit: contain
+    &_footer
+      height: 1.8750vw
+      width: 2.0833vw
+      margin-right: 0.7813vw
+      border: 1px solid #101828
+      border-radius: 0.6250vw
+      img
+        width: 100%
+        height: 100%
+        object-fit: contain
+      @media only screen and (max-width: 650px)
+        width: 8.7500vw
+        height: 8.7500vw
+        margin-right: 3.1250vw
+        border-radius: 3.1250vw
+    &_mobile-pay
+      @media only screen and (max-width: 650px)
+        width: 14.3750vw
+        height: 5.3125vw
+      img
+        width: 100%
+        height: 100%
+        object-fit: contain
+    &_modal
+      border-radius: 0.6250vw
+      border: 1px solid #101828
+      width: 2.9167vw
+      height: 2.6042vw
+      margin-right: 1.5625vw
+      img
+        width: 100%
+        height: 100%
+        object-fit: contain
+      @media only screen and (max-width: 650px)
+        width: 8.7500vw
+        height: 7.8125vw
+        margin-right: 4.6875vw
+        border-radius: 3.1250vw
+
+//footer end
+
+// Конец содержимого контента
+
+//modal-sign-in
+.modal
+  position: fixed
+  display: flex
+  background-color: rgba(0, 0, 0, 0.5)
+  transition: opacity 0.25s ease
+  width: 100%
+  height: 100%
+  left: 0
+  bottom: 0
+  z-index: 1200
+  &_scroll
+    overflow-y: scroll
+  &__container
+    position: relative
+    margin: 8.2813vw auto 20.4167vw
+    width: 31.2500vw
+    height: fit-content
+    background: $light
+    border-radius: 1.8229vw
+    padding: 2.6042vw 3.4458vw
+    @media only screen and (max-width: 650px)
+      width: 93.7500vw
+      margin: 37.5000vw auto 3.125vw
+      padding: 10.9375vw
+      border-radius: 3.7500vw
+  &__box
+  &__title
+    text-align: center
+    margin-bottom: 1.5625vw
+    @media only screen and (max-width: 650px)
+      margin-bottom: 3.1250vw
+  &__under-title
+    text-align: center
+    margin-bottom: 1.0417vw
+  &__description
+    text-align: center
+    display: block
+    @media only screen and (max-width: 650px)
+      width: 75.0000vw
+    &_mb
+      margin-bottom: 1.5625vw
+      @media only screen and (max-width: 650px)
+        margin-bottom: 3.1250vw
+  &__description-left
+    display: block
+    text-align: left
+    margin-bottom: 1.5625vw
+    @media only screen and (max-width: 650px)
+      margin-bottom: 3.1250vw
+  &__button
+    margin: 0 auto
+  &__button-none-underline
+    margin-bottom: 1.0417vw
+    margin-left: auto
+    @media only screen and (max-width: 650px)
+      margin-bottom: 3.1250vw
+  &__close-btn
+    position: absolute
+    top: 2.0833vw
+    right: 2.0833vw
+    background: none
+    width: 1.1354vw
+    height: 1.1354vw
+    @media only screen and (max-width: 650px)
+      top: 5.3281vw
+      right: 6.2656vw
+      width: 3.4375vw
+      height: 3.4375vw
+  &__close-icon
+    width: 100%
+    height: 100%
+    object-fit: contain
+  &__header-button
+    margin-bottom: 1.5625vw
+    @media only screen and (max-width: 650px)
+      margin-bottom: 3.1250vw
+  &__width-mb
+    margin-bottom: 1.1979vw
+    @media only screen and (max-width: 650px)
+      margin-bottom: 3.1250vw
+  &__subscribe
+    margin-bottom: 2.0833vw
+    @media only screen and (max-width: 650px)
+      margin-bottom: 3.1250vw
+  &__button-flex
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-bottom: 2.1875vw
+    @media only screen and (max-width: 650px)
+      margin-bottom: 3.1250vw
+    & .modal__button
+      margin: 0
+    & .modal__button-none-underline
+      margin: 0
+  &__soc-wrapper
+    display: flex
+    justify-content: center
+//modal
+
+
+
+.empty-basket
+  &__button
+    width: 22.9167vw
+    margin: 0 auto
+    @media only screen and (max-width: 650px)
+      width: 93.7500vw
+  &__text
+    margin-bottom: 3.6458vw
+    text-align: center
+    @media only screen and (max-width: 650px)
+      margin: 0 auto 51.5625vw
+      width: 56.2500vw
+  &__title
+    margin-bottom: 2.2396vw
+    @media only screen and (max-width: 650px)
+      margin-bottom: 8.1250vw
+  &__img
+    width: 6.7708vw
+    height: 6.5104vw
+    margin: 0 auto 5vw
+    @media only screen and (max-width: 650px)
+      width: 20.9375vw
+      height: 20.0000vw
+      margin: 0 auto 5.0000vw
+    img
+      width: 100%
+      height: 100%
+      object-fit: contain
+
+.copyright
+  &__text
+    &:nth-child(2)
+      @media only screen and (max-width: 650px)
+        white-space: nowrap

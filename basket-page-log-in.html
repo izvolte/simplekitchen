@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple-Kitchen</title>
+    <link href="assets/css/slick.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/slick.min.js"></script>
+    <script src="assets/js/TweenMax.min.js"></script>
+    <script src="assets/js/ScrollMagic.min.js"></script>
+    <script src="assets/js/animation.gsap.min.js"></script>
+    <script src="assets/js/debug.addIndicators.min.js"></script>
+    <script src="assets/js/turn.js"></script>
+    <script src="assets/js/main.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <div class="content">
+        <header class="header">
+            <a href="#" class="header__logo">
+                <div class="logo__wrapper">
+                    <div class="logo logo_size_m logo_color_head">
+                        <svg width="163" height="49" viewBox="0 0 163 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M87.928 8.664C87.928 9.208 88.168 9.64 88.648 9.96C89.128 10.28 89.712 10.528 90.4 10.704C91.088 10.88 91.776 11.08 92.464 11.304C93.152 11.512 93.736 11.872 94.216 12.384C94.696 12.88 94.936 13.536 94.936 14.352C94.936 15.376 94.528 16.208 93.712 16.848C92.912 17.488 91.872 17.808 90.592 17.808C89.44 17.808 88.456 17.552 87.64 17.04C86.84 16.528 86.28 15.864 85.96 15.048L87.304 14.256C87.528 14.88 87.928 15.376 88.504 15.744C89.096 16.096 89.792 16.272 90.592 16.272C91.376 16.272 92.032 16.12 92.56 15.816C93.088 15.496 93.352 15.008 93.352 14.352C93.352 13.808 93.112 13.376 92.632 13.056C92.152 12.736 91.568 12.488 90.88 12.312C90.192 12.136 89.504 11.944 88.816 11.736C88.128 11.512 87.544 11.152 87.064 10.656C86.584 10.144 86.344 9.48 86.344 8.664C86.344 7.688 86.728 6.872 87.496 6.216C88.28 5.56 89.264 5.232 90.448 5.232C91.424 5.232 92.28 5.456 93.016 5.904C93.752 6.336 94.296 6.928 94.648 7.68L93.328 8.448C92.864 7.328 91.904 6.768 90.448 6.768C89.76 6.768 89.168 6.936 88.672 7.272C88.176 7.592 87.928 8.056 87.928 8.664Z" fill="white"/>
+                            <path d="M99.0693 2.64C98.8453 2.864 98.5733 2.976 98.2533 2.976C97.9333 2.976 97.6613 2.864 97.4373 2.64C97.2133 2.416 97.1013 2.144 97.1013 1.824C97.1013 1.504 97.2133 1.232 97.4373 1.008C97.6613 0.784 97.9333 0.672 98.2533 0.672C98.5733 0.672 98.8453 0.784 99.0693 1.008C99.2933 1.232 99.4053 1.504 99.4053 1.824C99.4053 2.144 99.2933 2.416 99.0693 2.64ZM97.4613 17.52V5.52H99.0453V17.52H97.4613Z" fill="white"/>
+                            <path d="M115.199 5.232C116.543 5.232 117.623 5.664 118.439 6.528C119.271 7.392 119.687 8.56 119.687 10.032V17.52H118.103V10.032C118.103 8.992 117.831 8.192 117.287 7.632C116.759 7.056 116.055 6.768 115.175 6.768C114.183 6.768 113.375 7.104 112.751 7.776C112.143 8.432 111.839 9.464 111.839 10.872V17.52H110.255V10.032C110.255 8.976 109.999 8.168 109.487 7.608C108.991 7.048 108.311 6.768 107.447 6.768C106.487 6.768 105.671 7.104 104.999 7.776C104.327 8.448 103.991 9.48 103.991 10.872V17.52H102.407V5.52H103.991V7.272C104.855 5.912 106.079 5.232 107.663 5.232C109.391 5.232 110.607 5.96 111.311 7.416C112.175 5.96 113.471 5.232 115.199 5.232Z" fill="white"/>
+                            <path d="M129.182 5.232C130.894 5.232 132.35 5.84 133.55 7.056C134.766 8.272 135.374 9.76 135.374 11.52C135.374 13.28 134.766 14.768 133.55 15.984C132.35 17.2 130.894 17.808 129.182 17.808C127.054 17.808 125.438 16.928 124.334 15.168V22.32H122.75V5.52H124.334V7.872C125.438 6.112 127.054 5.232 129.182 5.232ZM125.702 14.904C126.614 15.816 127.734 16.272 129.062 16.272C130.39 16.272 131.51 15.816 132.422 14.904C133.334 13.976 133.79 12.848 133.79 11.52C133.79 10.192 133.334 9.072 132.422 8.16C131.51 7.232 130.39 6.768 129.062 6.768C127.734 6.768 126.614 7.232 125.702 8.16C124.79 9.072 124.334 10.192 124.334 11.52C124.334 12.848 124.79 13.976 125.702 14.904Z" fill="white"/>
+                            <path d="M138.008 17.52V0H139.592V17.52H138.008Z" fill="white"/>
+                            <path d="M148.497 5.232C150.273 5.232 151.705 5.864 152.793 7.128C153.897 8.376 154.449 9.856 154.449 11.568C154.449 11.744 154.433 11.992 154.401 12.312H143.865C144.025 13.528 144.537 14.496 145.401 15.216C146.281 15.92 147.361 16.272 148.641 16.272C149.553 16.272 150.337 16.088 150.993 15.72C151.665 15.336 152.169 14.84 152.505 14.232L153.897 15.048C153.369 15.896 152.649 16.568 151.737 17.064C150.825 17.56 149.785 17.808 148.617 17.808C146.729 17.808 145.193 17.216 144.009 16.032C142.825 14.848 142.233 13.344 142.233 11.52C142.233 9.728 142.817 8.232 143.985 7.032C145.153 5.832 146.657 5.232 148.497 5.232ZM148.497 6.768C147.249 6.768 146.201 7.144 145.353 7.896C144.521 8.632 144.025 9.592 143.865 10.776H152.817C152.657 9.512 152.169 8.528 151.353 7.824C150.537 7.12 149.585 6.768 148.497 6.768Z" fill="white"/>
+                            <path d="M96.376 45.52H94.264L88.264 39.736V45.52H86.68V28.72H88.264V38.824L93.976 33.52H96.136L89.944 39.28L96.376 45.52Z" fill="white"/>
+                            <path d="M100.147 30.64C99.9234 30.864 99.6514 30.976 99.3314 30.976C99.0114 30.976 98.7394 30.864 98.5154 30.64C98.2914 30.416 98.1794 30.144 98.1794 29.824C98.1794 29.504 98.2914 29.232 98.5154 29.008C98.7394 28.784 99.0114 28.672 99.3314 28.672C99.6514 28.672 99.9234 28.784 100.147 29.008C100.371 29.232 100.483 29.504 100.483 29.824C100.483 30.144 100.371 30.416 100.147 30.64ZM98.5394 45.52V33.52H100.123V45.52H98.5394Z" fill="white"/>
+                            <path d="M109.845 35.056H106.389V42.328C106.389 42.984 106.517 43.456 106.773 43.744C107.029 44.016 107.413 44.16 107.925 44.176C108.437 44.176 109.077 44.16 109.845 44.128V45.52C108.165 45.776 106.901 45.656 106.053 45.16C105.221 44.664 104.805 43.72 104.805 42.328V35.056H102.285V33.52H104.805V30.64L106.389 30.16V33.52H109.845V35.056Z" fill="white"/>
+                            <path d="M117.35 45.808C115.542 45.808 114.038 45.208 112.838 44.008C111.638 42.792 111.038 41.296 111.038 39.52C111.038 37.744 111.638 36.256 112.838 35.056C114.038 33.84 115.542 33.232 117.35 33.232C118.534 33.232 119.598 33.52 120.542 34.096C121.486 34.656 122.174 35.416 122.606 36.376L121.31 37.12C120.99 36.4 120.47 35.832 119.75 35.416C119.046 34.984 118.246 34.768 117.35 34.768C116.022 34.768 114.902 35.232 113.99 36.16C113.078 37.072 112.622 38.192 112.622 39.52C112.622 40.848 113.078 41.976 113.99 42.904C114.902 43.816 116.022 44.272 117.35 44.272C118.246 44.272 119.046 44.064 119.75 43.648C120.454 43.216 121.006 42.64 121.406 41.92L122.726 42.688C122.23 43.648 121.502 44.408 120.542 44.968C119.582 45.528 118.518 45.808 117.35 45.808Z" fill="white"/>
+                            <path d="M130.616 33.232C132.072 33.232 133.216 33.68 134.048 34.576C134.896 35.456 135.32 36.648 135.32 38.152V45.52H133.736V38.152C133.736 37.08 133.448 36.248 132.872 35.656C132.312 35.064 131.512 34.768 130.472 34.768C129.32 34.768 128.384 35.136 127.664 35.872C126.944 36.592 126.584 37.712 126.584 39.232V45.52H125V28.72H126.584V35.392C127.48 33.952 128.824 33.232 130.616 33.232Z" fill="white"/>
+                            <path d="M143.927 33.232C145.703 33.232 147.135 33.864 148.223 35.128C149.327 36.376 149.879 37.856 149.879 39.568C149.879 39.744 149.863 39.992 149.831 40.312H139.295C139.455 41.528 139.967 42.496 140.831 43.216C141.711 43.92 142.791 44.272 144.071 44.272C144.983 44.272 145.767 44.088 146.423 43.72C147.095 43.336 147.599 42.84 147.935 42.232L149.327 43.048C148.799 43.896 148.079 44.568 147.167 45.064C146.255 45.56 145.215 45.808 144.047 45.808C142.159 45.808 140.623 45.216 139.439 44.032C138.255 42.848 137.663 41.344 137.663 39.52C137.663 37.728 138.247 36.232 139.415 35.032C140.583 33.832 142.087 33.232 143.927 33.232ZM143.927 34.768C142.679 34.768 141.631 35.144 140.783 35.896C139.951 36.632 139.455 37.592 139.295 38.776H148.247C148.087 37.512 147.599 36.528 146.783 35.824C145.967 35.12 145.015 34.768 143.927 34.768Z" fill="white"/>
+                            <path d="M158.015 33.232C159.471 33.232 160.615 33.68 161.447 34.576C162.295 35.456 162.719 36.648 162.719 38.152V45.52H161.135V38.152C161.135 37.08 160.847 36.248 160.271 35.656C159.711 35.064 158.911 34.768 157.871 34.768C156.719 34.768 155.783 35.136 155.063 35.872C154.343 36.592 153.983 37.712 153.983 39.232V45.52H152.399V33.52H153.983V35.392C154.879 33.952 156.223 33.232 158.015 33.232Z" fill="white"/>
+                            <path class="logo__icon" fill-rule="evenodd" clip-rule="evenodd" d="M6.31456 10.7329L6.36222 2.33289C6.01906 2.16024 5.66987 2.02918 5.32069 1.94188C4.922 2.04155 4.52331 2.19829 4.13357 2.40882L4.18081 10.7329C4.18233 11.0019 3.97883 11.2279 3.71108 11.2545C3.42462 11.283 3.16932 11.0738 3.14087 10.7874L2.44089 3.73989C1.02603 5.26225 0 7.62252 0 10.588C0 14.8649 1.91103 18.4166 4.42121 19.1111C5.71354 35.3735 19.32 48.1677 35.9148 48.1677C42.6142 48.1677 48.8266 46.0825 53.9383 42.5257C55.8979 43.2542 58.9747 44.3127 62.0144 44.5707C63.8632 44.7275 65.7889 44.5985 67.4798 43.853C69.2068 43.0915 70.6186 41.716 71.4354 39.538C72.8914 35.6551 72.0465 32.753 70.4733 30.6134C69.294 29.0095 67.6663 27.8151 66.5552 26.9999C66.3126 26.8218 66.0947 26.6619 65.9114 26.5197C66.693 24.1611 67.2042 21.6793 67.4083 19.111C69.9184 18.4164 71.8294 14.8648 71.8294 10.588C71.8294 5.81288 69.169 1.94188 66.5087 1.94188C63.8483 1.94188 61.188 5.81288 61.188 10.588C61.188 14.7492 62.997 18.2238 65.4067 19.0485C64.6883 27.7265 60.2255 35.3422 53.638 40.2759L53.5579 40.2458L53.5112 40.3703C48.5928 44.0133 42.5054 46.1677 35.9148 46.1677C20.4039 46.1677 7.68004 34.2348 6.4228 19.0484C8.83248 18.2236 10.6414 14.7491 10.6414 10.588C10.6414 7.5309 9.55097 5.11697 8.06825 3.60119L7.35449 10.7874C7.32604 11.0738 7.07074 11.283 6.78428 11.2545C6.51654 11.2279 6.31303 11.0019 6.31456 10.7329ZM62.1835 42.5778C59.9458 42.3879 57.6593 41.7152 55.8482 41.087C58.136 39.2244 60.1581 37.0478 61.8488 34.6231C62.4411 34.988 63.159 35.4478 63.8379 35.9116C64.356 36.2656 64.8453 36.6179 65.2365 36.9293C65.6446 37.2543 65.8953 37.496 65.9868 37.6311L66.8146 37.0701C66.6268 36.7929 66.2603 36.4662 65.8594 36.147C65.4416 35.8143 64.9302 35.4468 64.4021 35.086C63.7235 34.6223 63.0072 34.1629 62.4082 33.7932C63.4947 32.125 64.4279 30.3477 65.1878 28.4815C65.2963 28.5622 65.4072 28.6439 65.5199 28.7269C66.6175 29.5359 67.886 30.4708 68.862 31.7982C70.06 33.4275 70.767 35.6244 69.5627 38.8357C68.934 40.5123 67.9049 41.4798 66.6729 42.023C65.4046 42.5822 63.853 42.7195 62.1835 42.5778Z" fill="white"/>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+            <div class="header__nav nav ">
+                <ul class="ul nav__list">
+                    <li class="nav__item nav__item_calc text_size_s text_weight_semibold">
+                        <a href="#">Калькулятор</a>
+                    </li>
+                    <li class="nav__item current text text_size_s text_weight_semibold">
+                        <a href="#">Преимущества</a>
+                    </li>
+                    <li class="nav__item text_size_s text_weight_semibold">
+                        <a href="#">Меню и тарифы</a>
+                    </li>
+                    <li class="nav__item text_size_s nav__item_faq text_weight_semibold">
+                        <a href="#">FAQ</a>
+                    </li>
+                    <li class="nav__item nav__item_questions text_size_s text_weight_semibold">
+                        <a href="#">Частые вопросы</a>
+                    </li>
+                </ul>
+                <div class="nav__contacts">
+                    <div class="nav__number-wrapper">
+                        <input type="text" class="nav__number text_size_s text_weight_ mask-tel" placeholder="Ваш телефон">
+                    </div>
+                    <button class="button nav__button ">
+                        <span class=" nav__button-title text_size_s button__title text_color_white text_weight_semibold">
+                            Перезвоните мне
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="header__right">
+                <div class="header__info">
+                    <a href="tel: +7 (495) 649-81-68" type="text" class="header__number text_weight_medium text_size_xs text">+7 (495) 649-81-68</a>
+                    <div class="header__button button button_color_pink button_size_xxxs button_radius_cub">
+                        <span class="button__title text_size_xs text_weight_semibold text_color_white">
+                            Перезвоните мне
+                        </span>
+                    </div>
+                </div>
+                <div class="header__login login">
+                    <button class="button button_color_none login__button">
+                        <span class="login__text text_size_xs text">Войти</span>
+                        <a class="login__icon-wrapper">
+                            <img class="login__icon" src="assets/icon/login.svg" alt="login-icon">
+                        </a>
+                    </button>
+                </div>
+                <a href="#" class="header__cart-button">
+                    <div class="cart-button__wrapper">
+                        <div class="cart-button__num">
+                            <span class="cart-button__text text_size_xxs text_weight_medium">14</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="header__burger burger ">
+                <span></span>
+            </div>
+        </header>
+        <section class="basket">
+            <div class="basket__header page-header">
+                <!--<button class="basket__header-button button back-button">
+                    <div class="back-button__icon-wrapper">
+                        <svg class="back-button__icon" width="32" height="8" viewBox="0 0 32 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.646446 3.64644C0.451185 3.84171 0.451185 4.15829 0.646446 4.35355L3.82843 7.53553C4.02369 7.73079 4.34027 7.73079 4.53553 7.53553C4.7308 7.34027 4.7308 7.02369 4.53553 6.82842L1.70711 4L4.53553 1.17157C4.7308 0.976308 4.7308 0.659726 4.53553 0.464464C4.34027 0.269201 4.02369 0.269201 3.82843 0.464464L0.646446 3.64644ZM32 3.5L1 3.5L1 4.5L32 4.5L32 3.5Z" fill="#101828"/>
+                        </svg>
+                    </div>
+                </button>-->
+                <h1 class="basket__title text_size_xl text_weight_bold center page-title">Корзина</h1>
+            </div>
+            <div class="basket__content">
+                <div class="basket__left">
+                    <h2 class="basket__left-title text_weight_bold text_size_l">Выбранные товары</h2>
+                    <div class="product-basket__wrapper">
+                        <div class="basket__product product-basket">
+                            <div class="product-basket__left">
+                                <div class="product-basket__icon-wrapper">
+                                    <svg class="product-basket__icon" xmlns="http://www.w3.org/2000/svg" width="59" height="56" viewBox="0 0 59 56"><defs><linearGradient id="svssa" x1="10.82" x2="13.77" y1="7.4" y2="9.25" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffa090"/><stop offset="1" stop-color="#f47965"/></linearGradient><linearGradient id="svssb" x1="15.73" x2="30.48" y1="7.4" y2="9.25" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffa090"/><stop offset="1" stop-color="#f47965"/></linearGradient><linearGradient id="svssc" x1="0" x2="59" y1="0" y2="55.53" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffa090"/><stop offset="1" stop-color="#f47965"/></linearGradient><linearGradient id="svssd" x1="33.44" x2="38.36" y1="33.32" y2="39.8" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffa090"/><stop offset="1" stop-color="#f47965"/></linearGradient><linearGradient id="svsse" x1="7.87" x2="14.75" y1="15.74" y2="22.22" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffa090"/><stop offset="1" stop-color="#f47965"/></linearGradient><linearGradient id="svssf" x1="7.87" x2="14.75" y1="24.06" y2="30.54" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffa090"/><stop offset="1" stop-color="#f47965"/></linearGradient><linearGradient id="svssg" x1="7.87" x2="14.75" y1="32.39" y2="38.87" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffa090"/><stop offset="1" stop-color="#f47965"/></linearGradient><linearGradient id="svssh" x1="7.87" x2="14.75" y1="40.72" y2="47.2" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffa090"/><stop offset="1" stop-color="#f47965"/></linearGradient><linearGradient id="svssi" x1="16.72" x2="32.45" y1="18.51" y2="20.36" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffa090"/><stop offset="1" stop-color="#f47965"/></linearGradient><linearGradient id="svssj" x1="16.72" x2="29.5" y1="26.84" y2="28.69" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffa090"/><stop offset="1" stop-color="#f47965"/></linearGradient><linearGradient id="svssk" x1="16.72" x2="27.54" y1="35.17" y2="37.02" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffa090"/><stop offset="1" stop-color="#f47965"/></linearGradient><linearGradient id="svssl" x1="16.72" x2="27.54" y1="43.5" y2="45.35" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffa090"/><stop offset="1" stop-color="#f47965"/></linearGradient></defs><g><g><path fill="url(#svssa)" d="M11.803 9.25h.984c.543 0 .983-.413.983-.924 0-.512-.44-.926-.983-.926h-.984c-.543 0-.983.414-.983.926 0 .51.44.925.983.925z"/></g><g><path fill="url(#svssb)" d="M16.714 9.25h12.783c.543 0 .983-.413.983-.924 0-.512-.44-.926-.983-.926H16.714c-.543 0-.984.414-.984.926 0 .51.44.925.984.925z"/></g><g><path fill="url(#svssc)" d="M50.074 29.616c4.922 0 8.926 4.017 8.926 8.95v4.006c0 7.146-5.793 12.957-12.912 12.957h-3.676a12.798 12.798 0 0 1-2.74-.3 3.025 3.025 0 0 1-1.322.3H2.95C1.32 55.53 0 54.286 0 52.753V8.33c0-1.533 1.32-2.776 2.95-2.776h4.114c.415-1.106 1.524-1.846 2.77-1.851H15.1C15.928 1.485 18.153 0 20.65 0c2.497 0 4.722 1.485 5.549 3.703h5.268c1.245.005 2.353.745 2.769 1.85h4.114c1.63 0 2.95 1.244 2.95 2.777v15.617a7.76 7.76 0 0 1 2.53 3.609c1.125-2.622 3.184-4.794 5.824-6.144.467-.244 1.054-.094 1.326.339.27.432.126.99-.326 1.255-4.25 2.362-5.37 5.453-5.584 7.582.423-.333.907-.59 1.428-.76a4.857 4.857 0 0 1 1.419-.212h2.157zm-8.253-1.856c-.796-2.193-2.976-3.673-5.437-3.694h-.021a16.972 16.972 0 0 0-1.89.099c-.123 1.279-.168 4.852 3.086 5.466.026.005.044.02.068.026.264-.024.53-.04.799-.04h2.151c.514 0 1.025.082 1.509.246.099.03.187.084.285.123a11.812 11.812 0 0 0-.55-2.23zm-9.99 22.217a12.898 12.898 0 0 1-2.331-7.404v-4.008c-.046-3.443 2.001-6.61 5.272-8.153-2.34-1.78-2.517-5.151-2.17-7.055.09-.38.258-1.046 2.798-1.131v-11.12h-1.164c-.416 1.106-1.524 1.847-2.77 1.851H9.834c-1.245-.004-2.354-.745-2.769-1.85H5.9v38.87zM39.332 8.33c0-.511-.44-.925-.983-.925h-3.933v1.85h.983c1.086 0 1.966.83 1.966 1.851v11.2a8.255 8.255 0 0 1 1.967.507zm-29.5-2.776c-.543 0-.983.414-.983.925v3.702c0 .511.44.925.983.925h21.634c.543 0 .983-.414.983-.925V6.48c0-.511-.44-.925-.983-.925h-5.999a.805.805 0 0 1-.47-.125.978.978 0 0 1-.19-.122.878.878 0 0 1-.093-.098.89.89 0 0 1-.12-.167 1.033 1.033 0 0 1-.055-.132.89.89 0 0 1-.041-.099c-.374-1.723-1.985-2.96-3.854-2.96-1.868 0-3.48 1.237-3.854 2.96a.75.75 0 0 1-.039.086.92.92 0 0 1-.461.532.962.962 0 0 1-.361.105.853.853 0 0 1-.098.02zm25.96 48.124a13.026 13.026 0 0 1-2.401-1.85H5.9c-1.086 0-1.967-.83-1.967-1.851v-38.87c0-1.023.88-1.852 1.967-1.852h.983v-1.85H2.95c-.543 0-.983.414-.983.925v44.423c0 .511.44.926.983.926zm21.24-15.113c0-3.912-3.122-7.098-6.96-7.1h-2.171a2.836 2.836 0 0 0-.786.121l-.048.013c-1.14.436-1.871 1.493-1.835 2.65v.92c0 .511-.44.926-.983.926-.543 0-.984-.415-.984-.926v-.917c.034-1.16-.704-2.215-1.847-2.646a2.657 2.657 0 0 0-.825-.139h-2.168c-3.837 0-6.96 3.186-6.96 7.098v4.007c0 6.126 4.912 11.106 10.946 11.106h3.676c6.034 0 10.945-4.982 10.945-11.105z"/></g><g><path fill="url(#svssd)" d="M37.063 33.37c-.149.044-3.623 1.185-3.623 5.505 0 .51.44.925.984.925.542 0 .983-.414.983-.925 0-2.938 2.175-3.715 2.286-3.752.514-.164.79-.69.617-1.174-.175-.484-.733-.744-1.247-.58z"/></g><g><path fill="url(#svsse)" d="M12.787 15.74c1.086 0 1.967.829 1.967 1.851v2.777c0 1.022-.88 1.85-1.967 1.85h-2.95c-1.087 0-1.967-.828-1.967-1.85V17.59c0-1.022.88-1.851 1.967-1.851zm0 4.628V17.59h-2.95v2.777z"/></g><g><path fill="url(#svssf)" d="M12.787 24.06c1.086 0 1.967.829 1.967 1.851v2.776c0 1.022-.88 1.852-1.967 1.852h-2.95c-1.087 0-1.967-.83-1.967-1.852v-2.776c0-1.022.88-1.851 1.967-1.851zm0 4.627v-2.776h-2.95v2.776z"/></g><g><path fill="url(#svssg)" d="M12.787 32.39c1.086 0 1.967.829 1.967 1.851v2.776c0 1.022-.88 1.851-1.967 1.851h-2.95c-1.087 0-1.967-.829-1.967-1.85V34.24c0-1.022.88-1.851 1.967-1.851zm0 4.627v-2.776h-2.95v2.776z"/></g><g><path fill="url(#svssh)" d="M12.787 40.72c1.086 0 1.967.829 1.967 1.851v2.777c0 1.022-.88 1.85-1.967 1.85h-2.95c-1.087 0-1.967-.828-1.967-1.85V42.57c0-1.022.88-1.851 1.967-1.851zm0 4.628V42.57h-2.95v2.777z"/></g><g><path fill="url(#svssi)" d="M17.704 20.36H31.47c.543 0 .984-.413.984-.925 0-.51-.44-.925-.984-.925H17.704c-.544 0-.984.414-.984.925 0 .512.44.926.984.926z"/></g><g><path fill="url(#svssj)" d="M28.52 26.84H17.704c-.544 0-.984.414-.984.926 0 .51.44.925.984.925H28.52c.543 0 .983-.414.983-.925 0-.512-.44-.926-.983-.926z"/></g><g><path fill="url(#svssk)" d="M26.553 35.17h-8.85c-.543 0-.983.414-.983.926 0 .51.44.925.984.925h8.85c.543 0 .983-.414.983-.925 0-.512-.44-.926-.984-.926z"/></g><g><path fill="url(#svssl)" d="M26.553 43.5h-8.85c-.543 0-.983.414-.983.926 0 .51.44.925.984.925h8.85c.543 0 .983-.414.983-.925 0-.512-.44-.926-.984-.926z"/></g></g>
+                                    </svg>
+                                </div>
+                                <button class="button product-basket__delete">
+                                    <span class="button text_size_xs text_weight_medium text_color_white">Удалить</span>
+                                </button>
+                            </div>
+                            <div class="product-basket__mid">
+                                <h3 class="product-basket__title text_size_s text_color_white">Extra slim</h3>
+                                <span class="product-basket__calories text_size_xs text_color_white">800 ккал</span>
+                            </div>
+                            <div class="product-basket__right">
+                                <div class="product-basket__right-top">
+                                    <span class="roduct-basket__price text_size_s text_weight_bold uppercase text_color_white">2 200 ₽</span>
+                                    <span class="product-basket__price-one-day text_size_xs text_color_white">В день 1 100 ₽</span>
+                                </div>
+                                <div class="product-basket__right-bottom">
+                                    <span class="product-basket__calc-name text_size_xs text_weight_medium text_color_white">Дней</span>
+                                    <div class="product-basket__calc">
+                                        <button class="product-basket__down basket__push product-basket__push">
+                                            <svg class="product-basket__push__svg" width="12" height="3" viewBox="0 0 12 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M0.727661 2.99967V0.0905762H11.6368V2.99967H0.727661Z" fill="#E58171"/>
+                                            </svg>
+                                        </button>
+                                        <span class="text_size_xs text_color_highlighter">2</span>
+                                        <button class="product-basket__up basket__push product-basket__push">
+                                            <svg class="product-basket__push__svg" width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12.2727 5.19647V7.89399H7.80329V12.3634H5.10577V7.89399H0.636353V5.19647H5.10577V0.727051H7.80329V5.19647H12.2727Z" fill="#E58171"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="basket__product product-basket">
+                            <div class="product-basket__left">
+                                <div class="product-basket__icon-wrapper">
+                                    <svg class="product-basket__icon" xmlns="http://www.w3.org/2000/svg" width="59" height="56" viewBox="0 0 59 56"><defs><linearGradient id="svssa" x1="10.82" x2="13.77" y1="7.4" y2="9.25" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffa090"/><stop offset="1" stop-color="#f47965"/></linearGradient><linearGradient id="svssb" x1="15.73" x2="30.48" y1="7.4" y2="9.25" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffa090"/><stop offset="1" stop-color="#f47965"/></linearGradient><linearGradient id="svssc" x1="0" x2="59" y1="0" y2="55.53" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffa090"/><stop offset="1" stop-color="#f47965"/></linearGradient><linearGradient id="svssd" x1="33.44" x2="38.36" y1="33.32" y2="39.8" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffa090"/><stop offset="1" stop-color="#f47965"/></linearGradient><linearGradient id="svsse" x1="7.87" x2="14.75" y1="15.74" y2="22.22" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffa090"/><stop offset="1" stop-color="#f47965"/></linearGradient><linearGradient id="svssf" x1="7.87" x2="14.75" y1="24.06" y2="30.54" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffa090"/><stop offset="1" stop-color="#f47965"/></linearGradient><linearGradient id="svssg" x1="7.87" x2="14.75" y1="32.39" y2="38.87" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffa090"/><stop offset="1" stop-color="#f47965"/></linearGradient><linearGradient id="svssh" x1="7.87" x2="14.75" y1="40.72" y2="47.2" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffa090"/><stop offset="1" stop-color="#f47965"/></linearGradient><linearGradient id="svssi" x1="16.72" x2="32.45" y1="18.51" y2="20.36" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffa090"/><stop offset="1" stop-color="#f47965"/></linearGradient><linearGradient id="svssj" x1="16.72" x2="29.5" y1="26.84" y2="28.69" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffa090"/><stop offset="1" stop-color="#f47965"/></linearGradient><linearGradient id="svssk" x1="16.72" x2="27.54" y1="35.17" y2="37.02" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffa090"/><stop offset="1" stop-color="#f47965"/></linearGradient><linearGradient id="svssl" x1="16.72" x2="27.54" y1="43.5" y2="45.35" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffa090"/><stop offset="1" stop-color="#f47965"/></linearGradient></defs><g><g><path fill="url(#svssa)" d="M11.803 9.25h.984c.543 0 .983-.413.983-.924 0-.512-.44-.926-.983-.926h-.984c-.543 0-.983.414-.983.926 0 .51.44.925.983.925z"/></g><g><path fill="url(#svssb)" d="M16.714 9.25h12.783c.543 0 .983-.413.983-.924 0-.512-.44-.926-.983-.926H16.714c-.543 0-.984.414-.984.926 0 .51.44.925.984.925z"/></g><g><path fill="url(#svssc)" d="M50.074 29.616c4.922 0 8.926 4.017 8.926 8.95v4.006c0 7.146-5.793 12.957-12.912 12.957h-3.676a12.798 12.798 0 0 1-2.74-.3 3.025 3.025 0 0 1-1.322.3H2.95C1.32 55.53 0 54.286 0 52.753V8.33c0-1.533 1.32-2.776 2.95-2.776h4.114c.415-1.106 1.524-1.846 2.77-1.851H15.1C15.928 1.485 18.153 0 20.65 0c2.497 0 4.722 1.485 5.549 3.703h5.268c1.245.005 2.353.745 2.769 1.85h4.114c1.63 0 2.95 1.244 2.95 2.777v15.617a7.76 7.76 0 0 1 2.53 3.609c1.125-2.622 3.184-4.794 5.824-6.144.467-.244 1.054-.094 1.326.339.27.432.126.99-.326 1.255-4.25 2.362-5.37 5.453-5.584 7.582.423-.333.907-.59 1.428-.76a4.857 4.857 0 0 1 1.419-.212h2.157zm-8.253-1.856c-.796-2.193-2.976-3.673-5.437-3.694h-.021a16.972 16.972 0 0 0-1.89.099c-.123 1.279-.168 4.852 3.086 5.466.026.005.044.02.068.026.264-.024.53-.04.799-.04h2.151c.514 0 1.025.082 1.509.246.099.03.187.084.285.123a11.812 11.812 0 0 0-.55-2.23zm-9.99 22.217a12.898 12.898 0 0 1-2.331-7.404v-4.008c-.046-3.443 2.001-6.61 5.272-8.153-2.34-1.78-2.517-5.151-2.17-7.055.09-.38.258-1.046 2.798-1.131v-11.12h-1.164c-.416 1.106-1.524 1.847-2.77 1.851H9.834c-1.245-.004-2.354-.745-2.769-1.85H5.9v38.87zM39.332 8.33c0-.511-.44-.925-.983-.925h-3.933v1.85h.983c1.086 0 1.966.83 1.966 1.851v11.2a8.255 8.255 0 0 1 1.967.507zm-29.5-2.776c-.543 0-.983.414-.983.925v3.702c0 .511.44.925.983.925h21.634c.543 0 .983-.414.983-.925V6.48c0-.511-.44-.925-.983-.925h-5.999a.805.805 0 0 1-.47-.125.978.978 0 0 1-.19-.122.878.878 0 0 1-.093-.098.89.89 0 0 1-.12-.167 1.033 1.033 0 0 1-.055-.132.89.89 0 0 1-.041-.099c-.374-1.723-1.985-2.96-3.854-2.96-1.868 0-3.48 1.237-3.854 2.96a.75.75 0 0 1-.039.086.92.92 0 0 1-.461.532.962.962 0 0 1-.361.105.853.853 0 0 1-.098.02zm25.96 48.124a13.026 13.026 0 0 1-2.401-1.85H5.9c-1.086 0-1.967-.83-1.967-1.851v-38.87c0-1.023.88-1.852 1.967-1.852h.983v-1.85H2.95c-.543 0-.983.414-.983.925v44.423c0 .511.44.926.983.926zm21.24-15.113c0-3.912-3.122-7.098-6.96-7.1h-2.171a2.836 2.836 0 0 0-.786.121l-.048.013c-1.14.436-1.871 1.493-1.835 2.65v.92c0 .511-.44.926-.983.926-.543 0-.984-.415-.984-.926v-.917c.034-1.16-.704-2.215-1.847-2.646a2.657 2.657 0 0 0-.825-.139h-2.168c-3.837 0-6.96 3.186-6.96 7.098v4.007c0 6.126 4.912 11.106 10.946 11.106h3.676c6.034 0 10.945-4.982 10.945-11.105z"/></g><g><path fill="url(#svssd)" d="M37.063 33.37c-.149.044-3.623 1.185-3.623 5.505 0 .51.44.925.984.925.542 0 .983-.414.983-.925 0-2.938 2.175-3.715 2.286-3.752.514-.164.79-.69.617-1.174-.175-.484-.733-.744-1.247-.58z"/></g><g><path fill="url(#svsse)" d="M12.787 15.74c1.086 0 1.967.829 1.967 1.851v2.777c0 1.022-.88 1.85-1.967 1.85h-2.95c-1.087 0-1.967-.828-1.967-1.85V17.59c0-1.022.88-1.851 1.967-1.851zm0 4.628V17.59h-2.95v2.777z"/></g><g><path fill="url(#svssf)" d="M12.787 24.06c1.086 0 1.967.829 1.967 1.851v2.776c0 1.022-.88 1.852-1.967 1.852h-2.95c-1.087 0-1.967-.83-1.967-1.852v-2.776c0-1.022.88-1.851 1.967-1.851zm0 4.627v-2.776h-2.95v2.776z"/></g><g><path fill="url(#svssg)" d="M12.787 32.39c1.086 0 1.967.829 1.967 1.851v2.776c0 1.022-.88 1.851-1.967 1.851h-2.95c-1.087 0-1.967-.829-1.967-1.85V34.24c0-1.022.88-1.851 1.967-1.851zm0 4.627v-2.776h-2.95v2.776z"/></g><g><path fill="url(#svssh)" d="M12.787 40.72c1.086 0 1.967.829 1.967 1.851v2.777c0 1.022-.88 1.85-1.967 1.85h-2.95c-1.087 0-1.967-.828-1.967-1.85V42.57c0-1.022.88-1.851 1.967-1.851zm0 4.628V42.57h-2.95v2.777z"/></g><g><path fill="url(#svssi)" d="M17.704 20.36H31.47c.543 0 .984-.413.984-.925 0-.51-.44-.925-.984-.925H17.704c-.544 0-.984.414-.984.925 0 .512.44.926.984.926z"/></g><g><path fill="url(#svssj)" d="M28.52 26.84H17.704c-.544 0-.984.414-.984.926 0 .51.44.925.984.925H28.52c.543 0 .983-.414.983-.925 0-.512-.44-.926-.983-.926z"/></g><g><path fill="url(#svssk)" d="M26.553 35.17h-8.85c-.543 0-.983.414-.983.926 0 .51.44.925.984.925h8.85c.543 0 .983-.414.983-.925 0-.512-.44-.926-.984-.926z"/></g><g><path fill="url(#svssl)" d="M26.553 43.5h-8.85c-.543 0-.983.414-.983.926 0 .51.44.925.984.925h8.85c.543 0 .983-.414.983-.925 0-.512-.44-.926-.984-.926z"/></g></g>
+                                    </svg>
+                                </div>
+                                <button class="button product-basket__delete">
+                                    <span class="button text_size_xs text_weight_medium text_color_white">Удалить</span>
+                                </button>
+                            </div>
+                            <div class="product-basket__mid">
+                                <h3 class="product-basket__title text_size_s text_color_white">Extra slim</h3>
+                                <span class="product-basket__calories text_size_xs text_color_white">800 ккал</span>
+                            </div>
+                            <div class="product-basket__right">
+                                <div class="product-basket__right-top">
+                                    <span class="roduct-basket__price text_size_s text_weight_bold uppercase text_color_white">2 200 ₽</span>
+                                    <span class="product-basket__price-one-day text_size_xs text_color_white">В день 1 100 ₽</span>
+                                </div>
+                                <div class="product-basket__right-bottom">
+                                    <span class="product-basket__calc-name text_size_xs text_color_white">Дней</span>
+                                    <div class="product-basket__calc">
+                                        <button class="product-basket__down basket__push product-basket__push">
+                                            <svg class="product-basket__push__svg" width="12" height="3" viewBox="0 0 12 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M0.727661 2.99967V0.0905762H11.6368V2.99967H0.727661Z" fill="#E58171"/>
+                                            </svg>
+                                        </button>
+                                        <span class="text_size_xs text_color_highlighter">2</span>
+                                        <button class="product-basket__up basket__push product-basket__push">
+                                            <svg class="product-basket__push__svg" width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12.2727 5.19647V7.89399H7.80329V12.3634H5.10577V7.89399H0.636353V5.19647H5.10577V0.727051H7.80329V5.19647H12.2727Z" fill="#E58171"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="basket__product product-basket">
+                            <div class="product-basket__left">
+                                <div class="product-basket__icon-wrapper">
+                                    <svg class="product-basket__icon" xmlns="http://www.w3.org/2000/svg" width="59" height="56" viewBox="0 0 59 56"><defs><linearGradient id="svssa" x1="10.82" x2="13.77" y1="7.4" y2="9.25" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffa090"/><stop offset="1" stop-color="#f47965"/></linearGradient><linearGradient id="svssb" x1="15.73" x2="30.48" y1="7.4" y2="9.25" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffa090"/><stop offset="1" stop-color="#f47965"/></linearGradient><linearGradient id="svssc" x1="0" x2="59" y1="0" y2="55.53" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffa090"/><stop offset="1" stop-color="#f47965"/></linearGradient><linearGradient id="svssd" x1="33.44" x2="38.36" y1="33.32" y2="39.8" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffa090"/><stop offset="1" stop-color="#f47965"/></linearGradient><linearGradient id="svsse" x1="7.87" x2="14.75" y1="15.74" y2="22.22" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffa090"/><stop offset="1" stop-color="#f47965"/></linearGradient><linearGradient id="svssf" x1="7.87" x2="14.75" y1="24.06" y2="30.54" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffa090"/><stop offset="1" stop-color="#f47965"/></linearGradient><linearGradient id="svssg" x1="7.87" x2="14.75" y1="32.39" y2="38.87" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffa090"/><stop offset="1" stop-color="#f47965"/></linearGradient><linearGradient id="svssh" x1="7.87" x2="14.75" y1="40.72" y2="47.2" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffa090"/><stop offset="1" stop-color="#f47965"/></linearGradient><linearGradient id="svssi" x1="16.72" x2="32.45" y1="18.51" y2="20.36" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffa090"/><stop offset="1" stop-color="#f47965"/></linearGradient><linearGradient id="svssj" x1="16.72" x2="29.5" y1="26.84" y2="28.69" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffa090"/><stop offset="1" stop-color="#f47965"/></linearGradient><linearGradient id="svssk" x1="16.72" x2="27.54" y1="35.17" y2="37.02" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffa090"/><stop offset="1" stop-color="#f47965"/></linearGradient><linearGradient id="svssl" x1="16.72" x2="27.54" y1="43.5" y2="45.35" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffa090"/><stop offset="1" stop-color="#f47965"/></linearGradient></defs><g><g><path fill="url(#svssa)" d="M11.803 9.25h.984c.543 0 .983-.413.983-.924 0-.512-.44-.926-.983-.926h-.984c-.543 0-.983.414-.983.926 0 .51.44.925.983.925z"/></g><g><path fill="url(#svssb)" d="M16.714 9.25h12.783c.543 0 .983-.413.983-.924 0-.512-.44-.926-.983-.926H16.714c-.543 0-.984.414-.984.926 0 .51.44.925.984.925z"/></g><g><path fill="url(#svssc)" d="M50.074 29.616c4.922 0 8.926 4.017 8.926 8.95v4.006c0 7.146-5.793 12.957-12.912 12.957h-3.676a12.798 12.798 0 0 1-2.74-.3 3.025 3.025 0 0 1-1.322.3H2.95C1.32 55.53 0 54.286 0 52.753V8.33c0-1.533 1.32-2.776 2.95-2.776h4.114c.415-1.106 1.524-1.846 2.77-1.851H15.1C15.928 1.485 18.153 0 20.65 0c2.497 0 4.722 1.485 5.549 3.703h5.268c1.245.005 2.353.745 2.769 1.85h4.114c1.63 0 2.95 1.244 2.95 2.777v15.617a7.76 7.76 0 0 1 2.53 3.609c1.125-2.622 3.184-4.794 5.824-6.144.467-.244 1.054-.094 1.326.339.27.432.126.99-.326 1.255-4.25 2.362-5.37 5.453-5.584 7.582.423-.333.907-.59 1.428-.76a4.857 4.857 0 0 1 1.419-.212h2.157zm-8.253-1.856c-.796-2.193-2.976-3.673-5.437-3.694h-.021a16.972 16.972 0 0 0-1.89.099c-.123 1.279-.168 4.852 3.086 5.466.026.005.044.02.068.026.264-.024.53-.04.799-.04h2.151c.514 0 1.025.082 1.509.246.099.03.187.084.285.123a11.812 11.812 0 0 0-.55-2.23zm-9.99 22.217a12.898 12.898 0 0 1-2.331-7.404v-4.008c-.046-3.443 2.001-6.61 5.272-8.153-2.34-1.78-2.517-5.151-2.17-7.055.09-.38.258-1.046 2.798-1.131v-11.12h-1.164c-.416 1.106-1.524 1.847-2.77 1.851H9.834c-1.245-.004-2.354-.745-2.769-1.85H5.9v38.87zM39.332 8.33c0-.511-.44-.925-.983-.925h-3.933v1.85h.983c1.086 0 1.966.83 1.966 1.851v11.2a8.255 8.255 0 0 1 1.967.507zm-29.5-2.776c-.543 0-.983.414-.983.925v3.702c0 .511.44.925.983.925h21.634c.543 0 .983-.414.983-.925V6.48c0-.511-.44-.925-.983-.925h-5.999a.805.805 0 0 1-.47-.125.978.978 0 0 1-.19-.122.878.878 0 0 1-.093-.098.89.89 0 0 1-.12-.167 1.033 1.033 0 0 1-.055-.132.89.89 0 0 1-.041-.099c-.374-1.723-1.985-2.96-3.854-2.96-1.868 0-3.48 1.237-3.854 2.96a.75.75 0 0 1-.039.086.92.92 0 0 1-.461.532.962.962 0 0 1-.361.105.853.853 0 0 1-.098.02zm25.96 48.124a13.026 13.026 0 0 1-2.401-1.85H5.9c-1.086 0-1.967-.83-1.967-1.851v-38.87c0-1.023.88-1.852 1.967-1.852h.983v-1.85H2.95c-.543 0-.983.414-.983.925v44.423c0 .511.44.926.983.926zm21.24-15.113c0-3.912-3.122-7.098-6.96-7.1h-2.171a2.836 2.836 0 0 0-.786.121l-.048.013c-1.14.436-1.871 1.493-1.835 2.65v.92c0 .511-.44.926-.983.926-.543 0-.984-.415-.984-.926v-.917c.034-1.16-.704-2.215-1.847-2.646a2.657 2.657 0 0 0-.825-.139h-2.168c-3.837 0-6.96 3.186-6.96 7.098v4.007c0 6.126 4.912 11.106 10.946 11.106h3.676c6.034 0 10.945-4.982 10.945-11.105z"/></g><g><path fill="url(#svssd)" d="M37.063 33.37c-.149.044-3.623 1.185-3.623 5.505 0 .51.44.925.984.925.542 0 .983-.414.983-.925 0-2.938 2.175-3.715 2.286-3.752.514-.164.79-.69.617-1.174-.175-.484-.733-.744-1.247-.58z"/></g><g><path fill="url(#svsse)" d="M12.787 15.74c1.086 0 1.967.829 1.967 1.851v2.777c0 1.022-.88 1.85-1.967 1.85h-2.95c-1.087 0-1.967-.828-1.967-1.85V17.59c0-1.022.88-1.851 1.967-1.851zm0 4.628V17.59h-2.95v2.777z"/></g><g><path fill="url(#svssf)" d="M12.787 24.06c1.086 0 1.967.829 1.967 1.851v2.776c0 1.022-.88 1.852-1.967 1.852h-2.95c-1.087 0-1.967-.83-1.967-1.852v-2.776c0-1.022.88-1.851 1.967-1.851zm0 4.627v-2.776h-2.95v2.776z"/></g><g><path fill="url(#svssg)" d="M12.787 32.39c1.086 0 1.967.829 1.967 1.851v2.776c0 1.022-.88 1.851-1.967 1.851h-2.95c-1.087 0-1.967-.829-1.967-1.85V34.24c0-1.022.88-1.851 1.967-1.851zm0 4.627v-2.776h-2.95v2.776z"/></g><g><path fill="url(#svssh)" d="M12.787 40.72c1.086 0 1.967.829 1.967 1.851v2.777c0 1.022-.88 1.85-1.967 1.85h-2.95c-1.087 0-1.967-.828-1.967-1.85V42.57c0-1.022.88-1.851 1.967-1.851zm0 4.628V42.57h-2.95v2.777z"/></g><g><path fill="url(#svssi)" d="M17.704 20.36H31.47c.543 0 .984-.413.984-.925 0-.51-.44-.925-.984-.925H17.704c-.544 0-.984.414-.984.925 0 .512.44.926.984.926z"/></g><g><path fill="url(#svssj)" d="M28.52 26.84H17.704c-.544 0-.984.414-.984.926 0 .51.44.925.984.925H28.52c.543 0 .983-.414.983-.925 0-.512-.44-.926-.983-.926z"/></g><g><path fill="url(#svssk)" d="M26.553 35.17h-8.85c-.543 0-.983.414-.983.926 0 .51.44.925.984.925h8.85c.543 0 .983-.414.983-.925 0-.512-.44-.926-.984-.926z"/></g><g><path fill="url(#svssl)" d="M26.553 43.5h-8.85c-.543 0-.983.414-.983.926 0 .51.44.925.984.925h8.85c.543 0 .983-.414.983-.925 0-.512-.44-.926-.984-.926z"/></g></g>
+                                    </svg>
+                                </div>
+                                <button class="button product-basket__delete">
+                                    <span class="button text_size_xs text_weight_medium text_color_white">Удалить</span>
+                                </button>
+                            </div>
+                            <div class="product-basket__mid">
+                                <h3 class="product-basket__title text_size_s text_color_white">Extra slim</h3>
+                                <span class="product-basket__calories text_size_xs text_color_white">800 ккал</span>
+                            </div>
+                            <div class="product-basket__right">
+                                <div class="product-basket__right-top">
+                                    <span class="roduct-basket__price text_size_s text_weight_bold uppercase text_color_white">2 200 ₽</span>
+                                    <span class="product-basket__price-one-day text_size_xs text_color_white">В день 1 100 ₽</span>
+                                </div>
+                                <div class="product-basket__right-bottom">
+                                    <span class="product-basket__calc-name text_size_xs text_color_white">Дней</span>
+                                    <div class="product-basket__calc">
+                                        <button class="product-basket__down basket__push product-basket__push">
+                                            <svg class="product-basket__push__svg" width="12" height="3" viewBox="0 0 12 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M0.727661 2.99967V0.0905762H11.6368V2.99967H0.727661Z" fill="#E58171"/>
+                                            </svg>
+                                        </button>
+                                        <span class="text_size_xs text_color_highlighter">2</span>
+                                        <button class="product-basket__up basket__push product-basket__push">
+                                            <svg class="product-basket__push__svg" width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12.2727 5.19647V7.89399H7.80329V12.3634H5.10577V7.89399H0.636353V5.19647H5.10577V0.727051H7.80329V5.19647H12.2727Z" fill="#E58171"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="button product-basket__continue-button text_size_s text_weight_semibold text_color_highlighter">
+                        Продолжить покупки
+                    </button>
+                    <button class="button product-basket__button button-main button_size_xxl button_color_pink button_radius_cub">
+                        <span class="button__title text_size_s text_weight_semibold text_color_white">Перейти к оформлению</span>
+                    </button>
+
+                </div>
+                <div class="basket__right">
+                    <h2 class="basket__right-title text_weight_bold text_size_l">Оформление заказа</h2>
+                    <form action="#" id="form">
+                        <div class="basket__form form form-basket">
+                            <div class="form__personal-data form__data">
+                                <h5 class="form__name text_weight_bold text_size_m">Личные данные</h5>
+                                <div class="input__group input__group_big">
+                                    <input type="text" name="username" class="form__input form__input_big text_size_s error-text" placeholder=" ">
+                                    <span class="ch-input__label text_size_s">ФИО*</span>
+                                </div>
+                                <div class="form__block">
+                                    <div class="input__group input__group_mini">
+                                        <input type="text" name="email" class="form__input form__input_mini text_size_s error-text" placeholder=" ">
+                                        <span class="ch-input__label text_size_s">E-mail*</span>
+                                    </div>
+                                    <div class="input__group">
+                                        <input type="text" name="user-phone" class="form__input form__input_mini text_size_s error-text mask-tel" placeholder=" ">
+                                        <span class="ch-input__label text_size_s">Телефон*</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form__delivery-data form__data">
+                                <h5 class="form__name text_weight_bold text_size_m">Дата и время доставки</h5>
+                                <div class="form__block">
+                                    <div class="input__group input__group_mini">
+                                        <input type="text" name="date" class="form__input form__input_mini text_size_s error-text" placeholder="21 Августа 2020">
+                                    </div>
+                                    <div class="drop-input__wrapper">
+                                        <div class="drop-input input__70 drop-box">
+                                            <div class="drop-input__header drop-header">
+                                                <input type="text" name="time" class="form__input form__input_mini text_size_s error-text" placeholder="Время доставки">
+                                            </div>
+                                            <div class="drop-input__cont drop-container">
+                                                <div class="drop-input__list-wrapper drop-wrapper">
+                                                    <ul class="drop-input__list">
+                                                        <li class="drop-input__item active">
+                                                            с 06:00 до 8:00
+                                                        </li>
+                                                        <li class="drop-input__item">
+                                                            с 08:00 до 10:00
+                                                        </li>
+                                                        <li class="drop-input__item">
+                                                            с 10:00 до 12:00
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form__address-data">
+                                <h5 class="form__name text_weight_bold text_size_m">Адрес доставки</h5>
+                                <div class="drop-input__wrapper">
+                                   <div class="drop-input input__group_big input__60 drop-box">
+                                        <div class="drop-input__header drop-header">
+                                            <input type="text" name="city" class="form__input form__input_absolute form__input_big text_size_s error-text" placeholder=" ">
+                                            <span class="ch-input__label text_size_s">Город*</span>
+                                            <div class="drop-input__arrow">
+                                            </div>
+                                        </div>
+                                        <div class="drop-input__cont drop-container">
+                                            <div class="drop-input__list-wrapper drop-wrapper">
+                                                <ul class="drop-input__list">
+                                                    <li class="drop-input__item active">
+                                                        Москва
+                                                    </li>
+                                                    <li class="drop-input__item">
+                                                        Санкт-Петербург
+                                                    </li>
+                                                    <li class="drop-input__item">
+                                                        Казань
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                   </div>
+                                </div>
+                                <div class="drop-input__wrapper">
+                                    <div class="drop-input input__group_big input__50 drop-box">
+                                        <div class="drop-input__header drop-header">
+                                            <input type="text" name="street" class="form__input form__input_big text_size_s error-text" placeholder=" ">
+                                            <span class="ch-input__label text_size_s">Улица*</span>
+                                        </div>
+                                        <div class="drop-input__cont drop-container">
+                                            <div class="drop-input__list-wrapper drop-wrapper">
+                                                <ul class="drop-input__list">
+                                                    <li class="drop-input__item active">
+                                                        Алафузова
+                                                    </li>
+                                                    <li class="drop-input__item">
+                                                        Московская
+                                                    </li>
+                                                    <li class="drop-input__item">
+                                                        Халезова
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form__block-home">
+                                    <div class="input__group input__group_mini">
+                                        <input type="text" name="date" class="form__input form__input_xxs text_size_s" placeholder=" ">
+                                        <span class="ch-input__label-center text_size_s">Дом*</span>
+                                    </div>
+                                    <div class="input__group input__group_mini">
+                                        <input type="text" name="time" class="form__input form__input_xs text_size_s" placeholder=" ">
+                                        <span class="ch-input__label-center text_size_s">Корпус*</span>
+                                    </div>
+                                    <div class="input__group">
+                                        <input type="text" name="time" class="form__input form__input_s text_size_s" placeholder=" ">
+                                        <span class="ch-input__label-center text_size_s">Квартира/офис*</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form__delivery-mkd">
+                                <span class="form__free text_size_xs">Доставки в пределах МКАД — бесплатно</span>
+                                <div class="form__check-delivery">
+                                    <label class="payment__label payment__label_mkd">
+                                        <input id="check-mkd" name="check-mkd" class="payment__input" type="checkbox" checked>
+                                        <span class="payment__check"></span>
+                                        <span class="payment__mkd text_size_xs">Доставка за пределами МКАД</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form__payment payment">
+                                <h5 class="form__name text_weight_bold text_size_m">Оплата</h5>
+                                <div class="payment__method-wrapper">
+                                    <label class="payment__label">
+                                        <input class="payment__input" id="courier" type="radio" name="pay-method" checked>
+                                        <span class="payment__radio"></span>
+                                        <span class="payment__method text_size_s">Банковской картой курьеру</span>
+                                    </label>
+                                    <label class="payment__label">
+                                        <input class="payment__input" id="site" type="radio" name="pay-method">
+                                        <span class="payment__radio"></span>
+                                        <span class="payment__method text_size_s">Банковской картой на сайте</span>
+                                    </label>
+                                    <label class="payment__label">
+                                        <input class="payment__input" id="cash" type="radio" name="pay-method">
+                                        <span class="payment__radio"></span>
+                                        <span class="payment__method text_size_s">Наличиными курьеру</span>
+                                    </label>
+                                </div>
+                                <div class="input__group input__group_big">
+                                    <textarea type="text" name="username" class="form__textarea text_size_s error-text" placeholder="Комментарий к заказу"></textarea>
+                                </div>
+                                <div class="questions">
+                                    <label class="questions__label">
+                                        <input class="questions__input" id="call" type="radio" name="questions-radio" checked>
+                                        <span class="questions__radio"></span>
+                                        <span class="questions__method text_size_s">Мне нужен обратный звонок</span>
+                                    </label>
+                                    <label class="questions__label questions__label_none">
+                                        <input class="questions__input" id="not-questions" type="radio" name="questions-radio">
+                                        <span class="questions__radio"></span>
+                                        <span class="questions__method text_size_s">У меня нет вопросов</span>
+                                    </label>
+                                </div>
+                                <div class="subscribe">
+                                    <label class="subscribe__label">
+                                        <input id="subscribe" class="subscribe__input" name="subscribe" type="checkbox" checked>
+                                        <span class="subscribe__check"></span>
+                                        <span class="subscribe__text text_size_xs">Подписаться на рассылку новостей, новинок и спецпредложений</span>
+                                    </label>
+                                </div>
+                                <div class="promo-code">
+                                    <div class="input__group input__group_mini">
+                                        <input type="text" name="time" class="form__input form__input_ps text_size_s" placeholder="Ваш промокод">
+                                    </div>
+                                    <button class="button promo-code__button text_size_s">
+                                        Как получить промокод?
+                                    </button>
+                                </div>
+
+                            </div>
+                            <div class="total">
+                                <div class="total__cost">
+                                    <span class="total__name text_size_m text_weight_bold">К оплате</span>
+                                    <span class="total__price text_size_m text_weight_bold">12 200 ₽</span>
+                                </div>
+                                <button class="button total__button button_size_l button_color_pink button_radius_circle">
+                                    <span class="button__title text_color_white text_size_s text_weight_semibold">Оформить заказ</span>
+                                </button>
+                                <span class="copyright text_weight_medium text_size_xxs">
+                                    Нажимая на кнопку, я подтверждаю свое согласие на
+                                </span>
+                                <span class="copyright text_weight_medium text_size_xxs text_color_highlighter">
+                                    «Политику в отношении обработки персональных данных»
+                                </span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="footer">
+        <div class="footer__partners footer__box">
+            <div class="footer__logo logo logo_size_m logo_color_black">
+                <svg width="163" height="49" viewBox="0 0 163 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M87.928 8.664C87.928 9.208 88.168 9.64 88.648 9.96C89.128 10.28 89.712 10.528 90.4 10.704C91.088 10.88 91.776 11.08 92.464 11.304C93.152 11.512 93.736 11.872 94.216 12.384C94.696 12.88 94.936 13.536 94.936 14.352C94.936 15.376 94.528 16.208 93.712 16.848C92.912 17.488 91.872 17.808 90.592 17.808C89.44 17.808 88.456 17.552 87.64 17.04C86.84 16.528 86.28 15.864 85.96 15.048L87.304 14.256C87.528 14.88 87.928 15.376 88.504 15.744C89.096 16.096 89.792 16.272 90.592 16.272C91.376 16.272 92.032 16.12 92.56 15.816C93.088 15.496 93.352 15.008 93.352 14.352C93.352 13.808 93.112 13.376 92.632 13.056C92.152 12.736 91.568 12.488 90.88 12.312C90.192 12.136 89.504 11.944 88.816 11.736C88.128 11.512 87.544 11.152 87.064 10.656C86.584 10.144 86.344 9.48 86.344 8.664C86.344 7.688 86.728 6.872 87.496 6.216C88.28 5.56 89.264 5.232 90.448 5.232C91.424 5.232 92.28 5.456 93.016 5.904C93.752 6.336 94.296 6.928 94.648 7.68L93.328 8.448C92.864 7.328 91.904 6.768 90.448 6.768C89.76 6.768 89.168 6.936 88.672 7.272C88.176 7.592 87.928 8.056 87.928 8.664Z" fill="white"/>
+                    <path d="M99.0693 2.64C98.8453 2.864 98.5733 2.976 98.2533 2.976C97.9333 2.976 97.6613 2.864 97.4373 2.64C97.2133 2.416 97.1013 2.144 97.1013 1.824C97.1013 1.504 97.2133 1.232 97.4373 1.008C97.6613 0.784 97.9333 0.672 98.2533 0.672C98.5733 0.672 98.8453 0.784 99.0693 1.008C99.2933 1.232 99.4053 1.504 99.4053 1.824C99.4053 2.144 99.2933 2.416 99.0693 2.64ZM97.4613 17.52V5.52H99.0453V17.52H97.4613Z" fill="white"/>
+                    <path d="M115.199 5.232C116.543 5.232 117.623 5.664 118.439 6.528C119.271 7.392 119.687 8.56 119.687 10.032V17.52H118.103V10.032C118.103 8.992 117.831 8.192 117.287 7.632C116.759 7.056 116.055 6.768 115.175 6.768C114.183 6.768 113.375 7.104 112.751 7.776C112.143 8.432 111.839 9.464 111.839 10.872V17.52H110.255V10.032C110.255 8.976 109.999 8.168 109.487 7.608C108.991 7.048 108.311 6.768 107.447 6.768C106.487 6.768 105.671 7.104 104.999 7.776C104.327 8.448 103.991 9.48 103.991 10.872V17.52H102.407V5.52H103.991V7.272C104.855 5.912 106.079 5.232 107.663 5.232C109.391 5.232 110.607 5.96 111.311 7.416C112.175 5.96 113.471 5.232 115.199 5.232Z" fill="white"/>
+                    <path d="M129.182 5.232C130.894 5.232 132.35 5.84 133.55 7.056C134.766 8.272 135.374 9.76 135.374 11.52C135.374 13.28 134.766 14.768 133.55 15.984C132.35 17.2 130.894 17.808 129.182 17.808C127.054 17.808 125.438 16.928 124.334 15.168V22.32H122.75V5.52H124.334V7.872C125.438 6.112 127.054 5.232 129.182 5.232ZM125.702 14.904C126.614 15.816 127.734 16.272 129.062 16.272C130.39 16.272 131.51 15.816 132.422 14.904C133.334 13.976 133.79 12.848 133.79 11.52C133.79 10.192 133.334 9.072 132.422 8.16C131.51 7.232 130.39 6.768 129.062 6.768C127.734 6.768 126.614 7.232 125.702 8.16C124.79 9.072 124.334 10.192 124.334 11.52C124.334 12.848 124.79 13.976 125.702 14.904Z" fill="white"/>
+                    <path d="M138.008 17.52V0H139.592V17.52H138.008Z" fill="white"/>
+                    <path d="M148.497 5.232C150.273 5.232 151.705 5.864 152.793 7.128C153.897 8.376 154.449 9.856 154.449 11.568C154.449 11.744 154.433 11.992 154.401 12.312H143.865C144.025 13.528 144.537 14.496 145.401 15.216C146.281 15.92 147.361 16.272 148.641 16.272C149.553 16.272 150.337 16.088 150.993 15.72C151.665 15.336 152.169 14.84 152.505 14.232L153.897 15.048C153.369 15.896 152.649 16.568 151.737 17.064C150.825 17.56 149.785 17.808 148.617 17.808C146.729 17.808 145.193 17.216 144.009 16.032C142.825 14.848 142.233 13.344 142.233 11.52C142.233 9.728 142.817 8.232 143.985 7.032C145.153 5.832 146.657 5.232 148.497 5.232ZM148.497 6.768C147.249 6.768 146.201 7.144 145.353 7.896C144.521 8.632 144.025 9.592 143.865 10.776H152.817C152.657 9.512 152.169 8.528 151.353 7.824C150.537 7.12 149.585 6.768 148.497 6.768Z" fill="white"/>
+                    <path d="M96.376 45.52H94.264L88.264 39.736V45.52H86.68V28.72H88.264V38.824L93.976 33.52H96.136L89.944 39.28L96.376 45.52Z" fill="white"/>
+                    <path d="M100.147 30.64C99.9234 30.864 99.6514 30.976 99.3314 30.976C99.0114 30.976 98.7394 30.864 98.5154 30.64C98.2914 30.416 98.1794 30.144 98.1794 29.824C98.1794 29.504 98.2914 29.232 98.5154 29.008C98.7394 28.784 99.0114 28.672 99.3314 28.672C99.6514 28.672 99.9234 28.784 100.147 29.008C100.371 29.232 100.483 29.504 100.483 29.824C100.483 30.144 100.371 30.416 100.147 30.64ZM98.5394 45.52V33.52H100.123V45.52H98.5394Z" fill="white"/>
+                    <path d="M109.845 35.056H106.389V42.328C106.389 42.984 106.517 43.456 106.773 43.744C107.029 44.016 107.413 44.16 107.925 44.176C108.437 44.176 109.077 44.16 109.845 44.128V45.52C108.165 45.776 106.901 45.656 106.053 45.16C105.221 44.664 104.805 43.72 104.805 42.328V35.056H102.285V33.52H104.805V30.64L106.389 30.16V33.52H109.845V35.056Z" fill="white"/>
+                    <path d="M117.35 45.808C115.542 45.808 114.038 45.208 112.838 44.008C111.638 42.792 111.038 41.296 111.038 39.52C111.038 37.744 111.638 36.256 112.838 35.056C114.038 33.84 115.542 33.232 117.35 33.232C118.534 33.232 119.598 33.52 120.542 34.096C121.486 34.656 122.174 35.416 122.606 36.376L121.31 37.12C120.99 36.4 120.47 35.832 119.75 35.416C119.046 34.984 118.246 34.768 117.35 34.768C116.022 34.768 114.902 35.232 113.99 36.16C113.078 37.072 112.622 38.192 112.622 39.52C112.622 40.848 113.078 41.976 113.99 42.904C114.902 43.816 116.022 44.272 117.35 44.272C118.246 44.272 119.046 44.064 119.75 43.648C120.454 43.216 121.006 42.64 121.406 41.92L122.726 42.688C122.23 43.648 121.502 44.408 120.542 44.968C119.582 45.528 118.518 45.808 117.35 45.808Z" fill="white"/>
+                    <path d="M130.616 33.232C132.072 33.232 133.216 33.68 134.048 34.576C134.896 35.456 135.32 36.648 135.32 38.152V45.52H133.736V38.152C133.736 37.08 133.448 36.248 132.872 35.656C132.312 35.064 131.512 34.768 130.472 34.768C129.32 34.768 128.384 35.136 127.664 35.872C126.944 36.592 126.584 37.712 126.584 39.232V45.52H125V28.72H126.584V35.392C127.48 33.952 128.824 33.232 130.616 33.232Z" fill="white"/>
+                    <path d="M143.927 33.232C145.703 33.232 147.135 33.864 148.223 35.128C149.327 36.376 149.879 37.856 149.879 39.568C149.879 39.744 149.863 39.992 149.831 40.312H139.295C139.455 41.528 139.967 42.496 140.831 43.216C141.711 43.92 142.791 44.272 144.071 44.272C144.983 44.272 145.767 44.088 146.423 43.72C147.095 43.336 147.599 42.84 147.935 42.232L149.327 43.048C148.799 43.896 148.079 44.568 147.167 45.064C146.255 45.56 145.215 45.808 144.047 45.808C142.159 45.808 140.623 45.216 139.439 44.032C138.255 42.848 137.663 41.344 137.663 39.52C137.663 37.728 138.247 36.232 139.415 35.032C140.583 33.832 142.087 33.232 143.927 33.232ZM143.927 34.768C142.679 34.768 141.631 35.144 140.783 35.896C139.951 36.632 139.455 37.592 139.295 38.776H148.247C148.087 37.512 147.599 36.528 146.783 35.824C145.967 35.12 145.015 34.768 143.927 34.768Z" fill="white"/>
+                    <path d="M158.015 33.232C159.471 33.232 160.615 33.68 161.447 34.576C162.295 35.456 162.719 36.648 162.719 38.152V45.52H161.135V38.152C161.135 37.08 160.847 36.248 160.271 35.656C159.711 35.064 158.911 34.768 157.871 34.768C156.719 34.768 155.783 35.136 155.063 35.872C154.343 36.592 153.983 37.712 153.983 39.232V45.52H152.399V33.52H153.983V35.392C154.879 33.952 156.223 33.232 158.015 33.232Z" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.31456 10.7329L6.36222 2.33289C6.01906 2.16024 5.66987 2.02918 5.32069 1.94188C4.922 2.04155 4.52331 2.19829 4.13357 2.40882L4.18081 10.7329C4.18233 11.0019 3.97883 11.2279 3.71108 11.2545C3.42462 11.283 3.16932 11.0738 3.14087 10.7874L2.44089 3.73989C1.02603 5.26225 0 7.62252 0 10.588C0 14.8649 1.91103 18.4166 4.42121 19.1111C5.71354 35.3735 19.32 48.1677 35.9148 48.1677C42.6142 48.1677 48.8266 46.0825 53.9383 42.5257C55.8979 43.2542 58.9747 44.3127 62.0144 44.5707C63.8632 44.7275 65.7889 44.5985 67.4798 43.853C69.2068 43.0915 70.6186 41.716 71.4354 39.538C72.8914 35.6551 72.0465 32.753 70.4733 30.6134C69.294 29.0095 67.6663 27.8151 66.5552 26.9999C66.3126 26.8218 66.0947 26.6619 65.9114 26.5197C66.693 24.1611 67.2042 21.6793 67.4083 19.111C69.9184 18.4164 71.8294 14.8648 71.8294 10.588C71.8294 5.81288 69.169 1.94188 66.5087 1.94188C63.8483 1.94188 61.188 5.81288 61.188 10.588C61.188 14.7492 62.997 18.2238 65.4067 19.0485C64.6883 27.7265 60.2255 35.3422 53.638 40.2759L53.5579 40.2458L53.5112 40.3703C48.5928 44.0133 42.5054 46.1677 35.9148 46.1677C20.4039 46.1677 7.68004 34.2348 6.4228 19.0484C8.83248 18.2236 10.6414 14.7491 10.6414 10.588C10.6414 7.5309 9.55097 5.11697 8.06825 3.60119L7.35449 10.7874C7.32604 11.0738 7.07074 11.283 6.78428 11.2545C6.51654 11.2279 6.31303 11.0019 6.31456 10.7329ZM62.1835 42.5778C59.9458 42.3879 57.6593 41.7152 55.8482 41.087C58.136 39.2244 60.1581 37.0478 61.8488 34.6231C62.4411 34.988 63.159 35.4478 63.8379 35.9116C64.356 36.2656 64.8453 36.6179 65.2365 36.9293C65.6446 37.2543 65.8953 37.496 65.9868 37.6311L66.8146 37.0701C66.6268 36.7929 66.2603 36.4662 65.8594 36.147C65.4416 35.8143 64.9302 35.4468 64.4021 35.086C63.7235 34.6223 63.0072 34.1629 62.4082 33.7932C63.4947 32.125 64.4279 30.3477 65.1878 28.4815C65.2963 28.5622 65.4072 28.6439 65.5199 28.7269C66.6175 29.5359 67.886 30.4708 68.862 31.7982C70.06 33.4275 70.767 35.6244 69.5627 38.8357C68.934 40.5123 67.9049 41.4798 66.6729 42.023C65.4046 42.5822 63.853 42.7195 62.1835 42.5778Z" fill="white"/>
+                </svg>
+            </div>
+            <div class="footer__partners-box partners-box">
+                <div class="partners-box__item">
+                    <div class="partners-box__partner partners-box__partner_visa"></div>
+                </div>
+                <div class="partners-box__item">
+                    <div class="partners-box__partner partners-box__partner_apple"></div>
+                </div>
+                <div class="partners-box__item">
+                    <div class="partners-box__partner partners-box__partner_g-pay"></div>
+                </div>
+                <div class="partners-box__item">
+                    <div class="partners-box__partner partners-box__partner_mir"></div>
+                </div>
+                <div class="partners-box__item">
+                    <div class="partners-box__partner partners-box__partner_master"></div>
+                </div>
+
+            </div>
+            <div class="partners-box__copyright copyright footer__partners-cop">
+                <span class="copyright__text text text_size_xxs text_weight_medium">
+                    © 2019 Simple-Kitchen — сервис доставки здорового питания
+                </span>
+            </div>
+        </div>
+        <div class="footer__contacts footer__box">
+            <ul class="footer-list">
+                <li class="footer-list__item">
+                    <div class="footer-list__image">
+                        <img src="assets/icon/phone.svg" alt="">
+                    </div>
+                    <a href="tel:+7(495)649-81-68" class="footer-list__text text_size_xs text_weight_medium">+7 (495) 649-81-68</a>
+                </li>
+                <li class="footer-list__item">
+                    <div class="footer-list__image">
+                        <img src="assets/icon/letter.svg" alt="">
+                    </div>
+                    <a href="mailto:info@simple-kitchen.pro" class="footer-list__text text_size_xs text_weight_medium">info@simple-kitchen.pro</a>
+                </li>
+                <li class="footer-list__item">
+                    <div class="footer-list__image">
+                        <img src="assets/icon/map.svg" alt="">
+                    </div>
+                    <span class="footer-list__text footer-list__text_address  text_size_xs text_weight_medium">
+                        г. Москва, Кутузовский проспект, дом 36, строение 4
+                    </span>
+                </li>
+            </ul>
+            <div class="copyright">
+                <span class="footer__copyright subscribe-footer__copyright_mobile text_weight_medium copyright__text text text_size_xxs">
+                    Указывая свои данные, Вы соглашаетесь с условиями<a href="#" class="underline"> публичной оферты</a> и <a href="#" class="underline">обработки персональных данных</a>
+                </span>
+                <span class="copyright__text text_weight_medium  subscribe-footer__copyright_mobile text_size_xxs">
+                    © 2019 Simple-Kitchen — сервис доставки здорового питания
+                </span>
+                <span class="copyright__text text text_size_xxs text_weight_medium">
+                    Разработка сайта - <a href="#" class="underline">Choose</a>
+                </span>
+            </div>
+        </div>
+        <div class="footer__subscribe footer__box">
+            <div class="subscribe-footer__item subscribe-footer__item_mobile">
+                <span class="footer__subscribe-text subscribe-footer__text text_size_xs text_weight_medium">
+                    Мы в соц. сетях:
+                </span>
+                <div class="subscribe-footer__soc-wrapper">
+                    <div href="#" class="soc__item_footer">
+                        <a href="">
+                            <img src="assets/icon/vk.svg" alt="vk-icon">
+                        </a>
+                    </div>
+                    <div href="#" class="soc__item_footer">
+                        <a href="">
+                            <img src="assets/icon/telegram.svg" alt="telegram-icon">
+                        </a>
+                    </div>
+                    <div href="#" class="soc__item_footer">
+                        <img src="assets/icon/inst.svg" alt="inst-icon">
+                    </div>
+                    <div href="#" class="soc__item_footer">
+                        <img src="assets/icon/facebook.svg" alt="facebook-icon">
+                    </div>
+                </div>
+            </div>
+            <div class="subscribe-footer__item-desc-wrapper">
+                <div class="subscribe-footer__item subscribe-footer__item_desc">
+                <span class="footer__subscribe-text subscribe__text text_size_xs text_weight_semibold text_weight_medium">
+                    Есть вопрос? Напишите нам
+                </span>
+                    <div class="subscribe-footer__soc-wrapper">
+                        <a href="#" class="soc__item_footer">
+                            <img src="assets/icon/telegram.svg" alt="telegram-icon">
+                        </a>
+                        <a href="#" class="soc__item_footer">
+                            <img src="assets/icon/vk.svg" alt="vk-icon">
+                        </a>
+                    </div>
+                </div>
+                <div class="subscribe-footer__item subscribe-footer__item_desc">
+                <span class="footer__subscribe-text subscribe__text text_size_xs text_weight_semibold text_weight_medium">
+                    Подписывайтесь в социальных сетях
+                </span>
+                    <div class="subscribe-footer__soc-wrapper">
+                        <a href="#" class="soc__item_footer">
+                            <img src="assets/icon/facebook.svg" alt="facebook-icon">
+                        </a>
+                        <a href="#" class="soc__item_footer">
+                            <img src="assets/icon/vk.svg" alt="vk-icon">
+                        </a>
+                        <a href="#" class="soc__item_footer">
+                            <img src="assets/icon/inst.svg" alt="inst-icon">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <span class="footer__copyright subscribe-footer__copyright copyright__text text text_size_xxs text_weight_medium">
+                    Указывая свои данные, Вы соглашаетесь с условиями<a href="#" class="underline"> публичной оферты</a> и <a href="#" class="underline">обработки персональных данных</a>
+                </span>
+            </div>
+        </div>
+    </footer>
+    <div class="modal hidden modal_scroll modal__sign-up">
+        <div class="password modal__container">
+            <button class="button modal__close-btn">
+                <img class="button modal__close-icon" src="assets/icon/close.svg" alt="">
+            </button>
+            <div class="modal__box">
+                <h1 class="modal__title text_size_l text_weight_bold">Регистрация</h1>
+                <button class="button modal__button-none-underline button_size_none-underline">
+                    <span class="button__title text_weight_semibold text_color_highlighter text_size_s">
+                        У меня уже есть аккаунт
+                    </span>
+                </button>
+                <div class="input__group input__group_big">
+                    <input type="text" name="username" class="form__input form__input_modal form__input_big text_size_s error-text" placeholder=" ">
+                    <span class="ch-input__label text_size_s">ФИО*</span>
+                </div>
+                <div class="input__group input__group_big">
+                    <input type="text" name="username" class="form__input form__input_modal form__input_big text_size_s error-text" placeholder=" ">
+                    <span class="ch-input__label text_size_s">E-mail*</span>
+                </div>
+                <div class="input__group input__group_big">
+                    <input type="text" name="username" class="form__input form__input_modal form__input_big text_size_s error-text mask-tel" placeholder=" ">
+                    <span class="ch-input__label text_size_s">Телефон*</span>
+                </div>
+                <div class="input__group input__group_big">
+                    <input type="password" name="username" class="form__input form__input_modal form__input_big text_size_s error-text" placeholder=" ">
+                    <span class="ch-input__label text_size_s">Пароль*</span>
+                </div>
+                <div class="input__group input__group_big">
+                    <input type="password" name="username" class="form__input form__input_modal form__input_big text_size_s error-text" placeholder=" ">
+                    <span class="ch-input__label text_size_s">Подтвердите пароль*</span>
+                </div>
+                <span class="modal__description-left text_size_xxs">Пароль может содержать латинские строчные и заглавные буквы, а также  цифры 0-9</span>
+                <div class="subscribe modal__subscribe">
+                    <label class="subscribe__label">
+                        <input id="subscribe-modal" class="subscribe__input" name="subscribe" type="checkbox" checked>
+                        <span class="subscribe__check"></span>
+                        <span class="subscribe__text text_size_xxs">Подписаться на рассылку новостей, новинок и спецпредложений</span>
+                    </label>
+                </div>
+                <button class="button modal__width-mb button_size_modal button_radius_circle button_color_pink modal__button">
+                    <span class="button__title text_weight_semibold text_color_white text_size_s">Зарегистрироваться</span>
+                </button>
+                <span class="modal__description text_size_xxxs">Указывая свои данные на сайте, Вы соглашаетесь с условиями <a href="#" class="text_color_highlighter">публичной оферты</a> и <a href="#" class="text_color_highlighter">обработки персональных данных</a></span>
+            </div>
+        </div>
+    </div>
+    <div class="modal modal__log-in">
+        <div class="password modal__container">
+            <button class="button modal__close-btn">
+                <img class="button modal__close-icon" src="assets/icon/close.svg" alt="">
+            </button>
+            <div class="modal__box">
+                <h1 class="modal__title text_size_l text_weight_bold">Войти в профиль</h1>
+                <button class="button modal__button-none-underline button_size_none-underline">
+                    <span class="button__title text_weight_semibold text_color_highlighter text_size_s">
+                        Зарегистрироваться
+                    </span>
+                </button>
+                <div class="input__group input__group_big">
+                    <input type="text" name="username" class="form__input form__input_modal form__input_big text_size_s error-text" placeholder=" ">
+                    <span class="ch-input__label text_size_s">Логин*</span>
+                </div>
+                <div class="input__group input__group_big">
+                    <input type="password" name="username" class="form__input form__input_modal form__input_big text_size_s error-text" placeholder=" ">
+                    <span class="ch-input__label text_size_s">Пароль*</span>
+                </div>
+                <div class="modal__button-flex">
+                    <button class="button modal__width-mb button_size_modal button_radius_circle button_color_pink modal__button">
+                        <span class="button__title text_weight_semibold text_color_white text_size_s">Войти</span>
+                    </button>
+                    <button class="button modal__button-none-underline button_size_none-underline">
+                    <span class="button__title text_weight_semibold text_color_highlighter text_size_s">
+                        Забыли пароль?
+                    </span>
+                    </button>
+                </div>
+                <span class="modal__description modal__description_mb text_size_xxxs">Указывая свои данные на сайте, Вы соглашаетесь с условиями <a href="#" class="text_color_highlighter">публичной оферты</a> и <a href="#" class="text_color_highlighter">обработки персональных данных</a>
+                </span>
+                <h2 class="modal__under-title text_size_m">Войти через социальные сети</h2>
+                <div class="modal__soc-wrapper">
+                    <div href="#" class="soc__item soc__item_modal">
+                        <a href="">
+                            <img src="assets/icon/vk.svg" alt="vk-icon">
+                        </a>
+                    </div>
+                    <div href="#" class="soc__item soc__item_modal">
+                        <a href="">
+                            <img src="assets/icon/facebook.svg" alt="vk-icon">
+                        </a>
+                    </div>
+                    <div href="#" class="soc__item soc__item_modal">
+                        <a href="">
+                            <img src="assets/icon/odnoklassniki.svg" alt="vk-icon">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal hidden modal__password-successful">
+        <div class="password modal__container">
+            <button class="button modal__close-btn">
+                <img class="button modal__close-icon" src="assets/icon/close.svg" alt="">
+            </button>
+            <div class="modal__box">
+                <button class="modal__header-button button back-button">
+                    <div class="back-button__icon-wrapper">
+                        <svg class="back-button__icon" width="36" height="8" viewBox="0 0 36 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.646446 3.64645C0.451183 3.84171 0.451183 4.15829 0.646446 4.35355L3.82843 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.7308 7.34027 4.7308 7.02369 4.53553 6.82843L1.70711 4L4.53553 1.17157C4.7308 0.976311 4.7308 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82843 0.464466L0.646446 3.64645ZM36 3.5L1 3.5V4.5L36 4.5V3.5Z" fill="#101828"/>
+                        </svg>
+                    </div>
+                    <span class="back-button__title text_weight_semibold text_size_xs">Вернуться к авторизации</span>
+                </button>
+                <h1 class="modal__title text_size_l text_weight_bold">Успешно!</h1>
+                <span class="modal__description modal__description_mb text_size_xs">Инструкция по восстановлению пароля отправлена на почту</span>
+                <button class="button button_size_modal button_radius_circle button_color_pink modal__button">
+                    <span class="button__title text_weight_semibold text_color_white text_size_s">Вернуться в магазин</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="modal hidden modal__recovery-pass">
+        <div class="password modal__container">
+            <button class="button modal__close-btn">
+                <img class="button modal__close-icon" src="assets/icon/close.svg" alt="">
+            </button>
+            <div class="modal__box">
+                <button class="modal__header-button button back-button">
+                    <div class="back-button__icon-wrapper">
+                        <svg class="back-button__icon" width="36" height="8" viewBox="0 0 36 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.646446 3.64645C0.451183 3.84171 0.451183 4.15829 0.646446 4.35355L3.82843 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.7308 7.34027 4.7308 7.02369 4.53553 6.82843L1.70711 4L4.53553 1.17157C4.7308 0.976311 4.7308 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82843 0.464466L0.646446 3.64645ZM36 3.5L1 3.5V4.5L36 4.5V3.5Z" fill="#101828"/>
+                        </svg>
+                    </div>
+                    <span class="back-button__title text_weight_semibold text_size_xs">Вернуться к авторизации</span>
+                </button>
+                <h1 class="modal__title text_size_l text_weight_bold">Восстановление пароля</h1>
+                <span class="modal__description modal__description_mb text_size_xs">
+                    Введите ваш E-mail
+                </span>
+                </span>
+                <div class="input__group input__group_big">
+                    <input type="text" name="username" class="form__input form__input_modal form__input_big text_size_s error-text" placeholder=" ">
+                    <span class="ch-input__label text_size_s">E-mail*</span>
+                </div>
+                <button class="button modal__width-mb button_size_modal button_radius_circle button_color_pink modal__button">
+                    <span class="button__title text_weight_semibold text_color_white text_size_s">Восстановить</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="modal hidden modal__reg-finish">
+        <div class="password modal__container">
+            <button class="button modal__close-btn">
+                <img class="button modal__close-icon" src="assets/icon/close.svg" alt="">
+            </button>
+            <div class="modal__box">
+                <h1 class="modal__title text_size_l text_weight_bold">Успешно!</h1>
+                <span class="modal__description modal__description_mb text_size_xs">Регистрация завершена</span>
+                <button class="button button_size_modal button_radius_circle button_color_pink modal__button">
+                    <span class="button__title text_weight_semibold text_color_white text_size_s"> Войти в профиль</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="modal hidden modal__call-request">
+        <div class="password modal__container">
+            <button class="button modal__close-btn">
+                <img class="button modal__close-icon" src="assets/icon/close.svg" alt="">
+            </button>
+            <div class="modal__box">
+                <h1 class="modal__title text_size_l text_weight_bold">Заказать звонок</h1>
+                <span class="modal__description modal__description_mb text_size_xs">
+                    Мы свяжемся с вами в ближайшее время
+                </span>
+                </span>
+                <div class="input__group input__group_big">
+                    <input type="text" name="username" class="form__input form__input_modal form__input_big text_size_s error-text" placeholder=" ">
+                    <span class="ch-input__label text_size_s">+7 (495) 649-81-68</span>
+                </div>
+                <button class="button modal__width-mb button_size_modal button_radius_circle button_color_pink modal__button">
+                    <span class="button__title text_weight_semibold text_color_white text_size_s">Позвоните мне</span>
+                </button>
+                <span class="modal__description text_size_xxxs">Указывая свои данные на сайте, Вы соглашаетесь с условиями <a href="#" class="text_color_highlighter">публичной оферты</a> и <a href="#" class="text_color_highlighter">обработки персональных данных</a>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="modal hidden modal__call-successful">
+        <div class="password modal__container">
+            <button class="button modal__close-btn">
+                <img class="button modal__close-icon" src="assets/icon/close.svg" alt="">
+            </button>
+            <div class="modal__box">
+                <h1 class="modal__title text_size_l text_weight_bold">Успешно!</h1>
+                <span class="modal__description modal__description_mb text_size_xs">Мы свяжемся с вами в ближайшее время</span>
+                <button class="button button_size_modal button_radius_circle button_color_pink modal__button">
+                    <span class="button__title text_weight_semibold text_color_white text_size_s">Продолжить покупки</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="modal hidden modal__my-profile">
+        <div class="password modal__container">
+            <button class="button modal__close-btn">
+                <img class="button modal__close-icon" src="assets/icon/close.svg" alt="">
+            </button>
+            <div class="modal__box">
+                <h1 class="modal__title text_size_l text_weight_bold">Успешно</h1>
+                <span class="modal__description modal__description_mb text_size_xs">Данные измененны</span>
+                <button class="button button_size_modal button_radius_circle button_color_pink modal__button">
+                    <span class="button__title text_weight_semibold text_color_white text_size_s">Продолжить покупки</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="modal hidden modal__product-in-cart">
+        <div class="password modal__container">
+            <div class="modal__box">
+                <h1 class="modal__title text_size_l text_weight_bold">Товар в корзине</h1>
+                <span class="modal__description modal__description_mb text_size_xs">Поздравляем, теперь вы можете перейти к оформлению заказа</span>
+                <button class="button modal__width-mb button_size_modal button_radius_circle button_color_pink modal__button">
+                    <span class="button__title text_weight_semibold text_color_white text_size_s">Оформить заказ</span>
+                </button>
+                <button class="button button_size_underline modal__button">
+                    <span class="button__title text_weight_semibold text_color_highlighter text_size_xs">Продолжить покупки</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
