@@ -3895,3 +3895,84 @@ label
     &:nth-child(2)
       @media only screen and (max-width: 650px)
         white-space: nowrap
+
+
+
+
+
+
+
+// политика
+
+.privacy
+  padding: 145rem 134rem 67rem
+  @media only screen and (max-width: 650px)
+    padding: 85rem 11rem 30rem
+
+  &__title
+    margin-bottom: 74rem
+    text-align: center
+    @media only screen and (max-width: 650px)
+      margin-bottom: 37rem
+  &__description
+    margin-bottom: 25rem
+    @media only screen and (max-width: 650px)
+      margin-bottom: 15rem
+
+  &__name
+    display: inline-block
+    @media only screen and (max-width: 650px)
+      display: inline
+  &__text
+    display: inline
+
+  ol
+    list-style: none
+    counter-reset: li
+    @media only screen and (max-width: 650px)
+
+    li
+      margin-bottom: 30rem
+      @media only screen and (max-width: 650px)
+        margin-bottom: 10rem
+
+      &:last-child
+        margin-bottom: 0
+
+      &:before
+        position: relative
+        display: inline-block
+        counter-increment: li
+        content: counters(li, ".") ". "
+        margin-right: 5rem
+        &:nth-child(1)
+          font-weight: bold
+        @media only screen and (max-width: 650px)
+          margin-right: 3rem
+      ol
+        padding-top: 25rem
+        list-style: none
+        @media only screen and (max-width: 650px)
+          padding-top: 15rem
+        li
+          &:before
+            content: ""
+            width: 2px
+            height: 2px
+            border-radius: 2px
+            background: $border-dark
+            position: relative
+            display: inline-block
+            transform: translateY(-6rem)
+            margin-right: 20rem
+            @media only screen and (max-width: 650px)
+              width: 1px
+              height: 1px
+              border-radius: 1px
+              margin-right: 8rem
+              transform: translateY(-2rem)
+            &:nth-child(1)
+              font-weight: bold
+
+
+
