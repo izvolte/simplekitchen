@@ -72,10 +72,6 @@ input
       color: $text-light
     &_pink
       color: #FFA090
-      //color: transparent
-      //-webkit-background-clip: text
-      //-webkit-text-fill-color: transparent
-      //background-image: $gradient
     &_dark
       color: $text-dark
     &_highlighter
@@ -90,7 +86,7 @@ input
     &_l
       font-size: 40rem
       @media only screen and (max-width: 650px)
-        font-size: 18rem //18px применил для заголоков в корзине.
+        font-size: 18rem //18px для заголоков в корзине.
     &_m
       font-size: 28rem //28px
       @media only screen and (max-width: 650px)
@@ -2317,6 +2313,70 @@ label
       margin-bottom: 0
       &:last-child
         margin-right: 0
+    &_promo-code
+      position: relative
+      &.error
+        .input__promo-icon_error
+          opacity: 1
+        .input__promo-text_error
+          opacity: 1
+
+      &.passed
+        .input__promo-icon_passed
+          opacity: 1
+        .input__promo-text_passed
+          opacity: 1
+      .input__promo-text
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        width: 240rem
+        right: -265rem
+        color: #6BCD3E
+        opacity: 0
+        transition: opacity 0.25s ease-in-out
+        @media only screen and (max-width: 650px)
+          right: unset
+          left: 50%
+          top: unset
+          bottom: -20rem
+          transform: translate(-50%, 0)
+          width: fit-content
+          width: -moz-fit-content
+        &_error
+          color: #D75852
+          @media only screen and (max-width: 650px)
+            width: 210rem
+      .input__promo-icon
+        width: 17rem
+        height: 17rem
+        position: absolute
+        right: 28rem
+        top: 50%
+        transform: translateY(-50%)
+        opacity: 0
+        transition: opacity 0.25s ease-in-out
+        @media only screen and (max-width: 650px)
+          width: 10rem
+          height: 10rem
+          right: 11rem
+        &_error
+          width: 14rem
+          height: 14rem
+          @media only screen and (max-width: 650px)
+            width: 8rem
+            height: 10rem
+        svg
+          width: 100%
+          height: 100%
+          position: absolute
+          top: 0
+          left: 0
+
+
+
+
+
 
   &__item
     display: flex
@@ -2548,6 +2608,10 @@ label
       width: 12.9167vw
       @media only screen and (max-width: 650px)
         width: 40.3125vw
+    &_promocode
+      width: 248rem
+      @media only screen and (max-width: 650px)
+        width: 124rem
     &_xs
       text-align: center
       width: 10.5729vw
@@ -2862,31 +2926,23 @@ label
 
 
 .promo-code
-  margin-bottom: 1.8750vw
+  margin-bottom: 48rem
   display: flex
   align-items: center
   @media only screen and (max-width: 650px)
-    margin-bottom: 6.2500vw
-  & .input__group
-    margin-right: 2.0833vw
-  &__button
-    position: relative
-    background: none
-    font-weight: unset
-    &:hover
-      transition: all 0.25s ease-in-out
-      color: $text-highlighter
-    &:hover:after
-      background: $text-highlighter
-    &:after
-      transition: all 0.25s ease-in-out
-      content: ''
-      position: absolute
-      bottom: 0
-      left: 0
-      width: 100%
-      height: 1px
-      background: $border-dark
+    margin-bottom: 25rem
+  .form__input
+    &::placeholder
+      font-weight: 400
+
+  &__question
+    margin-right: 30rem
+    @media only screen and (max-width: 650px)
+      margin-right: 15rem
+
+
+
+
 
 .total
   border-top: 1px solid $border-shadow
@@ -2896,13 +2952,25 @@ label
   align-items: center
   @media only screen and (max-width: 650px)
     padding-top: 4.8438vw
+
+  &__cost-list
+    width: 100%
+    margin-bottom: 100rem
+    min-height: 124rem
+    @media only screen and (max-width: 650px)
+      margin-bottom: 24rem
+      min-height: 74rem
   &__cost
     width: 100%
     display: flex
     justify-content: space-between
     margin-bottom: 1.5104vw
     @media only screen and (max-width: 650px)
-      margin-bottom: 6.25vw
+      margin-bottom: 10rem
+    &_discount
+      color: #D75852
+    &:last-child
+      margin-bottom: 0
   &__button
     text-align: center
     margin-bottom: 1.2500vw
