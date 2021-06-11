@@ -3034,6 +3034,9 @@ label {
     width: 100%;
   }
 }
+.input__group_big:last-child {
+  margin-bottom: 0;
+}
 .input__group_mini {
   margin-bottom: 0;
 }
@@ -3187,6 +3190,14 @@ label {
     margin-bottom: 6.25vw;
   }
 }
+.form__data_profile {
+  margin-bottom: 107rem;
+}
+@media only screen and (max-width: 650px) {
+  .form__data_profile {
+    margin-bottom: 27rem;
+  }
+}
 .form__address-data {
   position: relative;
 }
@@ -3201,11 +3212,46 @@ label {
 .form__block {
   justify-content: space-between;
   display: flex;
+  align-items: center;
   height: 4.1667vw;
+  margin-bottom: 56rem;
 }
 @media only screen and (max-width: 650px) {
   .form__block {
     height: 10.9375vw;
+    margin-bottom: 10rem;
+  }
+}
+.form__block_no-space {
+  justify-content: unset;
+}
+.form__block:last-child {
+  margin-bottom: 0;
+}
+.form__date-change {
+  position: absolute;
+  left: 376rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 286rem;
+  color: #ACACAC;
+}
+@media only screen and (max-width: 650px) {
+  .form__date-change {
+    left: 155rem;
+    width: 141rem;
+  }
+}
+.form__date-change_in-cart {
+  left: 50%;
+  top: unset;
+  bottom: -37rem;
+  transform: translate(-50%, 0%);
+}
+@media only screen and (max-width: 650px) {
+  .form__date-change_in-cart {
+    bottom: -14rem;
+    width: 265rem;
   }
 }
 .form__block-profile-contacts {
@@ -3215,7 +3261,26 @@ label {
 }
 @media only screen and (max-width: 650px) {
   .form__block-profile-contacts {
-    margin-bottom: 6.25vw;
+    margin-bottom: 10rem;
+    display: block;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .form__block-profile-contacts .input__group_mini {
+    margin-bottom: 10rem;
+  }
+}
+.form__block-profile-contacts .input__group_mini:last-child {
+  margin-bottom: 0;
+}
+@media only screen and (max-width: 650px) {
+  .form__block-profile-contacts .form__input_mini {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .form__block-profile-contacts .input__group_date-change {
+    margin-bottom: 24rem;
   }
 }
 .form__block-home {

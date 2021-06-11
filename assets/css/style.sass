@@ -2311,10 +2311,13 @@ label
       @media only screen and (max-width: 650px)
         margin-bottom: 3.1250vw
         width: 100%
+      &:last-child
+        margin-bottom: 0
     &_mini
       margin-bottom: 0
       &:last-child
         margin-right: 0
+
   &__item
     display: flex
     align-items: center
@@ -2426,6 +2429,11 @@ label
     margin-bottom: 3.1250vw
     @media only screen and (max-width: 650px)
       margin-bottom: 6.2500vw
+    &_profile
+      margin-bottom: 107rem
+      @media only screen and (max-width: 650px)
+        margin-bottom: 27rem
+
   &__address-data
     position: relative
   &__name
@@ -2435,15 +2443,53 @@ label
   &__block
     justify-content: space-between
     display: flex
+    align-items: center
     height: 4.1667vw
+    margin-bottom: 56rem
     @media only screen and (max-width: 650px)
       height: 10.9375vw
+      margin-bottom: 10rem
+    &_no-space
+      justify-content: unset
+    &:last-child
+      margin-bottom: 0
+  &__date-change
+    position: absolute
+    left: 376rem
+    top: 50%
+    transform: translateY(-50%)
+    width: 286rem
+    color: $text-shadow
+    @media only screen and (max-width: 650px)
+      left: 155rem
+      width: 141rem
+    &_in-cart
+      left: 50%
+      top: unset
+      bottom: -37rem
+      transform: translate(-50%, 0%)
+      @media only screen and (max-width: 650px)
+        bottom: -14rem
+        width: 265rem
   &__block-profile-contacts
     display: flex
     margin-bottom: 1.5625vw
     justify-content: space-between
     @media only screen and (max-width: 650px)
-      margin-bottom: 6.2500vw
+      margin-bottom: 10rem
+      display: block
+    .input__group_mini
+      @media only screen and (max-width: 650px)
+        margin-bottom: 10rem
+      &:last-child
+        margin-bottom: 0
+    .form__input_mini
+      @media only screen and (max-width: 650px)
+        width: 100%
+    .input__group_date-change
+      @media only screen and (max-width: 650px)
+        margin-bottom: 24rem
+
   &__block-home
     display: flex
     margin-bottom: 3.1250vw

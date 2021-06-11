@@ -141,7 +141,7 @@
                         <h2 class="form-title text_weight_bold text_size_l">Мой профиль</h2>
                         <form action="#" id="form">
                             <div class="profile__form form-basket">
-                                <div class="form__data">
+                                <div class="form__data form__data_profile">
                                     <h5 class="form__name text_weight_bold text_size_m">Личные данные</h5>
                                     <div class="input__group input__group_big">
                                         <input type="text" name="username"
@@ -163,16 +163,26 @@
                                             <span class="ch-input__label text_size_s">Телефон*</span>
                                         </div>
                                     </div>
-                                    <div class="input__group input__group_big input__group-password">
-                                        <input type="password" name="username"
-                                               class="form__input form__input_big text_size_s error-text"
-                                               placeholder=" ">
-                                        <span class="ch-input__label text_size_s">Пароль*</span>
-                                        <span class="ch-input__info text_color_white text_size_s">?
+                                    <div class="form__block-profile-contacts">
+                                        <div class="input__group input__group_mini input__group_date-change">
+                                            <input type="text" name="email" class="form__input form__input_mini text_size_s error-text" placeholder=" ">
+                                            <span class="ch-input__label text_size_s">Дата рождения</span>
+                                            <div class="form__date-change form__date-change_in-cart text_size_xxxs">
+                                                Для изменения даты рождения
+                                                необходимо связаться с менеджером
+                                            </div>
+                                        </div>
+                                        <div class="input__group input__group-password">
+                                            <input type="password" name="username"
+                                                   class="form__input form__input_mini text_size_s error-text"
+                                                   placeholder=" ">
+                                            <span class="ch-input__label text_size_s">Пароль*</span>
+                                            <span class="ch-input__info text_color_white text_size_s">?
                                             <span class="text_size_xxs">
                                                 Выбирайте надежный пароль. Не используйте в качестве пароля часто встречающиеся слова, имена или даты рождения Ваших близкиих, кличку собаки. Допустимы к использованию символы в верхнем и нижнем регистре английского алфавита A-z< цифры 0-9, нижнее подчперкивание _, спецсимволы @#$%^&
                                             </span>
                                         </span>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="form__address-data">
