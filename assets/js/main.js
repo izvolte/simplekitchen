@@ -382,6 +382,7 @@ function selectDay() {
 
 
 function maskInput() {
+
     let keyCode;
 
     function mask(event) {
@@ -419,6 +420,10 @@ function maskInput() {
 
 }
 
+function dateMask() {
+    $("#date-birthday").mask("99.99.9999", {placeholder: "дд.мм.гггг" })
+}
+
 
 window.onload = function () {
     burgerMenu();
@@ -430,6 +435,7 @@ window.onload = function () {
     selectLogic();
     selectDay();
     maskInput();
+    dateMask();
 
 
 }
