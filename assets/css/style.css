@@ -4227,4 +4227,12 @@ label {
               .agreement ol li ol li:before {
                 padding-right: 5rem; } }
 
+.recovery-pass__not-find {
+  color: #FE1B1B;
+  margin-bottom: 25rem;
+  text-align: center; }
+  @media only screen and (max-width: 650px) {
+    .recovery-pass__not-find {
+      margin-bottom: 15rem; } }
+
 /*# sourceMappingURL=style.css.map */
