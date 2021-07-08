@@ -76,6 +76,7 @@ input
       color: $text-dark
     &_highlighter
       color: $text-highlighter
+      text-decoration: underline
     &_shadow
       color: $text-shadow
   &_size
@@ -148,6 +149,7 @@ input
 
 .underline
   border-bottom: 1px solid $text-dark
+
 
 .page-header
   position: relative
@@ -4005,6 +4007,23 @@ label
     &:nth-child(2)
       @media only screen and (max-width: 650px)
         white-space: nowrap
+  &_basket
+    width: 530rem
+    text-align: center
+    @media only screen and (max-width: 650px)
+      width: 300rem
+  &_recovery
+    text-align: center
+    width: 450rem
+    margin-top: 29rem
+    display: block
+    @media only screen and (max-width: 650px)
+      margin-top: 10rem
+      width: 240rem
+
+  a
+    text-decoration: underline
+
 
 
 
