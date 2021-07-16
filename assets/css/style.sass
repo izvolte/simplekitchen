@@ -907,6 +907,10 @@ input
     position: absolute
     top: 0
     left: 0
+  &__banner-detox
+    position: absolute
+    top: 0
+    left: 0
 
 
 .banner-new
@@ -1098,6 +1102,204 @@ input
       bottom: 0
       right: 11rem
 
+
+
+.banner-detox
+  width: 100%
+  height: 100%
+  padding: 110rem 51rem 0 0
+  @media only screen and (max-width: 650px)
+    padding: 20rem 8rem 0
+  &__box
+    width: 849rem
+    height: 505rem
+    margin-left: auto
+    position: relative
+    @media only screen and (max-width: 650px)
+      width: 100%
+      height: 100%
+
+
+  &__header
+    h2,h3
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      white-space: nowrap
+  &__title
+    font-size: 49rem
+    color: $text-light
+    position: relative
+    width: 500rem
+    height: 115rem
+    margin: 0 auto 16rem
+    position: relative
+    @media only screen and (max-width: 650px)
+      font-size: 20rem
+      width: 215rem
+      height: 50rem
+  &__title-decor
+    position: absolute
+    top: 50%
+    left: -30rem
+    transform: translateY(-50%)
+    width: 39rem
+    height: 65rem
+    z-index: 1
+    @media only screen and (max-width: 650px)
+      width: 15rem
+      height: 30rem
+
+    &_close
+      right: -40rem
+      left: unset
+  &__title-bg, &__subtitle-bg
+    position: absolute
+    top: 50%
+    left: 50%
+    width: 100%
+    height: 100%
+    transform: translate(-50%, -50%)
+    img
+      width: 100%
+      height: 100%
+      object-fit: contain
+  &__subtitle-bg
+    @media only screen and (max-width: 650px)
+      display: none
+    &_mob
+      display: none
+      @media only screen and (max-width: 650px)
+        display: block
+
+  &__subtitle
+    margin: 0 auto
+    color: $violet
+    font-size: 40rem
+    position: relative
+    width: 700rem
+    height: 85rem
+
+    h4
+      br
+        display: none
+    @media only screen and (max-width: 650px)
+      font-size: 17rem
+      width: 190rem
+      height: 58rem
+      text-align: center
+      h4
+        br
+          display: block
+
+  &__order-detox
+    margin-left: auto
+    position: relative
+    @media only screen and (max-width: 650px)
+      position: absolute
+      bottom: 0
+      right: 7rem
+      margin-left: 0
+
+.order-detox
+  width: 480rem
+  height: 245rem
+  @media only screen and (max-width: 650px)
+    width: 183rem
+    height: 92rem
+  &__bg
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    img
+      width: 100%
+      height: 100%
+      object-fit: contain
+  &__hint
+    font-size: 34rem
+    color: $violet
+    text-transform: uppercase
+    position: absolute
+    top: 60rem
+    left: 50%
+    transform: translateX(-50%)
+    @media only screen and (max-width: 650px)
+      font-size: 14rem
+      top: 21rem
+    img
+      right: -69rem
+      top: -4rem
+      position: absolute
+      height: 80rem
+      width: 75rem
+      @media only screen and (max-width: 650px)
+        width: 33rem
+        height: 40rem
+        top: -10rem
+        right: -34rem
+  &__button
+    position: absolute
+    width: 100%
+    bottom: 60rem
+    left: 50%
+    transform: translateX(-50%)
+    display: flex
+    align-items: center
+    justify-content: space-around
+    @media only screen and (max-width: 650px)
+      bottom: 26rem
+      left: 48%
+
+  &__btn-decor
+    width: 24rem
+    height: 45rem
+    @media only screen and (max-width: 650px)
+      width: 10rem
+      height: 18rem
+
+  &__link
+    z-index: 10
+    color: $violet
+    font-size: 37rem
+    font-weight: bold
+    position: relative
+    text-transform: uppercase
+    white-space: nowrap
+    @media only screen and (max-width: 650px)
+      font-size: 14rem
+  &__circle
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 381rem
+    height: 381rem
+    @media only screen and (max-width: 650px)
+      width: 151rem
+      height: 33rem
+    img
+      width: 100%
+      height: 100%
+      object-fit: contain
+  &__contur
+    content: ""
+    position: absolute
+    top: 53%
+    left: 49.5%
+    transform: translate(-50%, -50%)
+    width: 371rem
+    height: 45rem
+    z-index: -1
+    @media only screen and (max-width: 650px)
+      width: 147rem
+      height: 18rem
+    img
+      width: 100%
+      height: 100%
+      object-fit: contain
 
 .trial
   color: #FFFFFF

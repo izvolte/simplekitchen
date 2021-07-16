@@ -1172,6 +1172,11 @@ input {
   top: 0;
   left: 0;
 }
+.slider-for__banner-detox {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 
 .banner-new {
   width: 100%;
@@ -1427,6 +1432,264 @@ input {
     bottom: 0;
     right: 11rem;
   }
+}
+
+.banner-detox {
+  width: 100%;
+  height: 100%;
+  padding: 110rem 51rem 0 0;
+}
+@media only screen and (max-width: 650px) {
+  .banner-detox {
+    padding: 20rem 8rem 0;
+  }
+}
+.banner-detox__box {
+  width: 849rem;
+  height: 505rem;
+  margin-left: auto;
+  position: relative;
+}
+@media only screen and (max-width: 650px) {
+  .banner-detox__box {
+    width: 100%;
+    height: 100%;
+  }
+}
+.banner-detox__header h2, .banner-detox__header h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+.banner-detox__title {
+  font-size: 49rem;
+  color: #ffffff;
+  position: relative;
+  width: 500rem;
+  height: 115rem;
+  margin: 0 auto 16rem;
+  position: relative;
+}
+@media only screen and (max-width: 650px) {
+  .banner-detox__title {
+    font-size: 20rem;
+    width: 215rem;
+    height: 50rem;
+  }
+}
+.banner-detox__title-decor {
+  position: absolute;
+  top: 50%;
+  left: -30rem;
+  transform: translateY(-50%);
+  width: 39rem;
+  height: 65rem;
+  z-index: 1;
+}
+@media only screen and (max-width: 650px) {
+  .banner-detox__title-decor {
+    width: 15rem;
+    height: 30rem;
+  }
+}
+.banner-detox__title-decor_close {
+  right: -40rem;
+  left: unset;
+}
+.banner-detox__title-bg, .banner-detox__subtitle-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+}
+.banner-detox__title-bg img, .banner-detox__subtitle-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+@media only screen and (max-width: 650px) {
+  .banner-detox__subtitle-bg {
+    display: none;
+  }
+}
+.banner-detox__subtitle-bg_mob {
+  display: none;
+}
+@media only screen and (max-width: 650px) {
+  .banner-detox__subtitle-bg_mob {
+    display: block;
+  }
+}
+.banner-detox__subtitle {
+  margin: 0 auto;
+  color: #2E4B87;
+  font-size: 40rem;
+  position: relative;
+  width: 700rem;
+  height: 85rem;
+}
+.banner-detox__subtitle h4 br {
+  display: none;
+}
+@media only screen and (max-width: 650px) {
+  .banner-detox__subtitle {
+    font-size: 17rem;
+    width: 190rem;
+    height: 58rem;
+    text-align: center;
+  }
+  .banner-detox__subtitle h4 br {
+    display: block;
+  }
+}
+.banner-detox__order-detox {
+  margin-left: auto;
+  position: relative;
+}
+@media only screen and (max-width: 650px) {
+  .banner-detox__order-detox {
+    position: absolute;
+    bottom: 0;
+    right: 7rem;
+    margin-left: 0;
+  }
+}
+
+.order-detox {
+  width: 480rem;
+  height: 245rem;
+}
+@media only screen and (max-width: 650px) {
+  .order-detox {
+    width: 183rem;
+    height: 92rem;
+  }
+}
+.order-detox__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.order-detox__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.order-detox__hint {
+  font-size: 34rem;
+  color: #2E4B87;
+  text-transform: uppercase;
+  position: absolute;
+  top: 60rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media only screen and (max-width: 650px) {
+  .order-detox__hint {
+    font-size: 14rem;
+    top: 21rem;
+  }
+}
+.order-detox__hint img {
+  right: -69rem;
+  top: -4rem;
+  position: absolute;
+  height: 80rem;
+  width: 75rem;
+}
+@media only screen and (max-width: 650px) {
+  .order-detox__hint img {
+    width: 33rem;
+    height: 40rem;
+    top: -10rem;
+    right: -34rem;
+  }
+}
+.order-detox__button {
+  position: absolute;
+  width: 100%;
+  bottom: 60rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+@media only screen and (max-width: 650px) {
+  .order-detox__button {
+    bottom: 26rem;
+    left: 48%;
+  }
+}
+.order-detox__btn-decor {
+  width: 24rem;
+  height: 45rem;
+}
+@media only screen and (max-width: 650px) {
+  .order-detox__btn-decor {
+    width: 10rem;
+    height: 18rem;
+  }
+}
+.order-detox__link {
+  z-index: 10;
+  color: #2E4B87;
+  font-size: 37rem;
+  font-weight: bold;
+  position: relative;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+@media only screen and (max-width: 650px) {
+  .order-detox__link {
+    font-size: 14rem;
+  }
+}
+.order-detox__circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 381rem;
+  height: 381rem;
+}
+@media only screen and (max-width: 650px) {
+  .order-detox__circle {
+    width: 151rem;
+    height: 33rem;
+  }
+}
+.order-detox__circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.order-detox__contur {
+  content: "";
+  position: absolute;
+  top: 53%;
+  left: 49.5%;
+  transform: translate(-50%, -50%);
+  width: 371rem;
+  height: 45rem;
+  z-index: -1;
+}
+@media only screen and (max-width: 650px) {
+  .order-detox__contur {
+    width: 147rem;
+    height: 18rem;
+  }
+}
+.order-detox__contur img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .trial {

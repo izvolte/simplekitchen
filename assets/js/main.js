@@ -436,6 +436,4 @@ window.onload = function () {
     selectDay();
     maskInput();
     dateMask();
-
-
 }
