@@ -1111,13 +1111,16 @@ input
   @media only screen and (max-width: 650px)
     padding: 20rem 8rem 0
   &__box
-    width: 849rem
+    padding-top: 48rem
+
+    width: 937rem
     height: 505rem
     margin-left: auto
     position: relative
     @media only screen and (max-width: 650px)
       width: 100%
       height: 100%
+      padding-top: 0
 
 
   &__header
@@ -1127,6 +1130,11 @@ input
       left: 50%
       transform: translate(-50%, -50%)
       white-space: nowrap
+    h3
+      br
+        display: none
+        @media only screen and (max-width: 650px)
+          display: block
   &__title
     font-size: 49rem
     color: $text-light
@@ -1150,10 +1158,14 @@ input
     @media only screen and (max-width: 650px)
       width: 15rem
       height: 30rem
+      left: -16rem
 
     &_close
       right: -40rem
       left: unset
+      @media only screen and (max-width: 650px)
+        right: -14rem
+
   &__title-bg, &__subtitle-bg
     position: absolute
     top: 50%

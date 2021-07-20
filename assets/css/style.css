@@ -1445,7 +1445,8 @@ input {
   }
 }
 .banner-detox__box {
-  width: 849rem;
+  padding-top: 48rem;
+  width: 937rem;
   height: 505rem;
   margin-left: auto;
   position: relative;
@@ -1454,6 +1455,7 @@ input {
   .banner-detox__box {
     width: 100%;
     height: 100%;
+    padding-top: 0;
   }
 }
 .banner-detox__header h2, .banner-detox__header h3 {
@@ -1462,6 +1464,14 @@ input {
   left: 50%;
   transform: translate(-50%, -50%);
   white-space: nowrap;
+}
+.banner-detox__header h3 br {
+  display: none;
+}
+@media only screen and (max-width: 650px) {
+  .banner-detox__header h3 br {
+    display: block;
+  }
 }
 .banner-detox__title {
   font-size: 49rem;
@@ -1492,11 +1502,17 @@ input {
   .banner-detox__title-decor {
     width: 15rem;
     height: 30rem;
+    left: -16rem;
   }
 }
 .banner-detox__title-decor_close {
   right: -40rem;
   left: unset;
+}
+@media only screen and (max-width: 650px) {
+  .banner-detox__title-decor_close {
+    right: -14rem;
+  }
 }
 .banner-detox__title-bg, .banner-detox__subtitle-bg {
   position: absolute;
